@@ -1,0 +1,39 @@
+    body { 
+        font: 14px helvetica neue, helvetica, arial, sans-serif;
+        background-color: #E6DBD8;
+    }
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: flex-start;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .flex-item {
+
+    }
+    #cy {
+        height: 100%;
+    }
+    #selected-scenario-info {
+        width: 550px;
+        margin-right: 20px;
+        float: left;
+        position: relative;
+        z-index: 10;
+    }
+    #selected-scenario-info h2 {
+        text-align: center;
+        color: #6047298a;
+    }
+    #info {
+        color: #c88;
+        font-size: 1em;
+        position: absolute;
+        z-index: -1;
+        left: 1em;
+        top: 1em;
+    }
