@@ -2,7 +2,7 @@
   <div id="selected-scenario-info" class="flex-item">
     <h2 *ngIf="selectedScenario == null; else elseBlock">Click a Scenario to View</h2>
     <ng-template #elseBlock>
-      <img id="scenario-img" class="someClass" (click)="getNextScenarioPage()" [src]="selectedScenario.imageUrl" width="550px">
+      <app-scenario-info [selectedScenario]="selectedScenario"></app-scenario-info>
     </ng-template>
   </div>
   <app-cytoscape [elements]="scenarios" (selectScenario)="handleScenarioSelect($event)"></app-cytoscape>

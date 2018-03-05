@@ -11,5 +11,8 @@ export class AssetService {
     return this.http.get('./assets/scenarios.json')
       .map(response => response.json());
   }
+  public getImageUrl(activePage) {
+    return `assets/scenarios/${activePage}.jpg`; 
+  }
 
 }
