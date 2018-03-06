@@ -1,10 +1,5 @@
 <div class="wrapper">
-  <div id="selected-scenario-info" class="flex-item">
-    <h2 *ngIf="selectedScenario == null; else elseBlock">Click a Scenario to View</h2>
-    <ng-template #elseBlock>
-      <app-scenario-info [selectedScenario]="selectedScenario"></app-scenario-info>
-    </ng-template>
-  </div>
-  <app-cytoscape [elements]="scenarios" (selectScenario)="handleScenarioSelect($event)"></app-cytoscape>
+  <app-scenario-info [selectedScenario]="selectedScenario"></app-scenario-info>
+  <app-tree [elements]="scenarios" (selectScenario)="handleScenarioSelect($event)"></app-tree>
 </div>
 

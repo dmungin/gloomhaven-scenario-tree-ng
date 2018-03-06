@@ -345,7 +345,9 @@
             "data": {
                 "id": "42",
                 "name": "#42 Realm of the Voice",
-                "pages": [56]
+                "pages": [56],
+                "status": "hidden",
+                "notes": "some stuff"
             },
             "position": {
                 "x": -950,

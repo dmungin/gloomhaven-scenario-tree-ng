@@ -1,11 +1,11 @@
 import { Component, OnChanges, ElementRef, Input, Output, EventEmitter, ViewChild, AfterViewInit } from '@angular/core';
 import * as cytoscape from 'cytoscape';
 @Component({
-  selector: 'app-cytoscape',
+  selector: 'app-tree',
   template: '<div id="cy" #cy class="flex-item"></div>',
-  styleUrls: ['./cytoscape.component.css']
+  styleUrls: ['./tree.component.css']
 })
-export class CytoscapeComponent implements OnChanges, AfterViewInit {
+export class TreeComponent implements OnChanges {
   @Input() public elements: any;
   @Output() public selectScenario = new EventEmitter();
   @ViewChild('cy') cyEl;
@@ -15,19 +15,16 @@ export class CytoscapeComponent implements OnChanges, AfterViewInit {
   public ngOnChanges(): any {
       this.render();
   }
-  public ngAfterViewInit() {
-    this.render();
-  }
   public render() {
     this.cy = cytoscape({
         container: this.cyEl.nativeElement,
         elements: this.elements,
         zoomingEnabled: false,
         zoom: 0.5,
-        pan: { x: 400, y: 50 },
+        pan: { x: 525, y: 50 },
         userZoomingEnabled: true,
         boxSelectionEnabled: false,
-        autounselectify: true,
+        autounselectify: false,
         autolock: true,
         layout: {
           name: "preset"
@@ -38,25 +35,27 @@ export class CytoscapeComponent implements OnChanges, AfterViewInit {
               'content': 'data(name)',
               'text-valign': 'top',
               'text-halign': 'center',
-              'color': '#604729',
+              'color': '#000',
               'text-outline-width': 0,
-              'background-color': '#604729',
-              'text-outline-color': '#604729'
+              'background-color': '#000',
+              'text-outline-color': '#000',
+              'opacity': '.87'
           })
           .selector('edge')
           .css({
               'curve-style': 'bezier',
               'target-arrow-shape': 'triangle',
-              'target-arrow-color': '#604729',
-              'line-color': '#604729',
-              'width': 1
+              'target-arrow-color': '#000',
+              'line-color': '#000',
+              'width': 1,
+              'opacity': '.87'
           })
           .selector(':selected')
           .css({
-              'color': 'green',
-              'line-color': 'black',
-              'target-arrow-color': 'black',
-              'source-arrow-color': 'black'
+              'color': '#ff4081',
+              'target-arrow-color': '#ff4081',
+              'source-arrow-color': '#ff4081',
+              'background-color': '#ff4081',
           })
           .selector('.faded')
           .css({
@@ -65,12 +64,15 @@ export class CytoscapeComponent implements OnChanges, AfterViewInit {
           })
     });
     this.cy.on('tap', 'node', this.nodeClicked.bind(this));
+    this.cy.nodes('[status = "hidden"]').style({'visibility': 'hidden'}).connectedEdges().style({'visibility': 'hidden'});
   }
   private nodeClicked(e) {
-      var scenario = e.target;
-      this.selectScenario.emit(scenario);
-      //setSelectedScenario(scenario);
-      //setActivePage(scenario.data().pages[0]);
-      //showScenario();
+    
+    var scenario = e.target;
+    this.selectScenario.emit(scenario);
+    //setSelectedScenario(scenario);
+    //setActivePage(scenario.data().pages[0]);
+    //showScenario();
   }
+
 }

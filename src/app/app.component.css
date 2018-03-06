@@ -1,5 +1,12 @@
-app-cytoscape {
-    width: 60%;
+app-scenario-info {
+    width: 30%;
+    margin-right: 20px;
+    float: left;
+    position: relative;
+    z-index: 10;
+}
+app-tree {
+    width: 70%;
     height: 100vh;
     border: 1px solid #ccc;
 }

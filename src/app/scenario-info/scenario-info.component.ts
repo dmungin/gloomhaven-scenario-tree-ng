@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Component, OnInit, Input, Inject, OnChanges } from '@angular/core';
 import { AssetService } from '../asset.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
@@ -7,23 +7,38 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
   templateUrl: './scenario-info.component.html',
   styleUrls: ['./scenario-info.component.css']
 })
-export class ScenarioInfoComponent implements OnInit {
+export class ScenarioInfoComponent implements OnInit, OnChanges {
   @Input() selectedScenario: any;
+  public scenario = {
+    status: 'incomplete',
+    notes: ''
+  };
   constructor(
     private assetService: AssetService, 
     public dialog: MatDialog
   ) { }
 
   ngOnInit() {
+
+  }
+  ngOnChanges() {
+    if (this.selectedScenario !== null) {
+      this.scenario.status = this.selectedScenario.status || "incomplete";
+      this.scenario.notes = this.selectedScenario.notes || "";
+    }
   }
   public showScenarioModal() {
     let dialogRef = this.dialog.open(ScenarioInfoDialog, {
       width: '900px',
+      height: '100vh',
       data: { selectedScenario: this.selectedScenario }
     });
     dialogRef.afterClosed().subscribe(() => {
       console.log('The dialog was closed');
     });
+  }
+  public saveScenarioData() {
+    console.log(this.scenario);
   }
   
 
