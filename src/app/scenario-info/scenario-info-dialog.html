@@ -1,0 +1,9 @@
+
+
+<h2 mat-dialog-title>{{selectedScenario.name}}</h2>
+<mat-dialog-content>
+        <img id="scenario-img" class="someClass" (click)="getNextScenarioPage()" [src]="selectedScenario.imageUrl" width="800px">
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Done</button>
+</mat-dialog-actions>

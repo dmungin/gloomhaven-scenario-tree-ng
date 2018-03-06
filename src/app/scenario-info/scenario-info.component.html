@@ -1,1 +1,18 @@
-<img id="scenario-img" class="someClass" (click)="getNextScenarioPage()" [src]="selectedScenario.imageUrl" width="550px">
+
+<form>
+    <button mat-raised-button (click)="showScenarioModal()" type="button">View Scenario</button>
+    <mat-button-toggle-group #group="matButtonToggleGroup">
+        <mat-button-toggle value="incomplete">
+            Incomplete
+        </mat-button-toggle>
+        <mat-button-toggle value="attempted">
+            Attempted
+        </mat-button-toggle>
+        <mat-button-toggle value="complete">
+            Complete
+        </mat-button-toggle>
+    </mat-button-toggle-group>
+    <mat-form-field>
+        <textarea matInput placeholder="Scenario Notes"></textarea>
+    </mat-form-field>
+</form>

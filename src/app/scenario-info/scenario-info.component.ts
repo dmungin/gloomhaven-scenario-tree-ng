@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { AssetService } from '../asset.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-scenario-info',
@@ -8,9 +9,41 @@ import { AssetService } from '../asset.service';
 })
 export class ScenarioInfoComponent implements OnInit {
   @Input() selectedScenario: any;
-  constructor(private assetService: AssetService) { }
+  constructor(
+    private assetService: AssetService, 
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit() {
+  }
+  public showScenarioModal() {
+    let dialogRef = this.dialog.open(ScenarioInfoDialog, {
+      width: '900px',
+      data: { selectedScenario: this.selectedScenario }
+    });
+    dialogRef.afterClosed().subscribe(() => {
+      console.log('The dialog was closed');
+    });
+  }
+  
+
+}
+
+@Component({
+  selector: 'app-scenario-info-dialog',
+  templateUrl: './scenario-info-dialog.html',
+})
+export class ScenarioInfoDialog {
+  public selectedScenario: any;
+  constructor(
+    public dialogRef: MatDialogRef<ScenarioInfoDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public assetService: AssetService) { 
+      this.selectedScenario = data.selectedScenario;
+    }
+
+  close(): void {
+    this.dialogRef.close();
   }
   public getNextScenarioPage() {
     let pages = this.selectedScenario.pages;
@@ -22,5 +55,4 @@ export class ScenarioInfoComponent implements OnInit {
     this.selectedScenario.activePage = pages[activeIndex];
     this.selectedScenario.imageUrl = this.assetService.getImageUrl(this.selectedScenario.activePage);
   }
-
 }

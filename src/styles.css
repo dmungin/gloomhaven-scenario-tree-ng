@@ -1,4 +1,6 @@
-    body { 
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body { 
         font: 14px helvetica neue, helvetica, arial, sans-serif;
         background-color: #E6DBD8;
     }
