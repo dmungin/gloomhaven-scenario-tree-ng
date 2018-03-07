@@ -47,6 +47,11 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
 @Component({
   selector: 'app-scenario-info-dialog',
   templateUrl: './scenario-info-dialog.html',
+  styles: [`
+    .mat-dialog-content {
+        max-height: 90vh;
+    }
+  `]
 })
 export class ScenarioInfoDialog {
   public selectedScenario: any;
