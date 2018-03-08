@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Inject, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Inject, OnChanges, EventEmitter, Output } from '@angular/core';
 import { AssetService } from '../asset.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
@@ -9,7 +9,9 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 })
 export class ScenarioInfoComponent implements OnInit, OnChanges {
   @Input() selectedScenario: any;
+  @Output() updateScenario = new EventEmitter<any>();
   public scenario = {
+    id: '',
     status: 'incomplete',
     notes: ''
   };
@@ -23,6 +25,7 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
   }
   ngOnChanges() {
     if (this.selectedScenario !== null) {
+      this.scenario.id = this.selectedScenario.id;
       this.scenario.status = this.selectedScenario.status || "incomplete";
       this.scenario.notes = this.selectedScenario.notes || "";
     }
@@ -38,6 +41,7 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
     });
   }
   public saveScenarioData() {
+    this.updateScenario.emit(this.scenario);
     console.log(this.scenario);
   }
   

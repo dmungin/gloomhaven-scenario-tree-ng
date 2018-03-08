@@ -4,7 +4,9 @@
             "data": {
                 "id": "1",
                 "name": "#1 Black Barrow",
-                "pages": [3]
+                "pages": [3],
+                "status": "incomplete",
+                "notes": ""
             },
             "position": {
                 "x": 0,
@@ -15,7 +17,9 @@
             "data": {
                 "id": "2",
                 "name": "#2 Barrow Lair",
-                "pages": [4, 5]
+                "pages": [4, 5],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": 0,
@@ -26,7 +30,9 @@
             "data": {
                 "id": "3",
                 "name": "#3 Inox Encampment",
-                "pages": [5]
+                "pages": [5],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": -150,
@@ -37,7 +43,9 @@
             "data": {
                 "id": "4",
                 "name": "#4 Crypt of the Damned",
-                "pages": [7]
+                "pages": [7],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": 400,
@@ -48,7 +56,9 @@
             "data": {
                 "id": "5",
                 "name": "#5 Ruinous Crypt",
-                "pages": [8]
+                "pages": [8],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": 550,
@@ -59,7 +69,9 @@
             "data": {
                 "id": "6",
                 "name": "#6 Decaying Crypt",
-                "pages": [9, 10]
+                "pages": [9, 10],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": 375,
@@ -70,7 +82,9 @@
             "data": {
                 "id": "7",
                 "name": "#7 Vibrant Grotto",
-                "pages": [10, 11]
+                "pages": [10, 11],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": 100,
@@ -81,7 +95,9 @@
             "data": {
                 "id": "8",
                 "name": "#8 Gloomhaven Warehouse",
-                "pages": [12]
+                "pages": [12],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": 175,
@@ -92,7 +108,9 @@
             "data": {
                 "id": "9",
                 "name": "#9 Diamond Mine",
-                "pages": [13]
+                "pages": [13],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": -250,
@@ -103,7 +121,9 @@
             "data": {
                 "id": "10",
                 "name": "#10 Plane of Elemental Power",
-                "pages": [14]
+                "pages": [14],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": 700,
@@ -114,7 +134,9 @@
             "data": {
                 "id": "13",
                 "name": "#13 Temple of the Seer",
-                "pages": [18]
+                "pages": [18],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": -75,
@@ -125,7 +147,9 @@
             "data": {
                 "id": "14",
                 "name": "#14 Frozen Hollow",
-                "pages": [19, 20]
+                "pages": [19, 20],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": 200,
@@ -136,7 +160,9 @@
             "data": {
                 "id": "19",
                 "name": "#19 Forgotten Crypt",
-                "pages": [25, 26]
+                "pages": [25, 26],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": 450,
@@ -147,7 +173,9 @@
             "data": {
                 "id": "27",
                 "name": "#27 Ruinous Rift",
-                "pages": [37]
+                "pages": [37],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": 450,
@@ -158,7 +186,9 @@
             "data": {
                 "id": "21",
                 "name": "#21 Infernal Throne",
-                "pages": [28, 29]
+                "pages": [28, 29],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": 625,
@@ -169,7 +199,9 @@
             "data": {
                 "id": "22",
                 "name": "#22 Temple of Elements",
-                "pages": [29, 30]
+                "pages": [29, 30],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": 700,
@@ -180,7 +212,9 @@
             "data": {
                 "id": "57",
                 "name": "#57 Investigation",
-                "pages": [74]
+                "pages": [74],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": -400,
@@ -191,7 +225,9 @@
             "data": {
                 "id": "58",
                 "name": "#58 Bloody Shack",
-                "pages": [75]
+                "pages": [75],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": -400,
@@ -202,7 +238,9 @@
             "data": {
                 "id": "64",
                 "name": "#64 Under Water Lagoon",
-                "pages": [82]
+                "pages": [82],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": -200,
@@ -213,7 +251,9 @@
             "data": {
                 "id": "65",
                 "name": "#65 Sulfur Mine",
-                "pages": [83, 84]
+                "pages": [83, 84],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": 0,
@@ -224,7 +264,9 @@
             "data": {
                 "id": "81",
                 "name": "#81 Temple of the Eclipse",
-                "pages": [103]
+                "pages": [103],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": 200,
@@ -235,7 +277,9 @@
             "data": {
                 "id": "82",
                 "name": "#82 Burning Mountain",
-                "pages": [104]
+                "pages": [104],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": 400,
@@ -246,7 +290,9 @@
             "data": {
                 "id": "83",
                 "name": "#83 Shadows Within",
-                "pages": [105]
+                "pages": [105],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": 600,
@@ -257,7 +303,9 @@
             "data": {
                 "id": "90",
                 "name": "#90 Demonic Rift",
-                "pages": [113]
+                "pages": [113],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": 600,
@@ -268,7 +316,9 @@
             "data": {
                 "id": "20",
                 "name": "#20 Necromancer's Sanctum",
-                "pages": [26, 27]
+                "pages": [26, 27],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": 50,
@@ -279,7 +329,9 @@
             "data": {
                 "id": "28",
                 "name": "#28 Outer Ritual Chamber",
-                "pages": [38]
+                "pages": [38],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": -200,
@@ -290,7 +342,9 @@
             "data": {
                 "id": "18",
                 "name": "#18 Abandoned Sewers",
-                "pages": [24]
+                "pages": [24],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": -250,
@@ -301,7 +355,9 @@
             "data": {
                 "id": "16",
                 "name": "#16 Mountain Pass",
-                "pages": [22]
+                "pages": [22],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": -700,
@@ -312,7 +368,9 @@
             "data": {
                 "id": "24",
                 "name": "#24 Echo Chamber",
-                "pages": [32, 33]
+                "pages": [32, 33],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": -850,
@@ -323,7 +381,9 @@
             "data": {
                 "id": "25",
                 "name": "#25 Icecrag Ascent",
-                "pages": [34, 35]
+                "pages": [34, 35],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": -550,
@@ -334,7 +394,9 @@
             "data": {
                 "id": "30",
                 "name": "#30 Shrine of the Depths",
-                "pages": [40, 41]
+                "pages": [40, 41],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": -950,
@@ -347,7 +409,7 @@
                 "name": "#42 Realm of the Voice",
                 "pages": [56],
                 "status": "hidden",
-                "notes": "some stuff"
+                "notes": ""
             },
             "position": {
                 "x": -950,
@@ -358,7 +420,9 @@
             "data": {
                 "id": "32",
                 "name": "#32 Decrepit Wood",
-                "pages": [43]
+                "pages": [43],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": -750,
@@ -369,7 +433,9 @@
             "data": {
                 "id": "23",
                 "name": "#23 Deep Ruins",
-                "pages": [31, 32]
+                "pages": [31, 32],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": -400,
@@ -380,7 +446,9 @@
             "data": {
                 "id": "43",
                 "name": "#43 Drake Nest",
-                "pages": [57, 58]
+                "pages": [57, 58],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": -250,
@@ -391,7 +459,9 @@
             "data": {
                 "id": "26",
                 "name": "#26 Ancient Cistern",
-                "pages": [35, 36]
+                "pages": [35, 36],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": -100,
@@ -402,7 +472,9 @@
             "data": {
                 "id": "72",
                 "name": "#72 Oozing Grove",
-                "pages": [92]
+                "pages": [92],
+                "status": "hidden",
+                "notes": ""
             },
             "position": {
                 "x": 400,

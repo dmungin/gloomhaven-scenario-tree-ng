@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <app-scenario-info [selectedScenario]="selectedScenario"></app-scenario-info>
+  <app-scenario-info [selectedScenario]="selectedScenario" (updateScenario)="handleScenarioUpdate($event)"></app-scenario-info>
   <app-tree [elements]="scenarios" (selectScenario)="handleScenarioSelect($event)"></app-tree>
 </div>
 

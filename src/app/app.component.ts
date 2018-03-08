@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AssetService } from './asset.service';
-
+import { TreeLogicService } from './tree-logic.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +9,10 @@ import { AssetService } from './asset.service';
 export class AppComponent implements OnInit {
   public scenarios: any;
   public selectedScenario: any = null;
-  constructor(private assetService: AssetService) {}
+  constructor(
+    private assetService: AssetService,
+    private treeLogicService: TreeLogicService
+  ) {}
   ngOnInit() {
     this.assetService.getScenariosJSON().subscribe(scenarios => this.scenarios = scenarios);
   }
@@ -28,6 +31,9 @@ export class AppComponent implements OnInit {
     }
     this.selectedScenario.activePage = pages[activeIndex];
     this.selectedScenario.imageUrl = this.getImageUrl(this.selectedScenario.activePage);
+  }
+  public handleScenarioUpdate(scenario) {
+    this.scenarios = this.treeLogicService.updateScenario(this.scenarios, scenario);
   }
   private getImageUrl(activePage) {
     return `assets/scenarios/${activePage}.jpg`; 

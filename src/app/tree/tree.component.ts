@@ -53,8 +53,6 @@ export class TreeComponent implements OnChanges {
           .selector(':selected')
           .css({
               'color': '#ff4081',
-              'target-arrow-color': '#ff4081',
-              'source-arrow-color': '#ff4081',
               'background-color': '#ff4081',
           })
           .selector('.faded')
@@ -64,10 +62,13 @@ export class TreeComponent implements OnChanges {
           })
     });
     this.cy.on('tap', 'node', this.nodeClicked.bind(this));
-    this.cy.nodes('[status = "hidden"]').style({'visibility': 'hidden'}).connectedEdges().style({'visibility': 'hidden'});
+    this.cy.nodes('[status != "hidden"]').css({'visibility': 'visible'}).connectedEdges().css({'visibility': 'visible'});
+    this.cy.nodes('[status = "hidden"][id < 51]').css({'visibility': 'hidden'}).connectedEdges().css({'visibility': 'hidden'});
+    this.cy.nodes('[status = "incomplete"]').css({'color': '#000', 'background-color': '#000', 'border-width': '0px'});
+    this.cy.nodes('[status = "complete"]').css({'color': '#3f51b5', 'background-color': '#3f51b5', 'border-width': '0px'});
+    this.cy.nodes('[status = "attempted"]').css({'color': '#000', 'background-color': '#000', 'border-width': '2px', 'border-color': '#3f51b5'});
   }
   private nodeClicked(e) {
-    
     var scenario = e.target;
     this.selectScenario.emit(scenario);
     //setSelectedScenario(scenario);

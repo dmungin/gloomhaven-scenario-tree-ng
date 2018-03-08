@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { TreeComponent } from './tree/tree.component';
 import { AssetService } from './asset.service';
 import { ScenarioInfoComponent, ScenarioInfoDialog } from './scenario-info/scenario-info.component';
+import { TreeLogicService } from './tree-logic.service';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { ScenarioInfoComponent, ScenarioInfoDialog } from './scenario-info/scena
   entryComponents: [
     ScenarioInfoDialog
   ],
-  providers: [ AssetService ],
+  providers: [ AssetService, TreeLogicService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
