@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule }   from '@angular/forms';
 
+import { ExportTreeComponent } from './export-tree/export-tree.component';
 import { MaterialModule } from './material.module';
 import { AppComponent } from './app.component';
 import { TreeComponent } from './tree/tree.component';
@@ -17,7 +18,8 @@ import { TreeLogicService } from './tree-logic.service';
     AppComponent,
     TreeComponent,
     ScenarioInfoComponent,
-    ScenarioInfoDialog
+    ScenarioInfoDialog,
+    ExportTreeComponent
   ],
   imports: [
     BrowserModule,

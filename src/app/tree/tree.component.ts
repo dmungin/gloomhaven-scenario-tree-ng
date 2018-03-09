@@ -33,10 +33,12 @@ export class TreeComponent implements OnChanges {
           .selector('node')
           .css({
               'content': 'data(name)',
+              'font-size': '1.3em',
+              'font-weight': '600',
               'text-valign': 'top',
               'text-halign': 'center',
               'color': '#000',
-              'text-outline-width': 0,
+              'text-outline-width': '0',
               'background-color': '#000',
               'text-outline-color': '#000',
               'opacity': '.87'
@@ -63,7 +65,7 @@ export class TreeComponent implements OnChanges {
     });
     this.cy.on('tap', 'node', this.nodeClicked.bind(this));
     this.cy.nodes('[status != "hidden"]').css({'visibility': 'visible'}).connectedEdges().css({'visibility': 'visible'});
-    this.cy.nodes('[status = "hidden"][id < 51]').css({'visibility': 'hidden'}).connectedEdges().css({'visibility': 'hidden'});
+    this.cy.nodes('[status = "hidden"]').css({'visibility': 'hidden'}).connectedEdges().css({'visibility': 'hidden'});
     this.cy.nodes('[status = "incomplete"]').css({'color': '#000', 'background-color': '#000', 'border-width': '0px'});
     this.cy.nodes('[status = "complete"]').css({'color': '#3f51b5', 'background-color': '#3f51b5', 'border-width': '0px'});
     this.cy.nodes('[status = "attempted"]').css({'color': '#000', 'background-color': '#000', 'border-width': '2px', 'border-color': '#3f51b5'});
