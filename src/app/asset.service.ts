@@ -15,13 +15,18 @@ export class AssetService {
       return this.http.get('./assets/scenarios.json')
       .map(response => response.json());
     } else {
-      let response = new BehaviorSubject<any>(JSON.parse(base64.decode(encodedTree)));
+      let response = new BehaviorSubject<any>(this.getDecodedScenarios(encodedTree));
       return response;
     }
-    
+  }
+  public getDecodedScenarios(encodedScenarios) {
+    return JSON.parse(base64.decode(encodedScenarios));
+  }
+  public getEncodedScenarios(scenarios) {
+    return base64.encode(JSON.stringify(scenarios))
   }
   public setScenariosJSON(scenarios) {
-    localStorage.setItem('gloomhavenScenarioTree', base64.encode(JSON.stringify(scenarios)));
+    localStorage.setItem('gloomhavenScenarioTree', this.getEncodedScenarios(scenarios));
   }
   public getImageUrl(activePage) {
     return `assets/scenarios/${activePage}.jpg`; 

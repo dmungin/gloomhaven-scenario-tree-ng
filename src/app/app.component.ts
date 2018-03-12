@@ -36,6 +36,10 @@ export class AppComponent implements OnInit {
     this.scenarios = this.treeLogicService.updateScenario(this.scenarios, scenario);
     this.assetService.setScenariosJSON(this.scenarios);
   }
+  public handleScenariosImport(scenarios) {
+    this.scenarios = scenarios;
+    this.assetService.setScenariosJSON(this.scenarios);
+  }
   private getImageUrl(activePage) {
     return `assets/scenarios/${activePage}.jpg`; 
   }

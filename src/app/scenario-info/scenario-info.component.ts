@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Inject, OnChanges, EventEmitter, Output } from '@angular/core';
 import { AssetService } from '../asset.service';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-scenario-info',
