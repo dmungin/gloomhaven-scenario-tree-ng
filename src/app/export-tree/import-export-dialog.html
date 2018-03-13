@@ -1,4 +1,12 @@
-
 <mat-dialog-content>
-      hihihi 
+      <p>Changes are saved automatically to your browser's local storage. However, you can save this data elsewhere by copying the encoded string below.</p>
+      <p>To import, paste your encoded string over the text below and click import.</p>
+      <form #importForm="ngForm">
+            <mat-form-field>
+                  <textarea matInput placeholder="Import / Export" [(ngModel)]="encodedScenarios" name="import"></textarea>
+            </mat-form-field>
+     </form>
 </mat-dialog-content>
+<mat-dialog-actions>
+      <button mat-raised-button color="primary" type="button" [mat-dialog-close]="importEncodedScenarios()">Import</button>
+</mat-dialog-actions>

@@ -673,24 +673,7 @@
                 "y": 1196
             }
         },
-
-
-
-
-
-        {
-            "data": {
-                "id": "72",
-                "name": "#72 Oozing Grove",
-                "pages": [92],
-                "status": "incomplete",
-                "notes": ""
-            },
-            "position": {
-                "x": 400,
-                "y": 1350
-            }
-        },
+    
         {
             "data": {
                 "id": "57",
@@ -715,6 +698,23 @@
             "position": {
                 "x": -400,
                 "y": 1350
+            }
+        },
+
+
+
+
+        {
+            "data": {
+                "id": "63",
+                "name": "#63 Magma Pit",
+                "pages": [81],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": -200,
+                "y": 1250
             }
         },
         {
@@ -745,6 +745,139 @@
         },
         {
             "data": {
+                "id": "66",
+                "name": "#66 Clockwork Cove",
+                "pages": [84, 85],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 0,
+                "y": 1250
+            }
+        },
+        {
+            "data": {
+                "id": "67",
+                "name": "#67 Arcane Library",
+                "pages": [86],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 0,
+                "y": 1250
+            }
+        },
+        {
+            "data": {
+                "id": "68",
+                "name": "#68 Toxic Moor",
+                "pages": [87],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 0,
+                "y": 1250
+            }
+        },
+        {
+            "data": {
+                "id": "69",
+                "name": "#69 Well of the Unfortunate",
+                "pages": [88],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 0,
+                "y": 1250
+            }
+        },
+        {
+            "data": {
+                "id": "70",
+                "name": "#70 Chained Isle",
+                "pages": [89, 90],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 0,
+                "y": 1250
+            }
+        },
+        {
+            "data": {
+                "id": "71",
+                "name": "#71 Windswept Highlands",
+                "pages": [90, 91],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 0,
+                "y": 1250
+            }
+        },
+
+
+        {
+            "data": {
+                "id": "72",
+                "name": "#72 Oozing Grove",
+                "pages": [92],
+                "status": "incomplete",
+                "notes": ""
+            },
+            "position": {
+                "x": 400,
+                "y": 1350
+            }
+        },
+        {
+            "data": {
+                "id": "73",
+                "name": "#73 Rockslide Ridge",
+                "pages": [93],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 400,
+                "y": 1350
+            }
+        },
+        {
+            "data": {
+                "id": "76",
+                "name": "#76 Harrower Hive",
+                "pages": [96, 97],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 400,
+                "y": 1350
+            }
+        },
+        {
+            "data": {
+                "id": "77",
+                "name": "#77 Vault of Secrets",
+                "pages": [97, 98],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 400,
+                "y": 1350
+            }
+        },
+
+        {
+            "data": {
                 "id": "81",
                 "name": "#81 Temple of the Eclipse",
                 "pages": [103],
@@ -753,6 +886,37 @@
             },
             "position": {
                 "x": 200,
+                "y": 1250
+            }
+        },
+        
+        {
+            "data": {
+                "id": "83",
+                "name": "#83 Shadows Within",
+                "pages": [105],
+                "status": "incomplete",
+                "notes": ""
+            },
+            "position": {
+                "x": 600,
+                "y": 1250
+            }
+        },
+
+
+
+
+        {
+            "data": {
+                "id": "80",
+                "name": "#80 Vigil Keep",
+                "pages": [101, 102],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 400,
                 "y": 1250
             }
         },
@@ -771,14 +935,14 @@
         },
         {
             "data": {
-                "id": "83",
-                "name": "#83 Shadows Within",
-                "pages": [105],
-                "status": "incomplete",
+                "id": "85",
+                "name": "#85 Sun Temple",
+                "pages": [107, 108],
+                "status": "hidden",
                 "notes": ""
             },
             "position": {
-                "x": 600,
+                "x": 400,
                 "y": 1250
             }
         },
