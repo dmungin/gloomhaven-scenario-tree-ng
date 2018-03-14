@@ -559,7 +559,7 @@
         {
             "data": {
                 "id": "47",
-                "name": "#47 lair of the Unseeing Eye",
+                "name": "#47 Lair of the Unseeing Eye",
                 "pages": [62],
                 "status": "hidden",
                 "notes": ""
@@ -676,6 +676,71 @@
     
         {
             "data": {
+                "id": "52",
+                "name": "#52 Noxious Cellar",
+                "pages": [68, 69],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": -1000,
+                "y": 1350
+            }
+        },
+        {
+            "data": {
+                "id": "53",
+                "name": "#53 Crypt Basement",
+                "pages": [69, 70],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": -1000,
+                "y": 1450
+            }
+        },
+        {
+            "data": {
+                "id": "54",
+                "name": "#54 Palace of Ice",
+                "pages": [71],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": -1000,
+                "y": 1550
+            }
+        },
+        {
+            "data": {
+                "id": "55",
+                "name": "#55 Foggy Thicket",
+                "pages": [72],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": -800,
+                "y": 1350
+            }
+        },
+        {
+            "data": {
+                "id": "56",
+                "name": "#56 Bandit's Wood",
+                "pages": [73],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": -800,
+                "y": 1450
+            }
+        },
+        {
+            "data": {
                 "id": "57",
                 "name": "#57 Investigation",
                 "pages": [74],
@@ -683,8 +748,8 @@
                 "notes": ""
             },
             "position": {
-                "x": -400,
-                "y": 1250
+                "x": -600,
+                "y": 1350
             }
         },
         {
@@ -696,13 +761,62 @@
                 "notes": ""
             },
             "position": {
+                "x": -600,
+                "y": 1450
+            }
+        },
+        {
+            "data": {
+                "id": "59",
+                "name": "#59 Forgotten Grove",
+                "pages": [76],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
                 "x": -400,
                 "y": 1350
             }
         },
-
-
-
+        {
+            "data": {
+                "id": "60",
+                "name": "#60 Alchemy Lab",
+                "pages": [77],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": -400,
+                "y": 1450
+            }
+        },
+        {
+            "data": {
+                "id": "61",
+                "name": "#61 Fading Lighthouse",
+                "pages": [78, 79],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": -200,
+                "y": 1350
+            }
+        },
+        {
+            "data": {
+                "id": "62",
+                "name": "#62 Pit of Souls",
+                "pages": [80],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": -200,
+                "y": 1450
+            }
+        },
 
         {
             "data": {
@@ -713,8 +827,8 @@
                 "notes": ""
             },
             "position": {
-                "x": -200,
-                "y": 1250
+                "x": 0,
+                "y": 1350
             }
         },
         {
@@ -726,8 +840,8 @@
                 "notes": ""
             },
             "position": {
-                "x": -200,
-                "y": 1250
+                "x": 0,
+                "y": 1450
             }
         },
         {
@@ -739,8 +853,8 @@
                 "notes": ""
             },
             "position": {
-                "x": 0,
-                "y": 1250
+                "x": 220,
+                "y": 1350
             }
         },
         {
@@ -752,8 +866,8 @@
                 "notes": ""
             },
             "position": {
-                "x": 0,
-                "y": 1250
+                "x": 220,
+                "y": 1450
             }
         },
         {
@@ -765,8 +879,8 @@
                 "notes": ""
             },
             "position": {
-                "x": 0,
-                "y": 1250
+                "x": 425,
+                "y": 1350
             }
         },
         {
@@ -778,8 +892,8 @@
                 "notes": ""
             },
             "position": {
-                "x": 0,
-                "y": 1250
+                "x": 425,
+                "y": 1450
             }
         },
         {
@@ -791,8 +905,8 @@
                 "notes": ""
             },
             "position": {
-                "x": 0,
-                "y": 1250
+                "x": 650,
+                "y": 1350
             }
         },
         {
@@ -804,8 +918,8 @@
                 "notes": ""
             },
             "position": {
-                "x": 0,
-                "y": 1250
+                "x": 650,
+                "y": 1450
             }
         },
         {
@@ -817,8 +931,8 @@
                 "notes": ""
             },
             "position": {
-                "x": 0,
-                "y": 1250
+                "x": 900,
+                "y": 1350
             }
         },
 
@@ -832,8 +946,8 @@
                 "notes": ""
             },
             "position": {
-                "x": 400,
-                "y": 1350
+                "x": -1000,
+                "y": 1700
             }
         },
         {
@@ -845,8 +959,8 @@
                 "notes": ""
             },
             "position": {
-                "x": 400,
-                "y": 1350
+                "x": -1000,
+                "y": 1800
             }
         },
         {
@@ -858,8 +972,8 @@
                 "notes": ""
             },
             "position": {
-                "x": 400,
-                "y": 1350
+                "x": -800,
+                "y": 1700
             }
         },
         {
@@ -871,11 +985,63 @@
                 "notes": ""
             },
             "position": {
-                "x": 400,
-                "y": 1350
+                "x": -800,
+                "y": 1800
             }
         },
 
+        {
+            "data": {
+                "id": "74",
+                "name": "#74 Merchant Ship",
+                "pages": [94],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": -600,
+                "y": 1700
+            }
+        },
+        {
+            "data": {
+                "id": "75",
+                "name": "#75 Overgrown Graveyard",
+                "pages": [95],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": -600,
+                "y": 1800
+            }
+        },
+        {
+            "data": {
+                "id": "78",
+                "name": "#78 Sacrifice Pit",
+                "pages": [99],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": -400,
+                "y": 1700
+            }
+        },
+        {
+            "data": {
+                "id": "79",
+                "name": "#79 Lost Temple",
+                "pages": [100, 101],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": -400,
+                "y": 1800
+            }
+        },
         {
             "data": {
                 "id": "81",
@@ -885,11 +1051,10 @@
                 "notes": ""
             },
             "position": {
-                "x": 200,
-                "y": 1250
+                "x": -200,
+                "y": 1700
             }
         },
-        
         {
             "data": {
                 "id": "83",
@@ -899,13 +1064,140 @@
                 "notes": ""
             },
             "position": {
-                "x": 600,
-                "y": 1250
+                "x": -200,
+                "y": 1800
             }
         },
-
-
-
+        {
+            "data": {
+                "id": "84",
+                "name": "#84 Crystalline Cave",
+                "pages": [106],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 25,
+                "y": 1700
+            }
+        },
+        {
+            "data": {
+                "id": "86",
+                "name": "#86 Harried Village",
+                "pages": [108, 109],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 225,
+                "y": 1700
+            }
+        },
+        {
+            "data": {
+                "id": "87",
+                "name": "#87 Corrupted Cove",
+                "pages": [110],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 225,
+                "y": 1800
+            }
+        },
+        {
+            "data": {
+                "id": "88",
+                "name": "#88 Plane of Water",
+                "pages": [111],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 25,
+                "y": 1800
+            }
+        },
+        {
+            "data": {
+                "id": "89",
+                "name": "#89 Syndicate Hideout",
+                "pages": [112],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 425,
+                "y": 1700
+            }
+        },
+        {
+            "data": {
+                "id": "91",
+                "name": "#91 Wild Melee",
+                "pages": [114],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 425,
+                "y": 1800
+            }
+        },
+        {
+            "data": {
+                "id": "92",
+                "name": "#92 Back Alley Brawl",
+                "pages": [115],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 625,
+                "y": 1700
+            }
+        },
+        {
+            "data": {
+                "id": "93",
+                "name": "#93 Sunken Vessel",
+                "pages": [116],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 625,
+                "y": 1800
+            }
+        },
+        {
+            "data": {
+                "id": "94",
+                "name": "#94 Verming Nest",
+                "pages": [117],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 825,
+                "y": 1700
+            }
+        },
+        {
+            "data": {
+                "id": "95",
+                "name": "#95 Payment Due",
+                "pages": [118, 119],
+                "status": "hidden",
+                "notes": ""
+            },
+            "position": {
+                "x": 825,
+                "y": 1800
+            }
+        },
 
         {
             "data": {
@@ -916,8 +1208,8 @@
                 "notes": ""
             },
             "position": {
-                "x": 400,
-                "y": 1250
+                "x": -1000,
+                "y": 1950
             }
         },
         {
@@ -929,8 +1221,8 @@
                 "notes": ""
             },
             "position": {
-                "x": 400,
-                "y": 1250
+                "x": -800,
+                "y": 1950
             }
         },
         {
@@ -942,8 +1234,8 @@
                 "notes": ""
             },
             "position": {
-                "x": 400,
-                "y": 1250
+                "x": -600,
+                "y": 1950
             }
         },
         {
@@ -955,8 +1247,8 @@
                 "notes": ""
             },
             "position": {
-                "x": 600,
-                "y": 1350
+                "x": -400,
+                "y": 1950
             }
         }
     ],
@@ -1361,6 +1653,52 @@
             "data": {
                 "source": "40",
                 "target": "41",
+                "linked": true
+            }
+        },
+        {
+            "data": {
+                "source": "86",
+                "target": "87"
+            }
+        },
+        {
+            "data": {
+                "source": "94",
+                "target": "95",
+                "linked": true
+            }
+        }
+        ,
+        {
+            "data": {
+                "source": "52",
+                "target": "53"
+            }
+        },
+        {
+            "data": {
+                "source": "53",
+                "target": "54"
+            }
+        },
+        {
+            "data": {
+                "source": "55",
+                "target": "56",
+                "linked": true
+            }
+        },
+        {
+            "data": {
+                "source": "59",
+                "target": "60"
+            }
+        },
+        {
+            "data": {
+                "source": "61",
+                "target": "62",
                 "linked": true
             }
         }

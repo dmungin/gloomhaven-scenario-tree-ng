@@ -9,6 +9,7 @@ export class TreeComponent implements OnChanges {
   @Input() public elements: any;
   @Output() public selectScenario = new EventEmitter();
   @ViewChild('cy') cyEl;
+  public hideLocked: boolean = true;
   private cy: any;
 
   public constructor() {}
@@ -41,7 +42,9 @@ export class TreeComponent implements OnChanges {
               'text-outline-width': '0',
               'background-color': '#000',
               'text-outline-color': '#000',
-              'opacity': '.87'
+              'opacity': '.87',
+              'border-color': '#3f51b5',
+              'border-style': 'solid'
           })
           .selector('edge')
           .css({
@@ -64,16 +67,41 @@ export class TreeComponent implements OnChanges {
           })
     });
     this.cy.on('tap', 'node', this.nodeClicked.bind(this));
-    //this.cy.on('free', 'node', this.nodeMoved.bind(this));
-    this.cy.nodes('[status != "hidden"]').css({'visibility': 'visible'}).connectedEdges().css({'visibility': 'visible'});
-    this.cy.nodes('[status = "hidden"]').css({'visibility': 'hidden'}).connectedEdges().css({'visibility': 'hidden'});
-    this.cy.nodes('[status = "incomplete"]').css({'color': '#000', 'background-color': '#000', 'border-width': '0px'});
-    this.cy.nodes('[status = "complete"]').css({'color': '#3f51b5', 'background-color': '#3f51b5', 'border-width': '0px'});
-    this.cy.nodes('[status = "attempted"]').css({'color': '#000', 'background-color': '#000', 'border-width': '2px', 'border-color': '#3f51b5'});
+
+    if (this.hideLocked) {
+      this.cy.nodes('[status != "hidden"]').css({'visibility': 'visible'});
+      this.cy.nodes('[status = "hidden"]').css({'visibility': 'hidden'});
+      // Set edges to the visible only if source is complete
+      this.cy.nodes('[status = "incomplete"], [status = "attempted"], [status = "hidden"]').outgoers('edge').css({'visibility': 'hidden'});
+      this.cy.nodes('[status = "complete"]').outgoers('edge').css({'visibility': 'visible'});
+    }
+    
+    this.updateStyles();
+    
+  }
+  private updateStyles() {
+    this.cy.nodes('[status = "incomplete"]').css({
+      'color': '#000', 
+      'background-color': '#000', 
+      'border-width': '0px'});
+    this.cy.nodes('[status = "complete"]').css({
+      'color': '#3f51b5', 
+      'background-color': '#3f51b5', 
+      'border-width': '0px'});
+    this.cy.nodes('[status = "attempted"]').css({
+      'color': '#000', 
+      'background-color': '#fff', 
+      'border-width': '1px'});
+    this.cy.nodes(':selected').css({
+        'color': '#ff4081',
+        'background-color': '#ff4081',
+        'border-width': '0px'
+    });
   }
   private nodeClicked(e) {
     var scenario = e.target;
     this.selectScenario.emit(scenario);
+    window.setTimeout(() => this.updateStyles(), 50);
     console.log(e.position);
     //setSelectedScenario(scenario);
     //setActivePage(scenario.data().pages[0]);
