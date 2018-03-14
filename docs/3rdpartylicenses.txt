@@ -87,6 +87,10 @@ MIT
 MIT
 MIT
 
+base-64@0.1.0
+MIT
+MIT
+
 lodash.clonedeep@4.5.0
 MIT
 Copyright jQuery Foundation and other contributors <https://jquery.org/>
