@@ -927,7 +927,7 @@
                 "id": "71",
                 "name": "#71 Windswept Highlands",
                 "pages": [90, 91],
-                "status": "hidden",
+                "status": "incomplete",
                 "notes": ""
             },
             "position": {
@@ -968,7 +968,7 @@
                 "id": "76",
                 "name": "#76 Harrower Hive",
                 "pages": [96, 97],
-                "status": "hidden",
+                "status": "incomplete",
                 "notes": ""
             },
             "position": {
@@ -1177,7 +1177,7 @@
                 "id": "94",
                 "name": "#94 Verming Nest",
                 "pages": [117],
-                "status": "hidden",
+                "status": "incomplete",
                 "notes": ""
             },
             "position": {
