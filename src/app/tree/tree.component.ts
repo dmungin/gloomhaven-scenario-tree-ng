@@ -10,6 +10,7 @@ export class TreeComponent implements OnChanges {
   @Output() public selectScenario = new EventEmitter();
   @ViewChild('cy') cyEl;
   public hideLocked: boolean = true;
+  private initialLoad: boolean = true;
   private cy: any;
 
   public constructor() {}
@@ -17,12 +18,13 @@ export class TreeComponent implements OnChanges {
       this.render();
   }
   public render() {
+    let pan = this.initialLoad ? { x: 525, y: 50 } : this.cy.pan();
     this.cy = cytoscape({
         container: this.cyEl.nativeElement,
         elements: this.elements,
         zoomingEnabled: false,
         zoom: 0.5,
-        pan: { x: 525, y: 50 },
+        pan: pan,
         userZoomingEnabled: true,
         boxSelectionEnabled: false,
         autounselectify: false,
@@ -45,6 +47,10 @@ export class TreeComponent implements OnChanges {
               'opacity': '.87',
               'border-color': '#3f51b5',
               'border-style': 'solid'
+          })
+          .selector('node[id > 51][status = "hidden"]')
+          .css({
+            'content': 'data(id)'
           })
           .selector('edge')
           .css({
@@ -70,14 +76,15 @@ export class TreeComponent implements OnChanges {
 
     if (this.hideLocked) {
       this.cy.nodes('[status != "hidden"]').css({'visibility': 'visible'});
-      this.cy.nodes('[status = "hidden"]').css({'visibility': 'hidden'});
+      this.cy.nodes('[status = "hidden"][id < 52]').css({'visibility': 'hidden'});
       // Set edges to the visible only if source is complete
       this.cy.nodes('[status = "incomplete"], [status = "attempted"], [status = "hidden"]').outgoers('edge').css({'visibility': 'hidden'});
+
       this.cy.nodes('[status = "complete"]').outgoers('edge').css({'visibility': 'visible'});
     }
     
     this.updateStyles();
-    
+    this.initialLoad = false;
   }
   private updateStyles() {
     this.cy.nodes('[status = "incomplete"]').css({

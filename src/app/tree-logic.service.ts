@@ -22,15 +22,20 @@ export class TreeLogicService {
     scenarios.edges.filter(edge => edge.data.source === parentId)
       .forEach(edge => {
         let scenarioIndex = scenarios.nodes.findIndex(scenario => scenario.data.id === edge.data.target);
-        scenarios.nodes[scenarioIndex].data.status = 'incomplete';
+        if (scenarios.nodes[scenarioIndex].data.status === 'hidden') {
+          scenarios.nodes[scenarioIndex].data.status = 'incomplete';
+        } 
       })
   }
   private hideChildScenarios(scenarios, parentId) {
     scenarios.edges.filter(edge => edge.data.source === parentId)
       .forEach(edge => {
         let scenarioIndex = scenarios.nodes.findIndex(scenario => scenario.data.id === edge.data.target);
-        scenarios.nodes[scenarioIndex].data.status = 'hidden';
-        this.hideChildScenarios(scenarios, scenarios.nodes[scenarioIndex].id);
+        if (scenarios.nodes[scenarioIndex].data.status === 'incomplete') {
+          scenarios.nodes[scenarioIndex].data.status = 'hidden';
+          this.hideChildScenarios(scenarios, scenarios.nodes[scenarioIndex].id);
+        }
+        
       })
   }
 }
