@@ -1,25 +1,31 @@
-<h2 *ngIf="selectedScenario == null; else elseBlock" class="faded">Click a Scenario to View</h2>
-<ng-template #elseBlock>
-    <h2>{{selectedScenario.name}}</h2>
-    <form (ngSubmit)="saveScenarioData()" #scenarioForm="ngForm">
-        <button mat-raised-button (click)="showScenarioModal()" type="button">View Scenario</button>
-    
-        <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="scenario.status" name="status">
-            <mat-button-toggle value="incomplete">
-                Incomplete
-            </mat-button-toggle>
-            <mat-button-toggle value="attempted">
-                Attempted
-            </mat-button-toggle>
-            <mat-button-toggle value="complete">
-                Complete
-            </mat-button-toggle>
-        </mat-button-toggle-group>
-        <mat-form-field>
-            <textarea matInput placeholder="Scenario Notes" [(ngModel)]="scenario.notes" name="notes"></textarea>
-        </mat-form-field>
-        <button mat-raised-button color="primary" type="submit">Save</button>
-    </form>
+<h2 *ngIf="selectedScenario == null; else isSelectedBlock" class="faded">Click a Scenario to View</h2>
+<ng-template #isSelectedBlock>
+    <div *ngIf="scenario.locked == 'true'; else isUnlockedBlock">
+        <h2># {{selectedScenario.id}}</h2>
+        <button mat-raised-button color="primary" type="button" (click)="unlockScenario()">Unlock</button>
+    </div>
+    <ng-template #isUnlockedBlock>
+        <h2>{{selectedScenario.name}}</h2>
+        <form (ngSubmit)="saveScenarioData(true)" #scenarioForm="ngForm">
+            <button mat-raised-button (click)="showScenarioModal()" type="button">View Scenario</button>
+        
+            <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="scenario.status" name="status">
+                <mat-button-toggle value="incomplete">
+                    Incomplete
+                </mat-button-toggle>
+                <mat-button-toggle value="attempted">
+                    Attempted
+                </mat-button-toggle>
+                <mat-button-toggle value="complete">
+                    Complete
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+            <mat-form-field>
+                <textarea matInput placeholder="Scenario Notes" [(ngModel)]="scenario.notes" name="notes"></textarea>
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit">Save</button>
+        </form>
+    </ng-template>
 </ng-template>
 
 

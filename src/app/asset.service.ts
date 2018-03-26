@@ -3,7 +3,6 @@ import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import * as base64 from 'base-64';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 @Injectable()
 export class AssetService {
@@ -11,19 +10,19 @@ export class AssetService {
   constructor(private http: Http) { }
   public getScenariosJSON(): Observable<any> {
     let encodedTree = localStorage.getItem('gloomhavenScenarioTree');
-    if (!encodedTree) {
-      return this.http.get('./assets/scenarios.json')
-      .map(response => response.json());
-    } else {
-      let response = new BehaviorSubject<any>(this.getDecodedScenarios(encodedTree));
-      return response;
-    }
+    return this.http.get('./assets/scenarios.json').map(response => {
+      let scenarios = response.json();
+      if (encodedTree) {
+        scenarios.nodes = this.getDecodedScenarios(encodedTree).nodes;
+      }
+      return scenarios;
+    });
   }
   public getDecodedScenarios(encodedScenarios) {
-    return JSON.parse(base64.decode(encodedScenarios));
+    return JSON.parse(encodedScenarios);
   }
   public getEncodedScenarios(scenarios) {
-    return base64.encode(JSON.stringify(scenarios))
+    return JSON.stringify({nodes: scenarios.nodes});
   }
   public setScenariosJSON(scenarios) {
     localStorage.setItem('gloomhavenScenarioTree', this.getEncodedScenarios(scenarios));

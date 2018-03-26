@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AssetService } from './asset.service';
 import { TreeLogicService } from './tree-logic.service';
+import { MatSnackBar } from '@angular/material';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,7 +12,8 @@ export class AppComponent implements OnInit {
   public selectedScenario: any = null;
   constructor(
     private assetService: AssetService,
-    private treeLogicService: TreeLogicService
+    private treeLogicService: TreeLogicService,
+    private snackBar: MatSnackBar
   ) {}
   ngOnInit() {
     this.assetService.getScenariosJSON().subscribe(scenarios => this.scenarios = scenarios);
@@ -37,8 +39,12 @@ export class AppComponent implements OnInit {
     this.assetService.setScenariosJSON(this.scenarios);
   }
   public handleScenariosImport(scenarios) {
+    scenarios.edges = this.scenarios.edges;
     this.scenarios = scenarios;
     this.assetService.setScenariosJSON(this.scenarios);
+    this.snackBar.open('Scenarios Imported!', '', {
+      duration: 1500,
+    });
   }
   private getImageUrl(activePage) {
     return `assets/scenarios/${activePage}.jpg`; 

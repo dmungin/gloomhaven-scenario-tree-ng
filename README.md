@@ -1,14 +1,12 @@
-# GloomhavenScenarioTreeNg
+# Gloomhaven Scenario Tree
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+This is a simple application to be able to easily visualize your Gloomhaven campaign state. The idea was to easily show what scenarios are currently available to your party, and to be able to track where those scenarios were unlocked from. For added convenience any scenario's pages can be viewed within the app so you can view / review any selected scenario. 
+
+This applicaion was created with the help of the Gloomhaven Scenario Flowchart found here `https://boardgamegeek.com/filepage/143772/scenario-flowchart`
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -22,6 +20,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Next steps
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#### Implement way to merge JSON in case of updates to the static data
+#### Add JSON for the Required Scenario and Blocking Scenario Arrows

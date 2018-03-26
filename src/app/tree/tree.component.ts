@@ -18,13 +18,18 @@ export class TreeComponent implements OnChanges {
       this.render();
   }
   public render() {
-    let pan = this.initialLoad ? { x: 525, y: 50 } : this.cy.pan();
+    let pan;
+    let selectedNode = null;
+    if (!this.initialLoad) {
+      // Save current viewport pan location and selected node to re-set it after render
+      pan = this.cy.pan();
+      selectedNode = this.cy.nodes(':selected');
+    }
     this.cy = cytoscape({
         container: this.cyEl.nativeElement,
         elements: this.elements,
         zoomingEnabled: false,
         zoom: 0.5,
-        pan: pan,
         userZoomingEnabled: true,
         boxSelectionEnabled: false,
         autounselectify: false,
@@ -48,9 +53,9 @@ export class TreeComponent implements OnChanges {
               'border-color': '#3f51b5',
               'border-style': 'solid'
           })
-          .selector('node[id > 51][status = "hidden"]')
+          .selector('node[locked = "true"]')
           .css({
-            'content': 'data(id)'
+            'content': ( ele ) => '#' + ele.data('id')
           })
           .selector('edge')
           .css({
@@ -61,28 +66,29 @@ export class TreeComponent implements OnChanges {
               'width': 1,
               'opacity': '.87'
           })
-          .selector(':selected')
+          .selector('edge[linked = "true"]')
           .css({
-              'color': '#ff4081',
-              'background-color': '#ff4081',
+            'line-style': 'dashed'
           })
-          .selector('.faded')
-          .css({
-              'opacity': 0.25,
-              'text-opacity': 0
-          })
+          
     });
+    // Center the tree on initial load
+    if (this.initialLoad) {
+      pan = {x: (this.cy.width() / 2), y: 50};
+    }
+    this.cy.pan(pan);
     this.cy.on('tap', 'node', this.nodeClicked.bind(this));
 
-    if (this.hideLocked) {
-      this.cy.nodes('[status != "hidden"]').css({'visibility': 'visible'});
-      this.cy.nodes('[status = "hidden"][id < 52]').css({'visibility': 'hidden'});
-      // Set edges to the visible only if source is complete
-      this.cy.nodes('[status = "incomplete"], [status = "attempted"], [status = "hidden"]').outgoers('edge').css({'visibility': 'hidden'});
+    this.cy.nodes('[status != "hidden"]').css({'visibility': 'visible'});
+    this.cy.nodes('[status = "hidden"]').css({'visibility': 'hidden'});
+    // Set edges to the visible only if source is complete
+    this.cy.nodes('[status = "incomplete"], [status = "attempted"], [status = "hidden"]').outgoers('edge').css({'visibility': 'hidden'});
 
-      this.cy.nodes('[status = "complete"]').outgoers('edge').css({'visibility': 'visible'});
+    this.cy.nodes('[status = "complete"]').outgoers('edge').css({'visibility': 'visible'});
+    // Reselect previously selected node after each render
+    if (selectedNode != null) {
+      this.cy.$(selectedNode).select();
     }
-    
     this.updateStyles();
     this.initialLoad = false;
   }
@@ -109,10 +115,6 @@ export class TreeComponent implements OnChanges {
     var scenario = e.target;
     this.selectScenario.emit(scenario);
     window.setTimeout(() => this.updateStyles(), 50);
-    console.log(e.position);
-    //setSelectedScenario(scenario);
-    //setActivePage(scenario.data().pages[0]);
-    //showScenario();
   }
 
 }

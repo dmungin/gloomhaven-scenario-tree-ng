@@ -16,6 +16,7 @@ export class TreeLogicService {
     }
     scenarios.nodes[scenarioIndex].data.status = updatedScenario.status;
     scenarios.nodes[scenarioIndex].data.notes = updatedScenario.notes;
+    scenarios.nodes[scenarioIndex].data.locked = updatedScenario.locked;
     return scenarios;
   }
   private showChildScenarios(scenarios, parentId) {

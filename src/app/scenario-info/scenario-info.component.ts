@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Inject, OnChanges, EventEmitter, Output } from '@angular/core';
 import { AssetService } from '../asset.service';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-scenario-info',
@@ -13,11 +13,13 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
   public scenario = {
     id: '',
     status: 'incomplete',
-    notes: ''
+    notes: '',
+    locked: ''
   };
   constructor(
     private assetService: AssetService, 
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit() {
@@ -28,6 +30,7 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
       this.scenario.id = this.selectedScenario.id;
       this.scenario.status = this.selectedScenario.status || "incomplete";
       this.scenario.notes = this.selectedScenario.notes || "";
+      this.scenario.locked = this.selectedScenario.locked || "";
     }
   }
   public showScenarioModal() {
@@ -40,9 +43,17 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
       console.log('The dialog was closed');
     });
   }
-  public saveScenarioData() {
+  public saveScenarioData(showSnackBar) {
     this.updateScenario.emit(this.scenario);
-    console.log(this.scenario);
+    if (showSnackBar) {
+      this.snackBar.open('Scenario Saved!', '', {
+        duration: 1500,
+      });
+    }
+  }
+  public unlockScenario() {
+    this.scenario.locked = 'false';
+    this.saveScenarioData(false);
   }
   
 
@@ -54,6 +65,9 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
   styles: [`
     .mat-dialog-content {
         max-height: 90vh;
+    }
+    #scenario-img {
+      width: 100%;
     }
   `]
 })

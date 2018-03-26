@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output, Inject } from '@angular/core';
+import { FormControl, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { AssetService } from '../asset.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
@@ -51,22 +52,28 @@ export class ExportTreeComponent implements OnInit {
 })
 export class ImportExportDialog {
   public scenarios: any;
-  public encodedScenarios: String;
+  public encodedScenarios = new FormControl('', [Validators.required, this.validJSONValidator()]);
+  public importError: String = null;
   constructor(
     public dialogRef: MatDialogRef<ImportExportDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     public assetService: AssetService) { 
       this.scenarios = data.scenarios;
-      this.encodedScenarios = this.exportEncodedScenarios();
+      this.encodedScenarios.setValue(this.assetService.getEncodedScenarios(this.scenarios));
     }
-  public importEncodedScenarios() {
-    return this.assetService.getDecodedScenarios(this.encodedScenarios);
+  public importScenarios(): void {
+    this.importError = null;
+    try {
+      let decodedScenarioJSON = this.assetService.getDecodedScenarios(this.encodedScenarios.value);
+      this.dialogRef.close(decodedScenarioJSON);
+    } catch (e) {
+      this.importError = "Not a valid scenario JSON.";
+    }
+    this.encodedScenarios.updateValueAndValidity();
   }
-  public exportEncodedScenarios() {
-    return this.assetService.getEncodedScenarios(this.scenarios);
+  private validJSONValidator(): ValidatorFn {
+    return (control: AbstractControl): {[key: string]: any} => {
+      return this.importError != null ? {'validJSON': {value: this.importError}} : null;
+    };
   }
-  // close(): void {
-  //   this.dialogRef.close();
-  // }
-
 }
