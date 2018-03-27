@@ -66,9 +66,17 @@ export class TreeComponent implements OnChanges {
               'width': 1,
               'opacity': '.87'
           })
-          .selector('edge[linked = "true"]')
+          .selector('edge[type = "linksto"]')
           .css({
             'line-style': 'dashed'
+          })
+          .selector('edge[type = "requiredby"]')
+          .css({
+            'line-color': '#69f0ae',
+          })
+          .selector('edge[type = "blocks"]')
+          .css({
+            'line-color': '#f44336',
           })
           
     });
