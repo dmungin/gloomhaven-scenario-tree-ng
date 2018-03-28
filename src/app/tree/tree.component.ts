@@ -41,7 +41,7 @@ export class TreeComponent implements OnChanges {
           .selector('node')
           .css({
               'content': 'data(name)',
-              'font-size': '1.3em',
+              'font-size': '1.33em',
               'font-weight': '600',
               'text-valign': 'top',
               'text-halign': 'center',
@@ -63,7 +63,7 @@ export class TreeComponent implements OnChanges {
               'target-arrow-shape': 'triangle',
               'target-arrow-color': '#000',
               'line-color': '#000',
-              'width': 1,
+              'width': 2,
               'opacity': '.87'
           })
           .selector('edge[type = "linksto"]')
@@ -88,11 +88,6 @@ export class TreeComponent implements OnChanges {
     }
     this.cy.pan(pan);
     this.cy.on('tap', 'node', this.nodeClicked.bind(this));
-
-    
-    
-    
-
     // Reselect previously selected node after each render
     if (selectedNode != null) {
       this.cy.$(selectedNode).select();
@@ -101,11 +96,18 @@ export class TreeComponent implements OnChanges {
     this.initialLoad = false;
   }
   private updateStyles() {
+    this.setNodeVisibility();
+    this.setEdgeVisibility();
+    this.colorScenarios();
+  }
+  private setNodeVisibility() {
     this.cy.nodes('[status != "hidden"]')
       .css({'visibility': 'visible'})
       .selectify();
     this.cy.nodes('[status = "hidden"]')
       .css({'visibility': 'hidden'});
+  }
+  private setEdgeVisibility() {
     // Set edges from non-complete nodes to hidden
     this.cy.nodes('[status = "incomplete"], [status = "attempted"], [status = "hidden"]')
       .outgoers('edge')
@@ -134,6 +136,8 @@ export class TreeComponent implements OnChanges {
     this.cy.nodes('[status = "hidden"]')
       .incomers('edge')
       .css({'visibility': 'hidden'});
+  }
+  private colorScenarios() {
     // Incomplete nodes are black
     this.cy.nodes('[status = "incomplete"]').css({
       'color': '#000', 
@@ -163,6 +167,7 @@ export class TreeComponent implements OnChanges {
         'background-color': '#c9c9c9',
         'border-width': '0px'
       })
+      .filter('[locked != "true"]')
       .unselectify();
     // Scenarios blocked by other scenarios being complete are red
     this.cy.nodes('[status = "complete"]')
