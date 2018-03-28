@@ -89,6 +89,18 @@ export class TreeComponent implements OnChanges {
     this.cy.pan(pan);
     this.cy.on('tap', 'node', this.nodeClicked.bind(this));
 
+    
+    
+    
+
+    // Reselect previously selected node after each render
+    if (selectedNode != null) {
+      this.cy.$(selectedNode).select();
+    }
+    this.updateStyles();
+    this.initialLoad = false;
+  }
+  private updateStyles() {
     this.cy.nodes('[status != "hidden"]')
       .css({'visibility': 'visible'})
       .selectify();
@@ -106,48 +118,53 @@ export class TreeComponent implements OnChanges {
     this.cy.nodes('[status != "hidden"]')
       .outgoers('edge[type = "requiredby"]')
       .css({'visibility': 'visible'});
+    // Set requiredby edges from complete nodes to hidden (requirement met)
     this.cy.nodes('[status = "complete"]')
       .outgoers('edge[type = "requiredby"]')
       .css({'visibility': 'hidden'});
-    // Set edges coming into hidden nodes to be hidden
-    this.cy.nodes('[status = "hidden"]').incomers('edge').css({'visibility': 'hidden'});
-    
-    
-
-    // Reselect previously selected node after each render
-    if (selectedNode != null) {
-      this.cy.$(selectedNode).select();
-    }
-    this.updateStyles();
-    this.initialLoad = false;
-  }
-  private updateStyles() {
+    // Set blocks edges from complete nodes to visible
+    this.cy.nodes('[status = "complete"]')
+      .outgoers('edge[type = "blocks"]')
+      .css({'visibility': 'visible'});
+    // Set blocks edges to complete nodes to hidden (completed nodes cannot be blocked)
+    this.cy.nodes('[status = "complete"]')
+      .incomers('edge[type = "blocks"]')
+      .css({'visibility': 'hidden'});
+    // Set edges coming into hidden nodes to be hidden (cleans up edges to nothing)
+    this.cy.nodes('[status = "hidden"]')
+      .incomers('edge')
+      .css({'visibility': 'hidden'});
+    // Incomplete nodes are black
     this.cy.nodes('[status = "incomplete"]').css({
       'color': '#000', 
       'background-color': '#000', 
       'border-width': '0px'});
+    // complete nodes are purple
     this.cy.nodes('[status = "complete"]').css({
       'color': '#3f51b5', 
       'background-color': '#3f51b5', 
       'border-width': '0px'});
+    // attempted nodes are an unfilled circle
     this.cy.nodes('[status = "attempted"]').css({
       'color': '#000', 
       'background-color': '#fff', 
       'border-width': '1px'});
+    // selected nodes are pink
     this.cy.nodes(':selected').css({
         'color': '#ff4081',
         'background-color': '#ff4081',
         'border-width': '0px'
     });
-    // Scenarios blocked by other scenarios being incomplete
+    // Scenarios blocked by other scenarios being incomplete are grey
     this.cy.nodes('[status != "complete"]')
       .outgoers('edge[type = "requiredby"]')
       .targets('node[status != "complete"]')
       .css({
         'background-color': '#c9c9c9',
         'border-width': '0px'
-      });
-    // Scenarios blocked by other scenarios being complete
+      })
+      .unselectify();
+    // Scenarios blocked by other scenarios being complete are red
     this.cy.nodes('[status = "complete"]')
       .outgoers('edge[type = "blocks"]')
       .targets('node[status != "complete"]')
