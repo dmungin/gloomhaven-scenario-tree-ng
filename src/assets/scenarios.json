@@ -1298,49 +1298,57 @@
         {
             "data": {
                 "source": "2",
-                "target": "3"
+                "target": "3",
+                "type": "unlocks"
             }
         },
         {
             "data": {
                 "source": "2",
-                "target": "4"
+                "target": "4",
+                "type": "unlocks"
             }
         },
         {
             "data": {
                 "source": "3",
-                "target": "8"
+                "target": "8",
+                "type": "unlocks"
             }
         },
         {
             "data": {
                 "source": "3",
-                "target": "9"
+                "target": "9",
+                "type": "unlocks"
             }
         },
         {
             "data": {
                 "source": "4",
-                "target": "6"
+                "target": "6",
+                "type": "unlocks"
             }
         },
         {
             "data": {
                 "source": "4",
-                "target": "5"
+                "target": "5",
+                "type": "unlocks"
             }
         },
         {
             "data": {
                 "source": "6",
-                "target": "8"
+                "target": "8",
+                "type": "unlocks"
             }
         },
         {
             "data": {
                 "source": "8",
-                "target": "7"
+                "target": "7",
+                "type": "unlocks"
             }
         },
         {

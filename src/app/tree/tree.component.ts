@@ -73,10 +73,12 @@ export class TreeComponent implements OnChanges {
           .selector('edge[type = "requiredby"]')
           .css({
             'line-color': '#69f0ae',
+            'target-arrow-color': '#69f0ae'
           })
           .selector('edge[type = "blocks"]')
           .css({
             'line-color': '#f44336',
+            'target-arrow-color': '#f44336'
           })
           
     });
@@ -87,12 +89,31 @@ export class TreeComponent implements OnChanges {
     this.cy.pan(pan);
     this.cy.on('tap', 'node', this.nodeClicked.bind(this));
 
-    this.cy.nodes('[status != "hidden"]').css({'visibility': 'visible'});
-    this.cy.nodes('[status = "hidden"]').css({'visibility': 'hidden'});
-    // Set edges to the visible only if source is complete
-    this.cy.nodes('[status = "incomplete"], [status = "attempted"], [status = "hidden"]').outgoers('edge').css({'visibility': 'hidden'});
+    this.cy.nodes('[status != "hidden"]')
+      .css({'visibility': 'visible'})
+      .selectify();
+    this.cy.nodes('[status = "hidden"]')
+      .css({'visibility': 'hidden'});
+    // Set edges from non-complete nodes to hidden
+    this.cy.nodes('[status = "incomplete"], [status = "attempted"], [status = "hidden"]')
+      .outgoers('edge')
+      .css({'visibility': 'hidden'});
+    // Set unlock edges from complete nodes to visible
+    this.cy.nodes('[status = "complete"]')
+      .outgoers('edge[type = "unlocks"]')
+      .css({'visibility': 'visible'});
+    // Set requiredby edges from visible nodes to visible
+    this.cy.nodes('[status != "hidden"]')
+      .outgoers('edge[type = "requiredby"]')
+      .css({'visibility': 'visible'});
+    this.cy.nodes('[status = "complete"]')
+      .outgoers('edge[type = "requiredby"]')
+      .css({'visibility': 'hidden'});
+    // Set edges coming into hidden nodes to be hidden
+    this.cy.nodes('[status = "hidden"]').incomers('edge').css({'visibility': 'hidden'});
+    
+    
 
-    this.cy.nodes('[status = "complete"]').outgoers('edge').css({'visibility': 'visible'});
     // Reselect previously selected node after each render
     if (selectedNode != null) {
       this.cy.$(selectedNode).select();
@@ -118,11 +139,30 @@ export class TreeComponent implements OnChanges {
         'background-color': '#ff4081',
         'border-width': '0px'
     });
+    // Scenarios blocked by other scenarios being incomplete
+    this.cy.nodes('[status != "complete"]')
+      .outgoers('edge[type = "requiredby"]')
+      .targets('node[status != "complete"]')
+      .css({
+        'background-color': '#c9c9c9',
+        'border-width': '0px'
+      });
+    // Scenarios blocked by other scenarios being complete
+    this.cy.nodes('[status = "complete"]')
+      .outgoers('edge[type = "blocks"]')
+      .targets('node[status != "complete"]')
+      .css({
+        'background-color': '#f44336',
+        'border-width': '0px'
+      })
+      .unselectify();
   }
   private nodeClicked(e) {
     var scenario = e.target;
-    this.selectScenario.emit(scenario);
-    window.setTimeout(() => this.updateStyles(), 50);
+    if (scenario.selectable()) {
+      this.selectScenario.emit(scenario);
+      window.setTimeout(() => this.updateStyles(), 50);
+    }
   }
 
 }
