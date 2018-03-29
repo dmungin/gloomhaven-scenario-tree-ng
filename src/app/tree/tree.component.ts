@@ -121,7 +121,7 @@ export class TreeComponent implements OnChanges {
       .css({'visibility': 'visible'});
     // Set requiredby edges from visible nodes to visible
     this.cy.nodes('[status != "hidden"]')
-      .outgoers('edge[type = "requiredby"][target != "31"]')
+      .outgoers('edge[type = "requiredby"][target != "31"][target != "26"]')
       .css({'visibility': 'visible'});
     // Set requiredby edges from complete nodes to hidden (requirement met)
     this.cy.nodes('[status = "complete"]')
@@ -164,7 +164,7 @@ export class TreeComponent implements OnChanges {
     });
     // Scenarios blocked by other scenarios being incomplete are grey
     this.cy.nodes('[status != "complete"]')
-      .outgoers('edge[type = "requiredby"][target != "31"]')
+      .outgoers('edge[type = "requiredby"][target != "31"][target != "26"]')
       .targets('node[status != "complete"]')
       .css({
         'background-color': '#c9c9c9',
@@ -186,7 +186,8 @@ export class TreeComponent implements OnChanges {
     let scenario42Complete = this.cy.$('#42').data('status') === 'complete';
     let scenario25Complete = this.cy.$('#25').data('status') === 'complete';
     let scenario35Complete = this.cy.$('#35').data('status') === 'complete';
-
+    let scenario23Complete = this.cy.$('#23').data('status') === 'complete';
+    let scenario43Complete = this.cy.$('#43').data('status') === 'complete';
     if (!scenario21Complete) {
       if (this.cy.nodes('#35').data('status') === 'complete') {
         if (this.cy.nodes('#27').data('status') === 'attempted' ||
@@ -248,7 +249,19 @@ export class TreeComponent implements OnChanges {
         }
       }
     }
-
+    if (!scenario23Complete && !scenario43Complete) {
+      if (this.cy.nodes('#26').data('status') === 'attempted' ||
+        this.cy.nodes('#26').data('status') === 'incomplete') {
+          this.cy.nodes('#23, #43').outgoers('[type = "requiredby"][target = "26"]').css({
+            'visibility': 'visible',
+            'curve-style': 'unbundled-bezier',
+            'control-point-distances': '50 50 50'
+          }).targets().css({
+            'background-color': '#c9c9c9',
+            'border-width': '0px'
+          });
+      }
+    }
   }
   private nodeClicked(e) {
     var scenario = e.target;
