@@ -1,6 +1,6 @@
-core-js@2.5.3
+core-js@2.5.4
 MIT
-Copyright (c) 2014-2017 Denis Pushkarev
+Copyright (c) 2014-2018 Denis Pushkarev
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -67,23 +67,23 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-@angular/platform-browser@5.2.7
+@angular/platform-browser@5.2.9
 MIT
 MIT
 
-@angular/core@5.2.7
+@angular/core@5.2.9
 MIT
 MIT
 
-@angular/http@5.2.7
+@angular/http@5.2.9
 MIT
 MIT
 
-@angular/forms@5.2.7
+@angular/forms@5.2.9
 MIT
 MIT
 
-@angular/common@5.2.7
+@angular/common@5.2.9
 MIT
 MIT
 
@@ -137,7 +137,7 @@ maintained libraries used by this software which have their own
 licenses; we recommend you read them, as their terms may differ from the
 terms above.
 
-@angular/cdk@5.2.3
+@angular/cdk@5.2.4
 MIT
 The MIT License
 
@@ -161,7 +161,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-@angular/material@5.2.3
+@angular/material@5.2.4
 MIT
 The MIT License
 
@@ -185,11 +185,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-@angular/animations@5.2.7
+@angular/animations@5.2.9
 MIT
 MIT
 
-css-loader@0.28.10
+css-loader@0.28.11
 MIT
 Copyright JS Foundation and other contributors
 
@@ -212,7 +212,7 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-cytoscape@3.2.9
+cytoscape@3.2.11
 MIT
 Copyright (c) 2016-2018, The Cytoscape Consortium.
 
@@ -234,7 +234,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-@angular/platform-browser-dynamic@5.2.7
+@angular/platform-browser-dynamic@5.2.9
 MIT
 MIT
 
