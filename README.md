@@ -4,6 +4,10 @@ This is a simple application to be able to easily visualize your Gloomhaven camp
 
 This applicaion was created with the help of the Gloomhaven Scenario Flowchart found here `https://boardgamegeek.com/filepage/143772/scenario-flowchart`
 
+## Install
+
+Run `npm install`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -23,4 +27,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Next steps
 
 #### Implement way to merge JSON in case of updates to the static data
-#### Add JSON for the Required Scenario and Blocking Scenario Arrows
+#### Improve UX - support small screen sizes, reduce required clicks
