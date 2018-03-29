@@ -72,11 +72,13 @@ export class TreeComponent implements OnChanges {
           })
           .selector('edge[type = "requiredby"]')
           .css({
+            'visibility': 'hidden',
             'line-color': '#69f0ae',
             'target-arrow-color': '#69f0ae'
           })
           .selector('edge[type = "blocks"]')
           .css({
+            'visibility': 'hidden',
             'line-color': '#f44336',
             'target-arrow-color': '#f44336'
           })
@@ -99,6 +101,7 @@ export class TreeComponent implements OnChanges {
     this.setNodeVisibility();
     this.setEdgeVisibility();
     this.colorScenarios();
+    this.checkSpecialCases();
   }
   private setNodeVisibility() {
     this.cy.nodes('[status != "hidden"]')
@@ -118,7 +121,7 @@ export class TreeComponent implements OnChanges {
       .css({'visibility': 'visible'});
     // Set requiredby edges from visible nodes to visible
     this.cy.nodes('[status != "hidden"]')
-      .outgoers('edge[type = "requiredby"]')
+      .outgoers('edge[type = "requiredby"][target != "31"]')
       .css({'visibility': 'visible'});
     // Set requiredby edges from complete nodes to hidden (requirement met)
     this.cy.nodes('[status = "complete"]')
@@ -126,7 +129,7 @@ export class TreeComponent implements OnChanges {
       .css({'visibility': 'hidden'});
     // Set blocks edges from complete nodes to visible
     this.cy.nodes('[status = "complete"]')
-      .outgoers('edge[type = "blocks"]')
+      .outgoers('edge[type = "blocks"][target != "27"][target != "31"][target != "33"]')
       .css({'visibility': 'visible'});
     // Set blocks edges to complete nodes to hidden (completed nodes cannot be blocked)
     this.cy.nodes('[status = "complete"]')
@@ -161,23 +164,91 @@ export class TreeComponent implements OnChanges {
     });
     // Scenarios blocked by other scenarios being incomplete are grey
     this.cy.nodes('[status != "complete"]')
-      .outgoers('edge[type = "requiredby"]')
+      .outgoers('edge[type = "requiredby"][target != "31"]')
       .targets('node[status != "complete"]')
       .css({
         'background-color': '#c9c9c9',
         'border-width': '0px'
-      })
-      .filter('[locked != "true"]')
-      .unselectify();
+      });
     // Scenarios blocked by other scenarios being complete are red
     this.cy.nodes('[status = "complete"]')
-      .outgoers('edge[type = "blocks"]')
+      .outgoers('edge[type = "blocks"][target != "27"][target != "31"][target != "33"]')
       .targets('node[status != "complete"]')
       .css({
         'background-color': '#f44336',
         'border-width': '0px'
       })
-      .unselectify();
+      ;
+  }
+  private checkSpecialCases() {
+    let scenario21Complete = this.cy.nodes('#21').data('status') === 'complete';
+    let scenario24Complete = this.cy.$('#24').data('status') === 'complete';
+    let scenario42Complete = this.cy.$('#42').data('status') === 'complete';
+    let scenario25Complete = this.cy.$('#25').data('status') === 'complete';
+    let scenario35Complete = this.cy.$('#35').data('status') === 'complete';
+
+    if (!scenario21Complete) {
+      if (this.cy.nodes('#35').data('status') === 'complete') {
+        if (this.cy.nodes('#27').data('status') === 'attempted' ||
+          this.cy.nodes('#27').data('status') === 'incomplete') {
+            this.cy.nodes('#35').outgoers('[type = "blocks"][target = "27"]').css({
+              'visibility': 'visible'
+            }).targets().css({
+              'background-color': '#f44336',
+              'border-width': '0px'
+            });
+        }
+        if (this.cy.nodes('#31').data('status') === 'attempted' ||
+          this.cy.nodes('#31').data('status') === 'incomplete') {
+            this.cy.nodes('#35').outgoers('[type = "blocks"][target = "31"]').css({
+              'visibility': 'visible'
+            }).targets().css({
+              'background-color': '#f44336',
+              'border-width': '0px'
+            });
+        }
+      }
+    }
+    if (!scenario24Complete || scenario42Complete) {
+      if (this.cy.nodes('#34').data('status') === 'complete') {
+        if (this.cy.nodes('#33').data('status') === 'attempted' ||
+          this.cy.nodes('#33').data('status') === 'incomplete') {
+            this.cy.nodes('#34').outgoers('[type = "blocks"][target = "33"]').css({
+              'visibility': 'visible'
+            }).targets().css({
+              'background-color': '#f44336',
+              'border-width': '0px'
+            });
+        }
+      }
+    }
+    if (!scenario25Complete) {
+      if (this.cy.nodes('#42').data('status') === 'complete') {
+        if (this.cy.nodes('#33').data('status') === 'attempted' ||
+          this.cy.nodes('#33').data('status') === 'incomplete') {
+            this.cy.nodes('#42').outgoers('[type = "blocks"][target = "33"]').css({
+              'visibility': 'visible'
+            }).targets().css({
+              'background-color': '#f44336',
+              'border-width': '0px'
+            });
+        }
+      }
+    }
+    if (scenario35Complete) {
+      if (this.cy.nodes('#21').data('status') !== 'complete') {
+        if (this.cy.nodes('#31').data('status') === 'attempted' ||
+          this.cy.nodes('#31').data('status') === 'incomplete') {
+            this.cy.nodes('#21').outgoers('[type = "requiredby"][target = "31"]').css({
+              'visibility': 'visible'
+            }).targets().css({
+              'background-color': '#c9c9c9',
+              'border-width': '0px'
+            });
+        }
+      }
+    }
+
   }
   private nodeClicked(e) {
     var scenario = e.target;
