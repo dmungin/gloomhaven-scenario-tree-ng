@@ -11,10 +11,8 @@ export class TreeLogicService {
     let scenarioIndex = scenarios.nodes.findIndex(scenario => scenario.data.id === updatedScenario.id);
     if (updatedScenario.status === 'complete') {
       this.showChildScenarios(scenarios, updatedScenario.id);
-      //this.blockScenarios(scenarios, updatedScenario.id);
     } else if (scenarios.nodes[scenarioIndex].data.status === 'complete' && (updatedScenario.status === 'incomplete' || updatedScenario.status === 'attempted')) {
       this.hideChildScenarios(scenarios, updatedScenario.id);
-      //this.unblockScenarios(scenarios, updatedScenario.id);
     }
     scenarios.nodes[scenarioIndex].data.status = updatedScenario.status;
     scenarios.nodes[scenarioIndex].data.notes = updatedScenario.notes;

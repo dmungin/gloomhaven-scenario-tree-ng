@@ -8,6 +8,7 @@ import { ExportTreeComponent, ImportExportDialog } from './export-tree/export-tr
 import { MaterialModule } from './material.module';
 import { AppComponent } from './app.component';
 import { TreeComponent } from './tree/tree.component';
+import { OverrideComponent } from './override/override.component'
 import { AssetService } from './asset.service';
 import { ScenarioInfoComponent, ScenarioInfoDialog } from './scenario-info/scenario-info.component';
 import { TreeLogicService } from './tree-logic.service';
@@ -20,7 +21,8 @@ import { TreeLogicService } from './tree-logic.service';
     ScenarioInfoComponent,
     ScenarioInfoDialog,
     ExportTreeComponent,
-    ImportExportDialog
+    ImportExportDialog,
+    OverrideComponent
   ],
   imports: [
     BrowserModule,

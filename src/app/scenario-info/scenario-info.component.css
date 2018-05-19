@@ -8,7 +8,7 @@ h2 {
 }
 button[mat-raised-button] {
     margin-bottom: 60px;
-    width: 33.33334%;
+    width: 40%;
 }
 mat-button-toggle-group {
     width: 100%;
@@ -28,4 +28,15 @@ mat-form-field {
 }
 mat-form-field textarea {
     height: 100px;
+}
+@media (max-width: 991px) {
+    button[mat-raised-button] {
+        width: 100%;
+    }
+    mat-button-toggle-group {
+        flex-direction: column;
+    }
+    mat-button-toggle {
+        width: 100%;
+    }
 }

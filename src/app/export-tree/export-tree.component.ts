@@ -20,7 +20,7 @@ export class ExportTreeComponent implements OnInit {
   public showImportExportModal() {
     let dialogRef = this.dialog.open(ImportExportDialog, {
       width: '600px',
-      height: '60vh',
+      height: '75vh',
       data: { scenarios: this.scenarios }
     });
     dialogRef.afterClosed().subscribe((scenarios) => {
@@ -42,11 +42,6 @@ export class ExportTreeComponent implements OnInit {
   }
   mat-form-field textarea {
     height: 150px;
-  }
-  mat-dialog-actions {
-    position: absolute;
-    bottom: 20px;
-    margin-bottom: 0;
   }
   `]
 })
