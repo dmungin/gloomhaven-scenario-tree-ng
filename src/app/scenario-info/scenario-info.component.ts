@@ -1,6 +1,9 @@
 import { Component, OnInit, Input, Inject, OnChanges, EventEmitter, Output } from '@angular/core';
 import { AssetService } from '../asset.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-scenario-info',
@@ -8,8 +11,12 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/
   styleUrls: ['./scenario-info.component.css']
 })
 export class ScenarioInfoComponent implements OnInit, OnChanges {
-  @Input() selectedScenario: any;
+  @Input()  selectedScenario: any;
+  @Input()  scenarios: any;
+  @Output() selectScenario = new EventEmitter();
   @Output() updateScenario = new EventEmitter<any>();
+  filteredScenarios: Observable<any[]>;
+  scenarioCtrl = new FormControl();
   public scenario = {
     id: '',
     status: 'incomplete',
@@ -17,13 +24,18 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
     locked: ''
   };
   constructor(
-    private assetService: AssetService, 
+    private assetService: AssetService,
     public dialog: MatDialog,
     private snackBar: MatSnackBar
   ) { }
 
   ngOnInit() {
-
+    this.filteredScenarios = this.scenarioCtrl.valueChanges
+      .pipe(
+        startWith<any>(''),
+        map(value => typeof value === 'string' ? value : value.data.name),
+        map(scenario => scenario ? this.filterScenarios(scenario) : this.scenarios.nodes.slice())
+      );
   }
   ngOnChanges() {
     if (this.selectedScenario !== null) {
@@ -32,6 +44,10 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
       this.scenario.notes = this.selectedScenario.notes || "";
       this.scenario.locked = this.selectedScenario.locked || "";
     }
+  }
+  public handleScenarioSelect($event) {
+    this.selectScenario.emit($event.option.value);
+    this.scenarioCtrl.patchValue('');
   }
   public showScenarioModal() {
     let dialogRef = this.dialog.open(ScenarioInfoDialog, {
@@ -42,6 +58,10 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
     dialogRef.afterClosed().subscribe(() => {
       console.log('The dialog was closed');
     });
+  }
+  public clearScenario() {
+    this.scenarioCtrl.patchValue('');
+    this.selectScenario.emit(null)
   }
   public saveScenarioData(showSnackBar) {
     this.updateScenario.emit(this.scenario);
@@ -55,8 +75,26 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
     this.scenario.locked = 'false';
     this.saveScenarioData(false);
   }
-  
-
+  public lockScenario() {
+    this.scenario.locked = 'true';
+    this.scenario.status = 'incomplete';
+    this.saveScenarioData(false);
+  }
+  public unhideScenario() {
+    this.scenario.status = 'incomplete';
+    this.saveScenarioData(false);
+  }
+  public hideScenario() {
+    this.scenario.status = 'hidden';
+    this.saveScenarioData(false);
+  }
+  public displayFn(scenario) {
+    return scenario ? scenario.data.name : undefined;
+  }
+  private filterScenarios(value: string) {
+    const filterValue = value.toLowerCase();
+    return this.scenarios.nodes.filter(node => node.data.name.toLowerCase().includes(filterValue));
+  }
 }
 
 @Component({
@@ -76,7 +114,7 @@ export class ScenarioInfoDialog {
   constructor(
     public dialogRef: MatDialogRef<ScenarioInfoDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    public assetService: AssetService) { 
+    public assetService: AssetService) {
       this.selectedScenario = data.selectedScenario;
     }
 

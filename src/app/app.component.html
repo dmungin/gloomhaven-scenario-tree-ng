@@ -1,14 +1,11 @@
 <div class="wrapper">
     <app-export-tree [scenarios]="scenarios" (importScenarios)="handleScenariosImport($event)"></app-export-tree>
-    <mat-tab-group>
-      <mat-tab label="Scenario">
-        <app-scenario-info [selectedScenario]="selectedScenario" (updateScenario)="handleScenarioUpdate($event)"></app-scenario-info>
-      </mat-tab>
-      <mat-tab label="Override">
-        <app-override></app-override>
-      </mat-tab>
-    </mat-tab-group>
-  
+    <app-scenario-info
+      [scenarios]="scenarios"
+      [selectedScenario]="selectedScenario"
+      (selectScenario)="handleScenarioSelect($event)"
+      (updateScenario)="handleScenarioUpdate($event)">
+    </app-scenario-info>
   <app-tree [elements]="scenarios" (selectScenario)="handleScenarioSelect($event)"></app-tree>
 </div>
 

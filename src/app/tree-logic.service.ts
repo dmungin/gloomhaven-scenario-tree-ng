@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { markParentViewsForCheck } from '@angular/core/src/view/util';
 import * as cloneDeep from 'lodash.clonedeep';
 @Injectable()
 export class TreeLogicService {
@@ -25,7 +24,7 @@ export class TreeLogicService {
         let scenarioIndex = scenarios.nodes.findIndex(scenario => scenario.data.id === edge.data.target);
         if (scenarios.nodes[scenarioIndex].data.status === 'hidden') {
           scenarios.nodes[scenarioIndex].data.status = 'incomplete';
-        } 
+        }
       })
   }
   private hideChildScenarios(scenarios, parentId) {
@@ -36,7 +35,7 @@ export class TreeLogicService {
           scenarios.nodes[scenarioIndex].data.status = 'hidden';
           this.hideChildScenarios(scenarios, scenarios.nodes[scenarioIndex].id);
         }
-        
+
       })
   }
 }

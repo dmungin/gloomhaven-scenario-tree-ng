@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, EventEmitter, Output, Input} from '@angular/core';
 
 @Component({
   selector: 'app-override',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./override.component.css']
 })
 export class OverrideComponent implements OnInit {
-
+  @Input() scenarios: any;
+  @Output() updateScenario = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit() {

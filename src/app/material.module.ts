@@ -8,6 +8,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 @NgModule({
     imports: [
         MatFormFieldModule,
@@ -18,7 +19,8 @@ import { MatTabsModule } from '@angular/material/tabs';
         MatDividerModule,
         MatIconModule,
         MatSnackBarModule,
-        MatTabsModule
+        MatTabsModule,
+        MatAutocompleteModule
     ],
     exports: [
         MatFormFieldModule,
@@ -29,7 +31,8 @@ import { MatTabsModule } from '@angular/material/tabs';
         MatDividerModule,
         MatIconModule,
         MatSnackBarModule,
-        MatTabsModule
+        MatTabsModule,
+        MatAutocompleteModule
     ],
     providers: [ ]
   })
