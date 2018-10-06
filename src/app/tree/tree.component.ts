@@ -6,16 +6,21 @@ import * as cytoscape from 'cytoscape';
   styleUrls: ['./tree.component.css']
 })
 export class TreeComponent implements OnChanges {
-  @Input() public elements: any;
-  @Output() public selectScenario = new EventEmitter();
+  @Input()  elements: any;
+  @Input()  selectedScenario: any;
+  @Output() selectScenario = new EventEmitter();
   @ViewChild('cy') cyEl;
-  public hideLocked: boolean = true;
   private initialLoad: boolean = true;
   private cy: any;
 
   public constructor() {}
-  public ngOnChanges(): any {
-      this.render();
+  public ngOnChanges(change): any {
+    this.render();
+    if (change.selectedScenario
+      && change.selectedScenario.currentValue !== null
+      && change.selectedScenario.currentValue.status !== 'hidden') {
+      this.panToSelected();
+    }
   }
   public render() {
     let pan;
@@ -53,7 +58,7 @@ export class TreeComponent implements OnChanges {
               'border-color': '#3f51b5',
               'border-style': 'solid'
           })
-          .selector('node[locked = "true"]')
+          .selector('node[status = "locked"]')
           .css({
             'content': ( ele ) => '#' + ele.data('id')
           })
@@ -82,7 +87,7 @@ export class TreeComponent implements OnChanges {
             'line-color': '#f44336',
             'target-arrow-color': '#f44336'
           })
-          
+
     });
     // Center the tree on initial load
     if (this.initialLoad) {
@@ -112,7 +117,7 @@ export class TreeComponent implements OnChanges {
   }
   private setEdgeVisibility() {
     // Set edges from non-complete nodes to hidden
-    this.cy.nodes('[status = "incomplete"], [status = "attempted"], [status = "hidden"]')
+    this.cy.nodes('[status = "incomplete"], [status = "attempted"], [status = "hidden"], [status = "locked"]')
       .outgoers('edge')
       .css({'visibility': 'hidden'});
     // Set unlock edges from complete nodes to visible
@@ -142,19 +147,19 @@ export class TreeComponent implements OnChanges {
   }
   private colorScenarios() {
     // Incomplete nodes are black
-    this.cy.nodes('[status = "incomplete"]').css({
-      'color': '#000', 
-      'background-color': '#000', 
+    this.cy.nodes('[status = "incomplete"], [status = "locked"]').css({
+      'color': '#000',
+      'background-color': '#000',
       'border-width': '0px'});
     // complete nodes are purple
     this.cy.nodes('[status = "complete"]').css({
-      'color': '#3f51b5', 
-      'background-color': '#3f51b5', 
+      'color': '#3f51b5',
+      'background-color': '#3f51b5',
       'border-width': '0px'});
     // attempted nodes are an unfilled circle
     this.cy.nodes('[status = "attempted"]').css({
-      'color': '#000', 
-      'background-color': '#fff', 
+      'color': '#000',
+      'background-color': '#fff',
       'border-width': '1px'});
     // selected nodes are pink
     this.cy.nodes(':selected').css({
@@ -270,5 +275,15 @@ export class TreeComponent implements OnChanges {
       window.setTimeout(() => this.updateStyles(), 50);
     }
   }
-
+  private panToSelected() {
+    let selectedNode = this.cy.nodes(`#${this.selectedScenario.id}`);
+    this.cy.nodes().unselect();
+    selectedNode.select();
+    this.colorScenarios();
+    this.cy.animate({
+      center: {
+        eles: selectedNode
+      }
+    });
+  }
 }

@@ -1,4 +1,4 @@
-mat-tab-group {
+app-scenario-info {
     width: 30%;
     margin-right: 20px;
     float: left;
@@ -7,14 +7,14 @@ mat-tab-group {
 }
 app-tree {
     width: 70%;
-    height: 100vh;
+    height: 98vh;
     border: 1px solid #ccc;
 }
 @media (max-width: 767px) {
     .wrapper {
         flex-direction: column;
     }
-    mat-tab-group {
+    app-scenario-info {
         width: 100%;
         float: none;
         order: 2;

@@ -1,6 +1,6 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-body { 
+body {
     font: 14px "Nunito", "Helvetica Neue", Helvetica, Arial, sans-serif;
     background-color: #fff;
 }
@@ -10,7 +10,7 @@ body {
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: flex-start;
-    width: 95%;
+    width: 98%;
     margin-left: auto;
     margin-right: auto;
 }

@@ -19,10 +19,14 @@ export class AppComponent implements OnInit {
     this.assetService.getScenariosJSON().subscribe(scenarios => this.scenarios = scenarios);
   }
   public handleScenarioSelect(scenario) {
-    let rawScenario = scenario.data();
-    rawScenario.activePage = rawScenario.pages[0];
-    rawScenario.imageUrl = this.getImageUrl(rawScenario.activePage); 
-    this.selectedScenario = rawScenario;
+    if (scenario) {
+      let rawScenario = (typeof scenario.data === 'function') ? scenario.data() : scenario.data;
+      rawScenario.activePage = rawScenario.pages[0];
+      rawScenario.imageUrl = this.getImageUrl(rawScenario.activePage);
+      this.selectedScenario = rawScenario;
+    } else {
+      this.selectedScenario = null;
+    }
   }
   public getNextScenarioPage() {
     let pages = this.selectedScenario.pages;
@@ -34,9 +38,10 @@ export class AppComponent implements OnInit {
     this.selectedScenario.activePage = pages[activeIndex];
     this.selectedScenario.imageUrl = this.getImageUrl(this.selectedScenario.activePage);
   }
-  public handleScenarioUpdate(scenario) {
-    this.scenarios = this.treeLogicService.updateScenario(this.scenarios, scenario);
+  public handleScenarioUpdate(changedScenario) {
+    this.scenarios = this.treeLogicService.updateScenario(this.scenarios, changedScenario);
     this.assetService.setScenariosJSON(this.scenarios);
+    this.handleScenarioSelect(this.scenarios.nodes.find(scenario => scenario.data.id === changedScenario.id))
   }
   public handleScenariosImport(scenarios) {
     scenarios.edges = this.scenarios.edges;
@@ -47,6 +52,6 @@ export class AppComponent implements OnInit {
     });
   }
   private getImageUrl(activePage) {
-    return `assets/scenarios/${activePage}.jpg`; 
+    return `assets/scenarios/${activePage}.jpg`;
   }
 }

@@ -678,9 +678,8 @@
                 "id": "52",
                 "name": "#52 Noxious Cellar",
                 "pages": [68, 69],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": -1000,
@@ -692,7 +691,7 @@
                 "id": "53",
                 "name": "#53 Crypt Basement",
                 "pages": [69, 70],
-                "status": "hidden",
+                "status": "locked",
                 "notes": ""
             },
             "position": {
@@ -705,7 +704,7 @@
                 "id": "54",
                 "name": "#54 Palace of Ice",
                 "pages": [71],
-                "status": "hidden",
+                "status": "locked",
                 "notes": ""
             },
             "position": {
@@ -718,9 +717,8 @@
                 "id": "55",
                 "name": "#55 Foggy Thicket",
                 "pages": [72],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": -800,
@@ -732,7 +730,7 @@
                 "id": "56",
                 "name": "#56 Bandit's Wood",
                 "pages": [73],
-                "status": "hidden",
+                "status": "locked",
                 "notes": ""
             },
             "position": {
@@ -745,9 +743,8 @@
                 "id": "57",
                 "name": "#57 Investigation",
                 "pages": [74],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": -600,
@@ -759,7 +756,7 @@
                 "id": "58",
                 "name": "#58 Bloody Shack",
                 "pages": [75],
-                "status": "hidden",
+                "status": "locked",
                 "notes": ""
             },
             "position": {
@@ -772,9 +769,8 @@
                 "id": "59",
                 "name": "#59 Forgotten Grove",
                 "pages": [76],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": -400,
@@ -786,7 +782,7 @@
                 "id": "60",
                 "name": "#60 Alchemy Lab",
                 "pages": [77],
-                "status": "hidden",
+                "status": "locked",
                 "notes": ""
             },
             "position": {
@@ -799,9 +795,8 @@
                 "id": "61",
                 "name": "#61 Fading Lighthouse",
                 "pages": [78, 79],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": -200,
@@ -813,7 +808,7 @@
                 "id": "62",
                 "name": "#62 Pit of Souls",
                 "pages": [80],
-                "status": "hidden",
+                "status": "locked",
                 "notes": ""
             },
             "position": {
@@ -827,9 +822,8 @@
                 "id": "63",
                 "name": "#63 Magma Pit",
                 "pages": [81],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": 0,
@@ -841,9 +835,8 @@
                 "id": "64",
                 "name": "#64 Under Water Lagoon",
                 "pages": [82],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": 0,
@@ -855,9 +848,8 @@
                 "id": "65",
                 "name": "#65 Sulfur Mine",
                 "pages": [83, 84],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": 220,
@@ -869,9 +861,8 @@
                 "id": "66",
                 "name": "#66 Clockwork Cove",
                 "pages": [84, 85],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": 220,
@@ -883,9 +874,8 @@
                 "id": "67",
                 "name": "#67 Arcane Library",
                 "pages": [86],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": 425,
@@ -896,10 +886,9 @@
             "data": {
                 "id": "68",
                 "name": "#68 Toxic Moor",
-                "pages": [87],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "pages": ],
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": 425,
@@ -911,9 +900,8 @@
                 "id": "69",
                 "name": "#69 Well of the Unfortunate",
                 "pages": [88],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": 650,
@@ -925,9 +913,8 @@
                 "id": "70",
                 "name": "#70 Chained Isle",
                 "pages": [89, 90],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": 650,
@@ -939,9 +926,8 @@
                 "id": "71",
                 "name": "#71 Windswept Highlands",
                 "pages": [90, 91],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": 900,
@@ -955,9 +941,8 @@
                 "id": "72",
                 "name": "#72 Oozing Grove",
                 "pages": [92],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": -1000,
@@ -969,9 +954,8 @@
                 "id": "73",
                 "name": "#73 Rockslide Ridge",
                 "pages": [93],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": -1000,
@@ -983,9 +967,8 @@
                 "id": "76",
                 "name": "#76 Harrower Hive",
                 "pages": [96, 97],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": -800,
@@ -997,9 +980,8 @@
                 "id": "77",
                 "name": "#77 Vault of Secrets",
                 "pages": [97, 98],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": -800,
@@ -1012,9 +994,8 @@
                 "id": "74",
                 "name": "#74 Merchant Ship",
                 "pages": [94],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": -600,
@@ -1026,9 +1007,8 @@
                 "id": "75",
                 "name": "#75 Overgrown Graveyard",
                 "pages": [95],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": -600,
@@ -1040,9 +1020,8 @@
                 "id": "78",
                 "name": "#78 Sacrifice Pit",
                 "pages": [99],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": -400,
@@ -1054,9 +1033,8 @@
                 "id": "79",
                 "name": "#79 Lost Temple",
                 "pages": [100, 101],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": -400,
@@ -1068,9 +1046,8 @@
                 "id": "81",
                 "name": "#81 Temple of the Eclipse",
                 "pages": [103],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": -200,
@@ -1082,9 +1059,8 @@
                 "id": "83",
                 "name": "#83 Shadows Within",
                 "pages": [105],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": -200,
@@ -1096,9 +1072,8 @@
                 "id": "84",
                 "name": "#84 Crystalline Cave",
                 "pages": [106],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": 25,
@@ -1110,9 +1085,8 @@
                 "id": "86",
                 "name": "#86 Harried Village",
                 "pages": [108, 109],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": 225,
@@ -1124,9 +1098,8 @@
                 "id": "87",
                 "name": "#87 Corrupted Cove",
                 "pages": [110],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": 225,
@@ -1138,9 +1111,8 @@
                 "id": "88",
                 "name": "#88 Plane of Water",
                 "pages": [111],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": 25,
@@ -1152,9 +1124,8 @@
                 "id": "89",
                 "name": "#89 Syndicate Hideout",
                 "pages": [112],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": 425,
@@ -1166,9 +1137,8 @@
                 "id": "91",
                 "name": "#91 Wild Melee",
                 "pages": [114],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": 425,
@@ -1180,9 +1150,8 @@
                 "id": "92",
                 "name": "#92 Back Alley Brawl",
                 "pages": [115],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": 625,
@@ -1194,9 +1163,8 @@
                 "id": "93",
                 "name": "#93 Sunken Vessel",
                 "pages": [116],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": 625,
@@ -1208,9 +1176,8 @@
                 "id": "94",
                 "name": "#94 Vermling Nest",
                 "pages": [117],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": 825,
@@ -1222,7 +1189,7 @@
                 "id": "95",
                 "name": "#95 Payment Due",
                 "pages": [118, 119],
-                "status": "hidden",
+                "status": "locked",
                 "notes": ""
             },
             "position": {
@@ -1236,9 +1203,8 @@
                 "id": "80",
                 "name": "#80 Vigil Keep",
                 "pages": [101, 102],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": -1000,
@@ -1250,9 +1216,8 @@
                 "id": "82",
                 "name": "#82 Burning Mountain",
                 "pages": [104],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": -800,
@@ -1264,9 +1229,8 @@
                 "id": "85",
                 "name": "#85 Sun Temple",
                 "pages": [107, 108],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": -600,
@@ -1278,9 +1242,8 @@
                 "id": "90",
                 "name": "#90 Demonic Rift",
                 "pages": [113],
-                "status": "incomplete",
-                "notes": "",
-                "locked": "true"
+                "status": "locked",
+                "notes": ""
             },
             "position": {
                 "x": -400,
@@ -1985,10 +1948,10 @@
                 "type": "blocks"
             }
         },
-        
-        
-        
-        
+
+
+
+
         {
             "data": {
                 "source": "6",
