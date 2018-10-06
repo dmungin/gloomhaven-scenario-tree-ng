@@ -20,11 +20,9 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
   public scenario = {
     id: '',
     status: 'incomplete',
-    notes: '',
-    locked: ''
+    notes: ''
   };
   constructor(
-    private assetService: AssetService,
     public dialog: MatDialog,
     private snackBar: MatSnackBar
   ) { }
@@ -42,8 +40,17 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
       this.scenario.id = this.selectedScenario.id;
       this.scenario.status = this.selectedScenario.status || "incomplete";
       this.scenario.notes = this.selectedScenario.notes || "";
-      this.scenario.locked = this.selectedScenario.locked || "";
     }
+  }
+  public isSideScenario() {
+    return (parseInt(this.scenario.id) > 51);
+  }
+  public showScenarioName(node) {
+    return (node.data.status !== 'locked' && node.data.status !== 'hidden');
+  }
+  public handleStatusChange(status) {
+    this.scenario.status = status;
+    this.saveScenarioData(false);
   }
   public handleScenarioSelect($event) {
     this.selectScenario.emit($event.option.value);
@@ -66,18 +73,17 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
   public saveScenarioData(showSnackBar) {
     this.updateScenario.emit(this.scenario);
     if (showSnackBar) {
-      this.snackBar.open('Scenario Saved!', '', {
+      this.snackBar.open('Notes Saved!', '', {
         duration: 1500,
       });
     }
   }
   public unlockScenario() {
-    this.scenario.locked = 'false';
+    this.scenario.status = 'incomplete';
     this.saveScenarioData(false);
   }
   public lockScenario() {
-    this.scenario.locked = 'true';
-    this.scenario.status = 'incomplete';
+    this.scenario.status = 'locked';
     this.saveScenarioData(false);
   }
   public unhideScenario() {

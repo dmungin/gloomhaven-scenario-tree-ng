@@ -6,6 +6,6 @@
       (selectScenario)="handleScenarioSelect($event)"
       (updateScenario)="handleScenarioUpdate($event)">
     </app-scenario-info>
-  <app-tree [elements]="scenarios" (selectScenario)="handleScenarioSelect($event)"></app-tree>
+  <app-tree [elements]="scenarios" [selectedScenario]="selectedScenario" (selectScenario)="handleScenarioSelect($event)"></app-tree>
 </div>
 

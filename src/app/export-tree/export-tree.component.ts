@@ -29,7 +29,7 @@ export class ExportTreeComponent implements OnInit {
       }
     });
   }
-  
+
 
 }
 
@@ -52,14 +52,14 @@ export class ImportExportDialog {
   constructor(
     public dialogRef: MatDialogRef<ImportExportDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    public assetService: AssetService) { 
+    public assetService: AssetService) {
       this.scenarios = data.scenarios;
       this.encodedScenarios.setValue(this.assetService.getEncodedScenarios(this.scenarios));
     }
   public importScenarios(): void {
     this.importError = null;
     try {
-      let decodedScenarioJSON = this.assetService.getDecodedScenarios(this.encodedScenarios.value);
+      let decodedScenarioJSON = this.assetService.getDecodedScenarios(this.scenarios.nodes, this.encodedScenarios.value);
       this.dialogRef.close(decodedScenarioJSON);
     } catch (e) {
       this.importError = "Not a valid scenario JSON.";

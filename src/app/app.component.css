@@ -7,7 +7,7 @@ app-scenario-info {
 }
 app-tree {
     width: 70%;
-    height: 100vh;
+    height: 98vh;
     border: 1px solid #ccc;
 }
 @media (max-width: 767px) {
