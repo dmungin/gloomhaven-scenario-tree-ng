@@ -44,7 +44,9 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
     });
   }
   public saveScenarioData(showSnackBar) {
-    this.updateScenario.emit(this.scenario);
+    setTimeout(() => {
+      this.updateScenario.emit(this.scenario);
+    }, 10);
     if (showSnackBar) {
       this.snackBar.open('Scenario Saved!', '', {
         duration: 1500,

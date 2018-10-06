@@ -8,8 +8,8 @@
         <h2>{{selectedScenario.name}}</h2>
         <form (ngSubmit)="saveScenarioData(true)" #scenarioForm="ngForm">
             <button mat-raised-button (click)="showScenarioModal()" type="button">View Scenario</button>
-        
-            <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="scenario.status" name="status">
+
+            <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="scenario.status" name="status" (click)="saveScenarioData(true)">
                 <mat-button-toggle value="incomplete">
                     Incomplete
                 </mat-button-toggle>
