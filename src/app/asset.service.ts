@@ -23,7 +23,7 @@ export class AssetService {
       let savedNode = savedScenarios.nodes[index];
       if (typeof savedScenarios.version === 'undefined') {
         savedNode = savedNode.data;
-        if (parseInt(savedNode.id) > 51 && savedNode.status === 'hidden') {
+        if (parseInt(savedNode.id) > 51 && (savedNode.status === 'hidden' || savedNode.locked == 'true') ) {
           savedNode.status = 'locked';
         }
       }
