@@ -94,7 +94,8 @@ export class TreeComponent implements OnChanges {
       pan = {x: (this.cy.width() / 2), y: 50};
     }
     this.cy.pan(pan);
-    this.cy.on('tap', 'node', this.nodeClicked.bind(this));
+    // this.cy.on('tap', 'node', this.nodeClicked.bind(this));
+    this.cy.on('tapend', 'node', this.nodeClicked.bind(this));
     // Reselect previously selected node after each render
     if (selectedNode != null) {
       this.cy.$(selectedNode).select();

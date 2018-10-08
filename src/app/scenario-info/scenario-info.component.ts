@@ -62,9 +62,7 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
       height: '100vh',
       data: { selectedScenario: this.selectedScenario }
     });
-    dialogRef.afterClosed().subscribe(() => {
-      console.log('The dialog was closed');
-    });
+    dialogRef.afterClosed().subscribe(() => {});
   }
   public clearScenario() {
     this.scenarioCtrl.patchValue('');

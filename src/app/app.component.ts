@@ -24,6 +24,9 @@ export class AppComponent implements OnInit {
       rawScenario.activePage = rawScenario.pages[0];
       rawScenario.imageUrl = this.getImageUrl(rawScenario.activePage);
       this.selectedScenario = rawScenario;
+      /* Call this in case user drags the scenario. This will save it even if they make no other changes */
+      this.scenarios = this.treeLogicService.updateScenario(this.scenarios, this.selectedScenario);
+      this.assetService.setScenariosJSON(this.scenarios);
     } else {
       this.selectedScenario = null;
     }
