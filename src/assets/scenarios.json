@@ -6,7 +6,13 @@
                 "name": "#1 Black Barrow",
                 "pages": [3],
                 "status": "incomplete",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "07": {
+                        "looted": "false",
+                        "description": "Random Side Scenario"
+                    }
+                }
             },
             "position": {
                 "x": 0,
@@ -19,7 +25,13 @@
                 "name": "#2 Barrow Lair",
                 "pages": [4, 5],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "67": {
+                        "looted": "false",
+                        "description": "gain 10 gold"
+                    }
+                }
             },
             "position": {
                 "x": 0,
@@ -32,7 +44,13 @@
                 "name": "#3 Inox Encampment",
                 "pages": [5, 6],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "65": {
+                        "looted": "false",
+                        "description": "\"Horned Helm\" design (Item 107)"
+                    }
+                }
             },
             "position": {
                 "x": -150,
@@ -45,7 +63,17 @@
                 "name": "#4 Crypt of the Damned",
                 "pages": [7],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "38": {
+                        "looted": "false",
+                        "description": "\"Ring of Skulls\" design (Item 123)"
+                    },
+                    "46": {
+                        "looted": "false",
+                        "description": "Suffer 3 damage, gain POISON"
+                    }
+                }
             },
             "position": {
                 "x": 540,
@@ -58,7 +86,17 @@
                 "name": "#5 Ruinous Crypt",
                 "pages": [8],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "28": {
+                        "looted": "false",
+                        "description": "Gain 15 gold"
+                    },
+                    "04": {
+                        "looted": "false",
+                        "description": "gain 15 gold"
+                    }
+                }
             },
             "position": {
                 "x": 700,
@@ -71,7 +109,13 @@
                 "name": "#6 Decaying Crypt",
                 "pages": [9, 10],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "50": {
+                        "looted": "false",
+                        "description": "Gain \"Second Skin\" (Item 101)"
+                    }
+                }
             },
             "position": {
                 "x": 400,
@@ -84,7 +128,8 @@
                 "name": "#7 Vibrant Grotto",
                 "pages": [10, 11],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": 100,
@@ -97,7 +142,13 @@
                 "name": "#8 Gloomhaven Warehouse",
                 "pages": [12],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "51": {
+                        "looted": "false",
+                        "description": "Random Side Scenario"
+                    }
+                }
             },
             "position": {
                 "x": 175,
@@ -110,7 +161,8 @@
                 "name": "#9 Diamond Mine",
                 "pages": [13],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": -750,
@@ -124,7 +176,13 @@
                 "name": "#11 Gloomhaven Square A",
                 "pages": [15, 16],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "05": {
+                        "looted": "false",
+                        "description": "Gain \"Chainmail\" (Item 0423"
+                    }
+                }
             },
             "position": {
                 "x": -850,
@@ -137,7 +195,13 @@
                 "name": "#12 Gloomhaven Square B",
                 "pages": [16, 17],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "34": {
+                        "looted": "false",
+                        "description": "Gain \"Amulet of Life\" (Item 024)"
+                    }
+                }
             },
             "position": {
                 "x": -600,
@@ -151,7 +215,13 @@
                 "name": "#10 Plane of Elemental Power",
                 "pages": [14],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "11": {
+                        "looted": "false",
+                        "description": "Random Item Design"
+                    }
+                }
             },
             "position": {
                 "x": 700,
@@ -164,7 +234,13 @@
                 "name": "#13 Temple of the Seer",
                 "pages": [18],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "10": {
+                        "looted": "false",
+                        "description": "Gain 10 experience"
+                    }
+                }
             },
             "position": {
                 "x": -86,
@@ -177,7 +253,13 @@
                 "name": "#14 Frozen Hollow",
                 "pages": [19, 20],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "26": {
+                        "looted": "false",
+                        "description": "Gain 20 gold"
+                    }
+                }
             },
             "position": {
                 "x": 200,
@@ -190,7 +272,13 @@
                 "name": "#19 Forgotten Crypt",
                 "pages": [25, 26],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "17": {
+                        "looted": "false",
+                        "description": "Gain 20 gold"
+                    }
+                }
             },
             "position": {
                 "x": 450,
@@ -203,7 +291,8 @@
                 "name": "#27 Ruinous Rift",
                 "pages": [37],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": 450,
@@ -216,7 +305,13 @@
                 "name": "#21 Infernal Throne",
                 "pages": [28, 29],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "15": {
+                        "looted": "false",
+                        "description": "Gain \"Pendant of Dark Pacts\" (Item 045)"
+                    }
+                }
             },
             "position": {
                 "x": 629,
@@ -229,7 +324,13 @@
                 "name": "#22 Temple of Elements",
                 "pages": [29, 30],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "21": {
+                        "looted": "false",
+                        "description": "Suffer 5 damage"
+                    }
+                }
             },
             "position": {
                 "x": 769,
@@ -242,7 +343,13 @@
                 "name": "#20 Necromancer's Sanctum",
                 "pages": [26, 27],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "60": {
+                        "looted": "false",
+                        "description": "Gain \"Skullbane Axe\" (Item 113)"
+                    }
+                }
             },
             "position": {
                 "x": 93,
@@ -255,7 +362,13 @@
                 "name": "#28 Outer Ritual Chamber",
                 "pages": [38],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "32": {
+                        "looted": "false",
+                        "description": "Random Item Design"
+                    }
+                }
             },
             "position": {
                 "x": -322,
@@ -269,7 +382,13 @@
                 "name": "#29 Sanctuary of Gloom",
                 "pages": [39],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "41": {
+                        "looted": "false",
+                        "description": "Gain \"Black Knife\" (Item 053)"
+                    }
+                }
             },
             "position": {
                 "x": -322,
@@ -282,7 +401,8 @@
                 "name": "#15 Shrine of Strength",
                 "pages": [20, 21],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": -188,
@@ -295,7 +415,13 @@
                 "name": "#17 Lost Island",
                 "pages": [23],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "71": {
+                        "looted": "false",
+                        "description": "Random Side Scenario"
+                    }
+                }
             },
             "position": {
                 "x": -55,
@@ -309,7 +435,13 @@
                 "name": "#18 Abandoned Sewers",
                 "pages": [24],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "63": {
+                        "looted": "false",
+                        "description": "Random Item Design"
+                    }
+                }
             },
             "position": {
                 "x": -200,
@@ -322,7 +454,13 @@
                 "name": "#16 Mountain Pass",
                 "pages": [22],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "01": {
+                        "looted": "false",
+                        "description": "Random Item Design"
+                    }
+                }
             },
             "position": {
                 "x": -730,
@@ -335,7 +473,13 @@
                 "name": "#24 Echo Chamber",
                 "pages": [32, 33],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "70": {
+                        "looted": "false",
+                        "description": "Random Side Scenario"
+                    }
+                }
             },
             "position": {
                 "x": -875,
@@ -348,7 +492,13 @@
                 "name": "#25 Icecrag Ascent",
                 "pages": [34, 35],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "58": {
+                        "looted": "false",
+                        "description": "Gain \"Drakescale Helm\" (Item 108)"
+                    }
+                }
             },
             "position": {
                 "x": -576,
@@ -361,7 +511,8 @@
                 "name": "#30 Shrine of the Depths",
                 "pages": [40, 41],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": -1000,
@@ -374,7 +525,17 @@
                 "name": "#42 Realm of the Voice",
                 "pages": [56],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "30": {
+                        "looted": "false",
+                        "description": "Gain 1 checkmark"
+                    },
+                    "55": {
+                        "looted": "false",
+                        "description": "Gain 1 checkmark"
+                    }
+                }
             },
             "position": {
                 "x": -1000,
@@ -387,7 +548,8 @@
                 "name": "#32 Decrepit Wood",
                 "pages": [43],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": -764,
@@ -400,7 +562,17 @@
                 "name": "#23 Deep Ruins",
                 "pages": [31, 32],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "39": {
+                        "looted": "false",
+                        "description": "Suffer 5 damage"
+                    },
+                    "72": {
+                        "looted": "false",
+                        "description": "\"Fueled Falchion\" design (Item 116)"
+                    }
+                }
             },
             "position": {
                 "x": -385,
@@ -413,7 +585,13 @@
                 "name": "#43 Drake Nest",
                 "pages": [57, 58],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "35": {
+                        "looted": "false",
+                        "description": "Gain \"Drakescale Boots\" (Item 098)"
+                    }
+                }
             },
             "position": {
                 "x": -200,
@@ -426,26 +604,27 @@
                 "name": "#26 Ancient Cistern",
                 "pages": [35, 36],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "66": {
+                        "looted": "false",
+                        "description": "Gain \"Volatile Bomb\" (Item 033)"
+                    }
+                }
             },
             "position": {
                 "x": -13,
                 "y": 790
             }
         },
-
-
-
-
-
-
         {
             "data": {
                 "id": "33",
                 "name": "#33 Savvas Armory",
                 "pages": [44],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": -618,
@@ -458,7 +637,13 @@
                 "name": "#34 Scorched Summit",
                 "pages": [45],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "23": {
+                        "looted": "false",
+                        "description": "Gain \"Drakescale Armor\" (Item 103)"
+                    }
+                }
             },
             "position": {
                 "x": -436,
@@ -471,7 +656,13 @@
                 "name": "#40 Ancient Defense Network",
                 "pages": [53, 54],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "47": {
+                        "looted": "false",
+                        "description": "Gain \"Steam Armor\" (Item 104)"
+                    }
+                }
             },
             "position": {
                 "x": -764,
@@ -484,7 +675,13 @@
                 "name": "#41 Timeworn Tomb",
                 "pages": [54, 55],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "24": {
+                        "looted": "false",
+                        "description": "Suffer 5 damage"
+                    }
+                }
             },
             "position": {
                 "x": -764,
@@ -497,7 +694,13 @@
                 "name": "#31 Plane of Night",
                 "pages": [41, 42],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "69": {
+                        "looted": "false",
+                        "description": "Gain \"Robes of Summoning\" (Item 100)"
+                    }
+                }
             },
             "position": {
                 "x": 175,
@@ -510,7 +713,13 @@
                 "name": "#39 Treacherous Divide",
                 "pages": [51, 52],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "73": {
+                        "looted": "false",
+                        "description": "Random Item Design"
+                    }
+                }
             },
             "position": {
                 "x": -75,
@@ -523,7 +732,13 @@
                 "name": "#37 Doom Trench",
                 "pages": [49],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "49": {
+                        "looted": "false",
+                        "description": "New Scenario: Lost Island 17 (K-17)"
+                    }
+                }
             },
             "position": {
                 "x": 175,
@@ -536,7 +751,13 @@
                 "name": "#38 Slave Pens",
                 "pages": [50, 51],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "29": {
+                        "looted": "false",
+                        "description": "Gain \"Endurance Footwraps\" (Item 097)"
+                    }
+                }
             },
             "position": {
                 "x": 387,
@@ -549,7 +770,13 @@
                 "name": "#46 Nightmare Peak",
                 "pages": [61],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "48": {
+                        "looted": "false",
+                        "description": "Gain 30 gold"
+                    }
+                }
             },
             "position": {
                 "x": -75,
@@ -562,7 +789,17 @@
                 "name": "#47 Lair of the Unseeing Eye",
                 "pages": [62],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "18": {
+                        "looted": "false",
+                        "description": "Gain 15 gold"
+                    },
+                    "57": {
+                        "looted": "false",
+                        "description": "Gain 15 gold"
+                    }
+                }
             },
             "position": {
                 "x": 175,
@@ -575,7 +812,13 @@
                 "name": "#48 Shadow Weald",
                 "pages": [63],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "64": {
+                        "looted": "false",
+                        "description": "Gain 30 gold"
+                    }
+                }
             },
             "position": {
                 "x": 387,
@@ -588,7 +831,8 @@
                 "name": "#44 Tribal Assault",
                 "pages": [58, 59],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": 557,
@@ -601,7 +845,13 @@
                 "name": "#51 The Void",
                 "pages": [66, 67],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "56": {
+                        "looted": "false",
+                        "description": "Gain \"Star Earring\" (Item 069)"
+                    }
+                }
             },
             "position": {
                 "x": 175,
@@ -614,7 +864,13 @@
                 "name": "#35 Gloomhaven Battlements A",
                 "pages": [46, 47],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "61": {
+                        "looted": "false",
+                        "description": "Gain \"Versatile Dagger\" (Item 040)"
+                    }
+                }
             },
             "position": {
                 "x": 731,
@@ -627,7 +883,13 @@
                 "name": "#36 Gloomhaven Battlements B",
                 "pages": [47, 48],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "02": {
+                        "looted": "false",
+                        "description": "Gain \"Tower Shield\" (Item 032)"
+                    }
+                }
             },
             "position": {
                 "x": 921,
@@ -640,7 +902,13 @@
                 "name": "#45 Rebel Swamp",
                 "pages": [60],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "74": {
+                        "looted": "false",
+                        "description": "Random Item Design"
+                    }
+                }
             },
             "position": {
                 "x": 731,
@@ -653,7 +921,13 @@
                 "name": "#49 Rebel's Stand",
                 "pages": [64],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "44": {
+                        "looted": "false",
+                        "description": "Random Item Design"
+                    }
+                }
             },
             "position": {
                 "x": 675,
@@ -666,7 +940,8 @@
                 "name": "#50 Ghost Forrest",
                 "pages": [65, 66],
                 "status": "hidden",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": 927,
@@ -679,7 +954,8 @@
                 "name": "#52 Noxious Cellar",
                 "pages": [68, 69],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": -1000,
@@ -692,7 +968,13 @@
                 "name": "#53 Crypt Basement",
                 "pages": [69, 70],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "31": {
+                        "looted": "false",
+                        "description": "Random Item Design"
+                    }
+                }
             },
             "position": {
                 "x": -1000,
@@ -705,7 +987,13 @@
                 "name": "#54 Palace of Ice",
                 "pages": [71],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "25": {
+                        "looted": "false",
+                        "description": "Gain 25 gold"
+                    }
+                }
             },
             "position": {
                 "x": -1000,
@@ -718,7 +1006,8 @@
                 "name": "#55 Foggy Thicket",
                 "pages": [72],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": -800,
@@ -731,7 +1020,13 @@
                 "name": "#56 Bandit's Wood",
                 "pages": [73],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "45": {
+                        "looted": "false",
+                        "description": "Random Item Design"
+                    }
+                }
             },
             "position": {
                 "x": -800,
@@ -744,7 +1039,17 @@
                 "name": "#57 Investigation",
                 "pages": [74],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "22": {
+                        "looted": "false",
+                        "description": "Random Item Design"
+                    },
+                    "03": {
+                        "looted": "false",
+                        "description": "Gain \"Splitmail\" (Item 044)"
+                    }
+                }
             },
             "position": {
                 "x": -600,
@@ -757,7 +1062,8 @@
                 "name": "#58 Bloody Shack",
                 "pages": [75],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": -600,
@@ -770,7 +1076,8 @@
                 "name": "#59 Forgotten Grove",
                 "pages": [76],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": -400,
@@ -783,7 +1090,8 @@
                 "name": "#60 Alchemy Lab",
                 "pages": [77],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": -400,
@@ -796,7 +1104,8 @@
                 "name": "#61 Fading Lighthouse",
                 "pages": [78, 79],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": -200,
@@ -809,7 +1118,13 @@
                 "name": "#62 Pit of Souls",
                 "pages": [80],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "59": {
+                        "looted": "false",
+                        "description": "Random Item Design"
+                    }
+                }
             },
             "position": {
                 "x": -200,
@@ -823,7 +1138,13 @@
                 "name": "#63 Magma Pit",
                 "pages": [81],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "12": {
+                        "looted": "false",
+                        "description": "Gain \"Magma Wanders\" (Item 099)"
+                    }
+                }
             },
             "position": {
                 "x": 0,
@@ -836,7 +1157,13 @@
                 "name": "#64 Under Water Lagoon",
                 "pages": [82],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "09": {
+                        "looted": "false",
+                        "description": "Gain \"Wave Crest\" (Item 111)"
+                    }
+                }
             },
             "position": {
                 "x": 0,
@@ -849,7 +1176,8 @@
                 "name": "#65 Sulfur Mine",
                 "pages": [83, 84],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": 220,
@@ -862,7 +1190,17 @@
                 "name": "#66 Clockwork Cove",
                 "pages": [84, 85],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "36": {
+                        "looted": "false",
+                        "description": "\"Rocket Boots\" design (Item 096)"
+                    },
+                    "16": {
+                        "looted": "false",
+                        "description": "Gain 10 gold"
+                    }
+                }
             },
             "position": {
                 "x": 220,
@@ -875,7 +1213,13 @@
                 "name": "#67 Arcane Library",
                 "pages": [86],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "14": {
+                        "looted": "false",
+                        "description": "Gain 10 experience"
+                    }
+                }
             },
             "position": {
                 "x": 425,
@@ -888,7 +1232,13 @@
                 "name": "#68 Toxic Moor",
                 "pages": [87],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "33": {
+                        "looted": "false",
+                        "description": "Gain \"Weighted Net\" (Item 019)"
+                    }
+                }
             },
             "position": {
                 "x": 425,
@@ -901,7 +1251,8 @@
                 "name": "#69 Well of the Unfortunate",
                 "pages": [88],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": 650,
@@ -914,7 +1265,13 @@
                 "name": "#70 Chained Isle",
                 "pages": [89, 90],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "06": {
+                        "looted": "false",
+                        "description": "Gain \"Hooked Chain\" (Item 039)"
+                    }
+                }
             },
             "position": {
                 "x": 650,
@@ -927,7 +1284,8 @@
                 "name": "#71 Windswept Highlands",
                 "pages": [90, 91],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": 900,
@@ -942,7 +1300,8 @@
                 "name": "#72 Oozing Grove",
                 "pages": [92],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": -1000,
@@ -955,7 +1314,8 @@
                 "name": "#73 Rockslide Ridge",
                 "pages": [93],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": -1000,
@@ -968,7 +1328,13 @@
                 "name": "#76 Harrower Hive",
                 "pages": [96, 97],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "75": {
+                        "looted": "false",
+                        "description": "Text needing translation"
+                    }
+                }
             },
             "position": {
                 "x": -800,
@@ -981,7 +1347,8 @@
                 "name": "#77 Vault of Secrets",
                 "pages": [97, 98],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": -800,
@@ -995,7 +1362,13 @@
                 "name": "#74 Merchant Ship",
                 "pages": [94],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "20": {
+                        "looted": "false",
+                        "description": "Random Item Design"
+                    }
+                }
             },
             "position": {
                 "x": -600,
@@ -1008,7 +1381,13 @@
                 "name": "#75 Overgrown Graveyard",
                 "pages": [95],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "53": {
+                        "looted": "false",
+                        "description": "Random Item Design"
+                    }
+                }
             },
             "position": {
                 "x": -600,
@@ -1021,7 +1400,8 @@
                 "name": "#78 Sacrifice Pit",
                 "pages": [99],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": -400,
@@ -1034,7 +1414,13 @@
                 "name": "#79 Lost Temple",
                 "pages": [100, 101],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "52": {
+                        "looted": "false",
+                        "description": "Gain \"Heart of the Betrayer\" (Item 131)"
+                    }
+                }
             },
             "position": {
                 "x": -400,
@@ -1047,7 +1433,13 @@
                 "name": "#81 Temple of the Eclipse",
                 "pages": [103],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "68": {
+                        "looted": "false",
+                        "description": "Gain \"Helix Ring\" (Item 130)"
+                    }
+                }
             },
             "position": {
                 "x": -200,
@@ -1060,7 +1452,8 @@
                 "name": "#83 Shadows Within",
                 "pages": [105],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": -200,
@@ -1073,7 +1466,13 @@
                 "name": "#84 Crystalline Cave",
                 "pages": [106],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "42": {
+                        "looted": "false",
+                        "description": "Random Item Design"
+                    }
+                }
             },
             "position": {
                 "x": 25,
@@ -1086,7 +1485,8 @@
                 "name": "#86 Harried Village",
                 "pages": [108, 109],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": 225,
@@ -1099,7 +1499,13 @@
                 "name": "#87 Corrupted Cove",
                 "pages": [110],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "40": {
+                        "looted": "false",
+                        "description": "Random Item Design"
+                    }
+                }
             },
             "position": {
                 "x": 225,
@@ -1112,7 +1518,17 @@
                 "name": "#88 Plane of Water",
                 "pages": [111],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "37": {
+                        "looted": "false",
+                        "description": "Gain 1 checkmark"
+                    },
+                    "08": {
+                        "looted": "false",
+                        "description": "Gain 1 checkmark"
+                    }
+                }
             },
             "position": {
                 "x": 25,
@@ -1125,7 +1541,21 @@
                 "name": "#89 Syndicate Hideout",
                 "pages": [112],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "43": {
+                        "looted": "false",
+                        "description": "Suffer 5 damage, gain POISON and WOUND"
+                    },
+                    "13": {
+                        "looted": "false",
+                        "description": "Suffer 5 damage, gain POISON and WOUND"
+                    },
+                    "27": {
+                        "looted": "false",
+                        "description": "Gain \"Orb of Twilight\" (Item 122)"
+                    }
+                }
             },
             "position": {
                 "x": 425,
@@ -1138,7 +1568,8 @@
                 "name": "#91 Wild Melee",
                 "pages": [114],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": 425,
@@ -1151,7 +1582,8 @@
                 "name": "#92 Back Alley Brawl",
                 "pages": [115],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": 625,
@@ -1164,7 +1596,13 @@
                 "name": "#93 Sunken Vessel",
                 "pages": [116],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "54": {
+                        "looted": "false",
+                        "description": "Gain \"Doomed Compass\" (Item 124)"
+                    }
+                }
             },
             "position": {
                 "x": 625,
@@ -1177,7 +1615,8 @@
                 "name": "#94 Vermling Nest",
                 "pages": [117],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": 825,
@@ -1190,7 +1629,8 @@
                 "name": "#95 Payment Due",
                 "pages": [118, 119],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": 825,
@@ -1204,7 +1644,8 @@
                 "name": "#80 Vigil Keep",
                 "pages": [101, 102],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": -1000,
@@ -1217,7 +1658,13 @@
                 "name": "#82 Burning Mountain",
                 "pages": [104],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "62": {
+                        "looted": "false",
+                        "description": "Gain \"Helm of the Mountain\" and \"Mountain Hammer\" (Item 110 and 115)"
+                    }
+                }
             },
             "position": {
                 "x": -800,
@@ -1230,7 +1677,8 @@
                 "name": "#85 Sun Temple",
                 "pages": [107, 108],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {}
             },
             "position": {
                 "x": -600,
@@ -1243,7 +1691,13 @@
                 "name": "#90 Demonic Rift",
                 "pages": [113],
                 "status": "locked",
-                "notes": ""
+                "notes": "",
+                "treasure": {
+                    "19": {
+                        "looted": "false",
+                        "description": "Random Item Design"
+                    }
+                }
             },
             "position": {
                 "x": -400,
