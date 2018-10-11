@@ -28,9 +28,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Next steps
 
-#### Update JSON with latest version of Scenario Tree data (https://boardgamegeek.com/filepage/143772/scenario-flowchart)
-#### Add ability custom color nodes
-#### Add Zoom In/Out control
-#### Add ability to turn on/off auto centering
-#### Add Quest Log feature (https://boardgamegeek.com/geeklist/237840/item/5973783#item5973783)
-#### Implement ngrx
+Update JSON with latest version of Scenario Tree data (https://boardgamegeek.com/filepage/143772/scenario-flowchart)
+Add ability custom color nodes
+Add Zoom In/Out control
+Add ability to turn on/off auto centering
+Add Quest Log feature (https://boardgamegeek.com/geeklist/237840/item/5973783#item5973783)
+Implement ngrx
