@@ -2,6 +2,7 @@ import { Component, OnInit, Input, EventEmitter, Output, Inject } from '@angular
 import { FormControl, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { AssetService } from '../asset.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { ScenarioCompressor } from '../scenario.compress'
 
 @Component({
   selector: 'app-export-tree',
@@ -29,8 +30,6 @@ export class ExportTreeComponent implements OnInit {
       }
     });
   }
-
-
 }
 
 @Component({
@@ -48,20 +47,27 @@ export class ExportTreeComponent implements OnInit {
 export class ImportExportDialog {
   public scenarios: any;
   public encodedScenarios = new FormControl('', [Validators.required, this.validJSONValidator()]);
+  public encodedScenariosUrl = new FormControl('', [Validators.required]);
   public importError: String = null;
   constructor(
     public dialogRef: MatDialogRef<ImportExportDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     public assetService: AssetService) {
       this.scenarios = data.scenarios;
-      this.encodedScenarios.setValue(this.assetService.getEncodedScenarios(this.scenarios));
+
+      let encodedScenarios = this.assetService.getEncodedScenarios(this.scenarios);
+      this.encodedScenarios.setValue(JSON.stringify(encodedScenarios));
+
+      let compressedScenarios = ScenarioCompressor.compress(encodedScenarios);
+      this.encodedScenariosUrl.setValue(`${window.location.origin}/?n=${compressedScenarios}`);
     }
   public importScenarios(): void {
     this.importError = null;
     try {
-      let decodedScenarioJSON = this.assetService.getDecodedScenarios(this.scenarios.nodes, this.encodedScenarios.value);
+      let decodedScenarioJSON = this.assetService.getDecodedScenarios(JSON.parse(this.encodedScenarios.value));
       this.dialogRef.close(decodedScenarioJSON);
     } catch (e) {
+      console.error(e);
       this.importError = "Not a valid scenario JSON.";
     }
     this.encodedScenarios.updateValueAndValidity();

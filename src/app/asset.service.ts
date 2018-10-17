@@ -13,16 +13,21 @@ export class AssetService {
       map(scenarios => {
         this.defaultScenariosJSON = cloneDeep(scenarios);
         if (encodedTree) {
-          scenarios.nodes = this.getDecodedScenarios(scenarios.nodes, encodedTree).nodes
+          scenarios.nodes = this.getDecodedScenarios(JSON.parse(encodedTree)).nodes
         }
         return scenarios;
       })
     );
   }
-  public getDecodedScenarios(currentNodes, savedScenarioString) {
-    let savedScenarios = JSON.parse(savedScenarioString);
-    currentNodes.forEach((node, index) => {
-      let savedNode = savedScenarios.nodes[index];
+  public getDecodedScenarios(savedScenarios) {
+    savedScenarios.nodes = savedScenarios.nodes.reduce(function(map, node) {
+      map[node.id] = node;
+      return map;
+    }, {});
+
+    let currentNodes = cloneDeep(this.defaultScenariosJSON).nodes.map((node, index) => {
+      let savedNode = savedScenarios.nodes[node.data.id];
+
       /* Logic to allow old saved json format to work */
       if (typeof savedScenarios.version === 'undefined') {
         savedNode.status = savedNode.data.status;
@@ -33,6 +38,7 @@ export class AssetService {
           savedNode.status = 'locked';
         }
       }
+
       /* If an attribute was saved then copy it over to the current full JSON */
       if (typeof savedNode.status !== 'undefined') {
         node.data.status = savedNode.status;
@@ -46,6 +52,7 @@ export class AssetService {
       if (typeof savedNode.y !== 'undefined') {
         node.position.y = savedNode.y;
       }
+      return node;
     });
     return {nodes: currentNodes};
   }
@@ -60,18 +67,19 @@ export class AssetService {
       if (matchedBase.data.notes !== node.data.notes) {
         simpleNode['notes'] = node.data.notes;
       }
-      if (matchedBase.position.x !== node.position.x) {
+      if (matchedBase.position.x !== node.position.x || matchedBase.position.y !== node.position.y) {
         simpleNode['x'] = parseInt(node.position.x);
-      }
-      if (matchedBase.position.y !== node.position.y) {
         simpleNode['y'] = parseInt(node.position.y);
       }
       return simpleNode;
     });
-    return JSON.stringify({nodes: simplifiedNodes, version: '2'});
+    return {
+      nodes: simplifiedNodes,
+      version: '2'
+    };
   }
   public setScenariosJSON(scenarios) {
-    localStorage.setItem('gloomhavenScenarioTree', this.getEncodedScenarios(scenarios));
+    localStorage.setItem('gloomhavenScenarioTree', JSON.stringify(this.getEncodedScenarios(scenarios)));
   }
   public getImageUrl(activePage) {
     return `assets/scenarios/${activePage}.jpg`;

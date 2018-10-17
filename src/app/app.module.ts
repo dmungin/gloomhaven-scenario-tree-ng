@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { ExportTreeComponent, ImportExportDialog } from './export-tree/export-tree.component';
 import { MaterialModule } from './material.module';
@@ -28,7 +29,8 @@ import { TreeLogicService } from './tree-logic.service';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot([]),
   ],
   entryComponents: [
     ScenarioInfoDialog,

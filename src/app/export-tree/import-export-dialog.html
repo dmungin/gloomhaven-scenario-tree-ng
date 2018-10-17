@@ -1,4 +1,9 @@
 <mat-dialog-content>
+      <form>
+            <mat-form-field>
+                  <textarea matInput placeholder="Import URL" [formControl]="encodedScenariosUrl" name="encodedScenariosUrl"></textarea>
+            </mat-form-field>
+     </form>
       <p>Changes are saved automatically to your browser's local storage. However, you can save this data elsewhere by copying the encoded string below.</p>
       <p>To import, paste your encoded string over the text below and click import.</p>
       <form>

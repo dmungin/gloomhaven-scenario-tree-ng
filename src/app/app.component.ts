@@ -1,7 +1,10 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AssetService } from './asset.service';
 import { TreeLogicService } from './tree-logic.service';
 import { MatSnackBar } from '@angular/material';
+import { ScenarioCompressor } from './scenario.compress'
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,13 +13,29 @@ import { MatSnackBar } from '@angular/material';
 export class AppComponent implements OnInit {
   public scenarios: any;
   public selectedScenario: any = null;
+  public data?: any = null;
   constructor(
+    private route: ActivatedRoute,
     private assetService: AssetService,
     private treeLogicService: TreeLogicService,
     private snackBar: MatSnackBar
-  ) {}
+  ) {
+    this.route.queryParams.subscribe(params => {
+        let data = params['n'];
+        if (data) {
+          this.data = ScenarioCompressor.decompress(data);
+        }
+    });
+  }
   ngOnInit() {
-    this.assetService.getScenariosJSON().subscribe(scenarios => this.scenarios = scenarios);
+    this.assetService.getScenariosJSON().subscribe(scenarios => {
+      this.scenarios = scenarios;
+      if (this.data) {
+        this.scenarios.nodes = this.assetService.getDecodedScenarios(this.data).nodes;
+        this.data = null;
+        this.assetService.setScenariosJSON(this.scenarios);
+      }
+    });
   }
   public handleScenarioSelect(scenario) {
     if (scenario) {
