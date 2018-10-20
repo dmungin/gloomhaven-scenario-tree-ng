@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
 import * as cloneDeep from 'lodash.clonedeep';
+import { ScenarioData, ScenarioNode, ScenarioNodeData, ScenarioNodeStatuses, ScenarioTreasure } from '../asset.service';
 
 @Component({
   selector: 'app-scenario-info',
@@ -12,19 +13,16 @@ import * as cloneDeep from 'lodash.clonedeep';
   styleUrls: ['./scenario-info.component.css']
 })
 export class ScenarioInfoComponent implements OnInit, OnChanges {
-  @Input()  selectedScenario: any;
-  @Input()  scenarios: any;
-  @Output() selectScenario = new EventEmitter();
-  @Output() updateScenario = new EventEmitter<any>();
+  @Input()  selectedScenario: ScenarioNodeData;
+  @Input()  scenarios: ScenarioData;
+  @Output() selectScenario = new EventEmitter<ScenarioNodeData>();
+  @Output() updateScenario = new EventEmitter<[ScenarioNodeData, ScenarioTreasure[]]>();
   filteredScenarios: Observable<any[]>;
   scenarioCtrl = new FormControl();
-  public scenario = {
-    id: '',
-    status: 'incomplete',
-    notes: '',
-    treasure: {}
-  };
-  public treasureArray: any[];
+
+  public scenario: ScenarioNodeData | null;
+  public treasures: ScenarioTreasure[] = [];
+
   constructor(
     public dialog: MatDialog,
     private snackBar: MatSnackBar
@@ -40,25 +38,24 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
   }
   ngOnChanges() {
     if (this.selectedScenario !== null) {
-      this.scenario.id = this.selectedScenario.id;
-      this.scenario.status = this.selectedScenario.status || "incomplete";
-      this.scenario.notes = this.selectedScenario.notes || "";
-      this.scenario.treasure = cloneDeep(this.selectedScenario.treasure);
-      this.treasureArray = this.treasureArrayFromObject(this.selectedScenario.treasure)
+      this.scenario = cloneDeep(this.selectedScenario);
+      this.treasures = cloneDeep(this.scenarios.treasures.filter(node => {
+        return this.scenario.treasure.includes(node.id);
+      }));
     }
   }
   public isSideScenario() {
-    return (parseInt(this.scenario.id) > 51);
+    return this.scenario.side;
   }
   public showScenarioName(node) {
-    return (node.data.status !== 'locked' && node.data.status !== 'hidden');
+    return (!node.data.side && node.data.status !== 'hidden');
   }
-  public handleStatusChange(status) {
+  public handleStatusChange(status: ScenarioNodeStatuses) {
     this.scenario.status = status;
     this.saveScenarioData(false);
   }
-  public handleTreasureChange($event, id) {
-    this.scenario.treasure[id].looted = $event.checked;
+  public handleTreasureChange($event, treasure: ScenarioTreasure) {
+    treasure.looted = $event.checked;
     this.saveScenarioData(false);
   }
   public handleScenarioSelect($event) {
@@ -78,7 +75,7 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
     this.selectScenario.emit(null)
   }
   public saveScenarioData(showSnackBar) {
-    this.updateScenario.emit(this.scenario);
+    this.updateScenario.emit([this.scenario, this.treasures]);
     if (showSnackBar) {
       this.snackBar.open('Notes Saved!', '', {
         duration: 1500,
@@ -90,7 +87,7 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
     this.saveScenarioData(false);
   }
   public lockScenario() {
-    this.scenario.status = 'locked';
+    this.scenario.status = 'hidden';
     this.saveScenarioData(false);
   }
   public unhideScenario() {
@@ -101,19 +98,12 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
     this.scenario.status = 'hidden';
     this.saveScenarioData(false);
   }
-  public displayFn(scenario) {
+  public displayFn(scenario: ScenarioNode | null) {
     return scenario ? scenario.data.name : undefined;
   }
   private filterScenarios(value: string) {
     const filterValue = value.toLowerCase();
     return this.scenarios.nodes.filter(node => node.data.name.toLowerCase().includes(filterValue));
-  }
-  private treasureArrayFromObject(treasureObject: any) {
-    return Object.keys(treasureObject).map(number => ({
-      id: number,
-      looted: treasureObject[number].looted.toString() === 'true',
-      description: treasureObject[number].description
-    }));
   }
 }
 
@@ -130,7 +120,8 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
   `]
 })
 export class ScenarioInfoDialog {
-  public selectedScenario: any;
+  public selectedScenario: ScenarioNodeData;
+
   constructor(
     public dialogRef: MatDialogRef<ScenarioInfoDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any,

@@ -1,5 +1,7 @@
 import { Component, OnChanges, ElementRef, Input, Output, EventEmitter, ViewChild, AfterViewInit } from '@angular/core';
 import * as cytoscape from 'cytoscape';
+import { ScenarioData, ScenarioNode, ScenarioNodeData } from '../asset.service';
+
 @Component({
   selector: 'app-tree',
   template: '<div id="cy" #cy class="flex-item"></div>',
@@ -7,8 +9,8 @@ import * as cytoscape from 'cytoscape';
 })
 export class TreeComponent implements OnChanges {
   @Input()  elements: any;
-  @Input()  selectedScenario: any;
-  @Output() selectScenario = new EventEmitter();
+  @Input()  selectedScenario: ScenarioNodeData;
+  @Output() selectScenario = new EventEmitter<ScenarioNodeData>();
   @ViewChild('cy') cyEl;
   private initialLoad: boolean = true;
   private cy: any;
@@ -18,7 +20,7 @@ export class TreeComponent implements OnChanges {
     this.render();
     if (change.selectedScenario
       && change.selectedScenario.currentValue !== null
-      && change.selectedScenario.currentValue.status !== 'hidden') {
+      && (change.selectedScenario.currentValue.status !== 'hidden' || change.selectedScenario.currentValue.side)) {
       this.panToSelected();
     }
   }
@@ -58,7 +60,7 @@ export class TreeComponent implements OnChanges {
               'border-color': '#3f51b5',
               'border-style': 'solid'
           })
-          .selector('node[status = "locked"]')
+          .selector('node[status = "hidden"][side]')
           .css({
             'content': ( ele ) => '#' + ele.data('id')
           })
@@ -110,15 +112,15 @@ export class TreeComponent implements OnChanges {
     this.checkSpecialCases();
   }
   private setNodeVisibility() {
-    this.cy.nodes('[status != "hidden"]')
+    this.cy.nodes('[status != "hidden"], [side]')
       .css({'visibility': 'visible'})
       .selectify();
-    this.cy.nodes('[status = "hidden"]')
+    this.cy.nodes('[status = "hidden"][!side]')
       .css({'visibility': 'hidden'});
   }
   private setEdgeVisibility() {
     // Set edges from non-complete nodes to hidden
-    this.cy.nodes('[status = "incomplete"], [status = "attempted"], [status = "hidden"], [status = "locked"]')
+    this.cy.nodes('[status = "incomplete"], [status = "attempted"], [status = "hidden"]')
       .outgoers('edge')
       .css({'visibility': 'hidden'});
     // Set unlock edges from complete nodes to visible
@@ -126,7 +128,7 @@ export class TreeComponent implements OnChanges {
       .outgoers('edge[type = "unlocks"]')
       .css({'visibility': 'visible'});
     // Set requiredby edges from visible nodes to visible
-    this.cy.nodes('[status != "hidden"]')
+    this.cy.nodes('[status != "hidden"], [side]')
       .outgoers('edge[type = "requiredby"][target != "31"][target != "26"]')
       .css({'visibility': 'visible'});
     // Set requiredby edges from complete nodes to hidden (requirement met)
@@ -148,7 +150,7 @@ export class TreeComponent implements OnChanges {
   }
   private colorScenarios() {
     // Incomplete nodes are black
-    this.cy.nodes('[status = "incomplete"], [status = "locked"]').css({
+    this.cy.nodes('[status = "incomplete"], [side]').css({
       'color': '#000',
       'background-color': '#000',
       'border-width': '0px'});
