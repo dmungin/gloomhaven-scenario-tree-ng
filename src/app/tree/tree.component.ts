@@ -193,6 +193,7 @@ export class TreeComponent implements OnChanges {
     let scenario25Complete = this.cy.$('#25').data('status') === 'complete';
     let scenario35Complete = this.cy.$('#35').data('status') === 'complete';
     let scenario23Complete = this.cy.$('#23').data('status') === 'complete';
+    let scenario33Complete = this.cy.$('#33').data('status') === 'complete';
     let scenario43Complete = this.cy.$('#43').data('status') === 'complete';
     if (!scenario21Complete) {
       if (this.cy.nodes('#35').data('status') === 'complete') {
@@ -267,6 +268,14 @@ export class TreeComponent implements OnChanges {
             'border-width': '0px'
           });
       }
+    }
+    if (scenario33Complete && scenario25Complete) {
+      this.cy.nodes('#33').outgoers('[type = "blocks"][target = "34"]').css({
+        'visibility': 'visible'
+      }).targets().css({
+        'background-color': '#f44336',
+        'border-width': '0px'
+      });
     }
   }
   private nodeClicked(e) {
