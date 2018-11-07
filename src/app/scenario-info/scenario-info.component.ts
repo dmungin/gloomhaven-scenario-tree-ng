@@ -4,6 +4,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
+import * as cloneDeep from 'lodash.clonedeep';
 
 @Component({
   selector: 'app-scenario-info',
@@ -20,8 +21,10 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
   public scenario = {
     id: '',
     status: 'incomplete',
-    notes: ''
+    notes: '',
+    treasure: {}
   };
+  public treasureArray: any[];
   constructor(
     public dialog: MatDialog,
     private snackBar: MatSnackBar
@@ -40,6 +43,8 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
       this.scenario.id = this.selectedScenario.id;
       this.scenario.status = this.selectedScenario.status || "incomplete";
       this.scenario.notes = this.selectedScenario.notes || "";
+      this.scenario.treasure = cloneDeep(this.selectedScenario.treasure);
+      this.treasureArray = this.treasureArrayFromObject(this.selectedScenario.treasure)
     }
   }
   public isSideScenario() {
@@ -50,6 +55,10 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
   }
   public handleStatusChange(status) {
     this.scenario.status = status;
+    this.saveScenarioData(false);
+  }
+  public handleTreasureChange($event, id) {
+    this.scenario.treasure[id].looted = $event.checked;
     this.saveScenarioData(false);
   }
   public handleScenarioSelect($event) {
@@ -98,6 +107,13 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
   private filterScenarios(value: string) {
     const filterValue = value.toLowerCase();
     return this.scenarios.nodes.filter(node => node.data.name.toLowerCase().includes(filterValue));
+  }
+  private treasureArrayFromObject(treasureObject: any) {
+    return Object.keys(treasureObject).map(number => ({
+      id: number,
+      looted: treasureObject[number].looted.toString() === 'true',
+      description: treasureObject[number].description
+    }));
   }
 }
 

@@ -29,6 +29,9 @@ mat-form-field {
 mat-form-field textarea {
     height: 100px;
 }
+.treasure-description {
+  margin-left: 30px;
+}
 @media (max-width: 991px) {
     button[mat-raised-button] {
         width: 100%;

@@ -36,6 +36,20 @@
                     Complete
                 </mat-button-toggle>
             </mat-button-toggle-group>
+            <div *ngIf="treasureArray.length">
+              <h3>Treasure</h3>
+              <mat-list>
+                <mat-list-item *ngFor="let treasure of treasureArray">
+                  <mat-slide-toggle [checked]="treasure.looted" (change)="handleTreasureChange($event, treasure.id)">
+                    {{ treasure.id }}
+                  </mat-slide-toggle>
+                  <div class="treasure-description">
+                    <span *ngIf="treasure.looted">{{ treasure.description }}</span>
+                    <span *ngIf="!treasure.looted">????????????</span>
+                  </div>
+                </mat-list-item>
+              </mat-list>
+            </div>
             <mat-form-field>
                 <textarea matInput placeholder="Scenario Notes" [(ngModel)]="scenario.notes" name="notes"></textarea>
             </mat-form-field>

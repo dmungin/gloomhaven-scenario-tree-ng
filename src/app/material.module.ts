@@ -9,6 +9,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatListModule } from '@angular/material/list';
 @NgModule({
     imports: [
         MatFormFieldModule,
@@ -20,7 +22,9 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
         MatIconModule,
         MatSnackBarModule,
         MatTabsModule,
-        MatAutocompleteModule
+        MatAutocompleteModule,
+        MatSlideToggleModule,
+        MatListModule
     ],
     exports: [
         MatFormFieldModule,
@@ -32,7 +36,9 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
         MatIconModule,
         MatSnackBarModule,
         MatTabsModule,
-        MatAutocompleteModule
+        MatAutocompleteModule,
+        MatSlideToggleModule,
+        MatListModule
     ],
     providers: [ ]
   })

@@ -29,7 +29,7 @@
                 "treasure": {
                     "67": {
                         "looted": "false",
-                        "description": "gain 10 gold"
+                        "description": "Gain 10 gold"
                     }
                 }
             },
@@ -94,7 +94,7 @@
                     },
                     "04": {
                         "looted": "false",
-                        "description": "gain 15 gold"
+                        "description": "Gain 15 gold"
                     }
                 }
             },
@@ -180,7 +180,7 @@
                 "treasure": {
                     "05": {
                         "looted": "false",
-                        "description": "Gain \"Chainmail\" (Item 0423"
+                        "description": "Gain \"Chainmail\" (Item 0423)"
                     }
                 }
             },

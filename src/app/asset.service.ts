@@ -46,6 +46,11 @@ export class AssetService {
       if (typeof savedNode.y !== 'undefined') {
         node.position.y = savedNode.y;
       }
+      if (typeof savedNode.treasure !== 'undefined') {
+        Object.keys(savedNode.treasure).forEach(number => {
+          node.data.treasure[number].looted = savedNode.treasure[number].looted;
+        });
+      }
     });
     return {nodes: currentNodes};
   }
@@ -66,6 +71,13 @@ export class AssetService {
       if (matchedBase.position.y !== node.position.y) {
         simpleNode['y'] = parseInt(node.position.y);
       }
+      Object.keys(matchedBase.data.treasure).forEach(number => {
+        if (matchedBase.data.treasure[number].looted.toString() !== node.data.treasure[number].looted.toString()) {
+          simpleNode['treasure'] = {};
+          simpleNode['treasure'][number] = { looted: node.data.treasure[number].looted.toString() }
+        }
+      });
+
       return simpleNode;
     });
     return JSON.stringify({nodes: simplifiedNodes, version: '2'});
