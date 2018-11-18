@@ -1,0 +1,123 @@
+<div id="scenario-info-component">
+  <form>
+    <mat-form-field *ngIf="scenarios">
+      <input
+        matInput
+        placeholder="Select A Scenario"
+        aria-label="selected scenario"
+        [matAutocomplete]="auto"
+        [formControl]="scenarioCtrl"
+      />
+      <mat-autocomplete
+        #auto="matAutocomplete"
+        [displayWith]="displayFn"
+        (optionSelected)="handleScenarioSelect($event)"
+      >
+        <mat-option
+          *ngFor="let scenario of (filteredScenarios | async)"
+          [value]="scenario"
+        >
+          <span *ngIf="showScenarioName(scenario)">{{
+            scenario.data.name
+          }}</span>
+          <span *ngIf="!showScenarioName(scenario)"
+            ># {{ scenario.data.id }}</span
+          >
+          | <small>Status: {{ scenario.data.status }}</small>
+        </mat-option>
+      </mat-autocomplete>
+      <mat-icon matSuffix (click)="clearScenario()">clear</mat-icon>
+    </mat-form-field>
+  </form>
+  <div *ngIf="selectedScenario">
+    <div
+      *ngIf="
+        scenario.status === 'locked' || scenario.status === 'hidden';
+        else: isUnlockedBlock
+      "
+    >
+      <h2># {{ selectedScenario.id }}</h2>
+      <button
+        *ngIf="scenario.status === 'locked'"
+        mat-raised-button
+        color="primary"
+        type="button"
+        (click)="unlockScenario()"
+      >
+        Unlock
+      </button>
+      <button
+        *ngIf="scenario.status === 'hidden'"
+        mat-raised-button
+        color="primary"
+        type="button"
+        (click)="unhideScenario()"
+      >
+        Show
+      </button>
+    </div>
+    <ng-template #isUnlockedBlock>
+      <h2>{{ selectedScenario.name }}</h2>
+      <form (ngSubmit)="saveScenarioData(true)" #scenarioForm="ngForm">
+        <button mat-raised-button (click)="showScenarioModal()" type="button">
+          Scenario Pages
+        </button>
+        <button
+          mat-raised-button
+          (click)="lockScenario()"
+          *ngIf="isSideScenario()"
+          type="button"
+        >
+          Lock Scenario
+        </button>
+        <button
+          mat-raised-button
+          (click)="hideScenario()"
+          *ngIf="!isSideScenario()"
+          type="button"
+        >
+          Hide Scenario
+        </button>
+
+        <mat-button-toggle-group
+          #group="matButtonToggleGroup"
+          [ngModel]="scenario.status"
+          (ngModelChange)="handleStatusChange($event)"
+          name="status"
+        >
+          <mat-button-toggle value="incomplete"> Incomplete </mat-button-toggle>
+          <mat-button-toggle value="attempted"> Attempted </mat-button-toggle>
+          <mat-button-toggle value="complete"> Complete </mat-button-toggle>
+        </mat-button-toggle-group>
+        <div *ngIf="treasureArray.length">
+          <h3>Treasure</h3>
+          <mat-list>
+            <mat-list-item *ngFor="let treasure of treasureArray">
+              <mat-slide-toggle
+                [checked]="treasure.looted"
+                (change)="handleTreasureChange($event, treasure.id)"
+              >
+                {{ treasure.id }}
+              </mat-slide-toggle>
+              <div class="treasure-description">
+                <span *ngIf="treasure.looted">{{ treasure.description }}</span>
+                <span *ngIf="!treasure.looted">????????????</span>
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+        <mat-form-field>
+          <textarea
+            matInput
+            placeholder="Scenario Notes"
+            [(ngModel)]="scenario.notes"
+            name="notes"
+          ></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">
+          Save Notes
+        </button>
+      </form>
+    </ng-template>
+  </div>
+</div>

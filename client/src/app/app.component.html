@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <div class="nav-row">
+    <span>Gloomhaven Scenario Tree</span>
+    <app-export-tree
+      [scenarios]="scenarios"
+      (importScenarios)="handleScenariosImport($event)"
+    ></app-export-tree>
+  </div>
+</mat-toolbar>
+<div class="wrapper">
+  <app-scenario-info
+    [scenarios]="scenarios"
+    [selectedScenario]="selectedScenario"
+    (selectScenario)="handleScenarioSelect($event)"
+    (updateScenario)="handleScenarioUpdate($event)"
+  >
+  </app-scenario-info>
+  <app-tree
+    [elements]="scenarios"
+    [selectedScenario]="selectedScenario"
+    (selectScenario)="handleScenarioSelect($event)"
+  ></app-tree>
+</div>
