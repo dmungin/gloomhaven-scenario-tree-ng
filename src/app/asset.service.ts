@@ -11,6 +11,8 @@ export class AssetService {
     let encodedTree = localStorage.getItem('gloomhavenScenarioTree');
     return this.http.get<any>('./assets/scenarios.json').pipe(
       map(scenarios => {
+        // First sort the nodes so that any ui using them keeps order consistent
+        scenarios.nodes = scenarios.nodes.sort((n1, n2) => +n1.data.id - +n2.data.id)
         this.defaultScenariosJSON = cloneDeep(scenarios);
         if (encodedTree) {
           scenarios.nodes = this.getDecodedScenarios(scenarios.nodes, encodedTree).nodes
