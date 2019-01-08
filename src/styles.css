@@ -1,20 +1,10 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 body {
-    font: 14px "Nunito", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 14px 'Nunito', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: #fff;
+    margin: 0;
 }
-.wrapper {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    width: 98%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 #info {
     color: #c88;
     font-size: 1em;
@@ -26,6 +16,12 @@ body {
 .mat-dialog-container {
     position: relative;
 }
+.scenario-info-dialog {
+    max-width: 95vw!important;
+}
+.scenario-info-dialog .mat-dialog-container {
+    padding: 0;
+  }
 .hidden {
     display: none;
 }

@@ -67,8 +67,7 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
   }
   public showScenarioModal() {
     let dialogRef = this.dialog.open(ScenarioInfoDialog, {
-      width: '900px',
-      height: '100vh',
+      panelClass: 'scenario-info-dialog',
       data: { selectedScenario: this.selectedScenario }
     });
     dialogRef.afterClosed().subscribe(() => {});
@@ -122,9 +121,25 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
   templateUrl: './scenario-info-dialog.html',
   styles: [`
     .mat-dialog-content {
-        max-height: 90vh;
+        max-height: 100vh;
+        padding: 0;
+        margin: 0;
+        width: 100%;
     }
-    #scenario-img {
+    p {
+      position: absolute;
+      right: 0;
+      margin: 0;
+      padding: 15px;
+      font-weight: 500;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    @media (max-width: 767px) {
+      p {
+        font-size: 8px;
+      }
+    }
+    .scenario-image {
       width: 100%;
     }
   `]
