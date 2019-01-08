@@ -114,7 +114,10 @@ export class TreeComponent implements OnChanges {
       .css({'visibility': 'visible'})
       .selectify();
     this.cy.nodes('[status = "hidden"]')
-      .css({'visibility': 'hidden'});
+      .css({
+        'visibility': 'hidden', 
+        'text-opacity': '0'
+      });
   }
   private setEdgeVisibility() {
     // Set edges from non-complete nodes to hidden

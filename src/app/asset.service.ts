@@ -75,7 +75,9 @@ export class AssetService {
       }
       Object.keys(matchedBase.data.treasure).forEach(number => {
         if (matchedBase.data.treasure[number].looted.toString() !== node.data.treasure[number].looted.toString()) {
-          simpleNode['treasure'] = {};
+          if (typeof simpleNode['treasure'] === 'undefined') {
+            simpleNode['treasure'] = {};
+          }
           simpleNode['treasure'][number] = { looted: node.data.treasure[number].looted.toString() }
         }
       });
