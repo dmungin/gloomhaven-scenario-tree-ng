@@ -1,7 +1,6 @@
-import { Component, OnChanges, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnChanges, Input, Output, EventEmitter, ViewChild, SimpleChanges } from '@angular/core';
 import cytoscape from 'cytoscape';
 import cxtmenu from 'cytoscape-cxtmenu';
-import { MatRadioGroupBase } from '@angular/material';
 cytoscape.use(cxtmenu);
 @Component({
   selector: 'app-tree',
@@ -19,7 +18,7 @@ export class TreeComponent implements OnChanges {
   private cy: any;
 
   public constructor() {}
-  public ngOnChanges(change): any {
+  public ngOnChanges(change: SimpleChanges): any {
     this.render();
     if (change.selectedScenario
       && change.selectedScenario.currentValue !== null
@@ -28,22 +27,21 @@ export class TreeComponent implements OnChanges {
     }
   }
   public render() {
-    let pan;
+    let pan: {x: Number, y: Number};
     let selectedNode = null;
     if (!this.initialLoad) {
       // Save current viewport pan location and selected node to re-set it after render
       pan = this.cy.pan();
       selectedNode = this.cy.nodes(':selected');
-    }
-    this.cy = cytoscape(this.getCytoscapeConfig());
-    this.cy.cxtmenu(this.getCxtMenuConfig());
-    // Center the tree on initial load
-    if (this.initialLoad) {
+      this.cy.elements().remove();
+      this.cy.add(this.elements);
+    } else {
+      this.cy = cytoscape(this.getCytoscapeConfig());
+      this.cy.cxtmenu(this.getCxtMenuConfig());
       pan = {x: (this.cy.width() / 2), y: 50};
+      this.cy.on('tap', 'node', this.nodeClicked.bind(this));
     }
     this.cy.pan(pan);
-    // this.cy.on('tap', 'node', this.nodeClicked.bind(this));
-    this.cy.on('tapend', 'node', this.nodeClicked.bind(this));
     // Reselect previously selected node after each render
     if (selectedNode != null) {
       this.cy.$(selectedNode).select();
