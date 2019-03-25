@@ -9,13 +9,17 @@ h2 {
     color: #000000;
     opacity: 0.87;
 }
-button[mat-raised-button] {
+.button-row button {
+    margin-right: 8px;
+}
+button[mat-stroked-button] {
     margin-bottom: 60px;
     width: 40%;
 }
 mat-button-toggle-group {
     width: 100%;
     margin-bottom: 40px;
+    box-sizing: border-box;
 }
 mat-button-toggle {
     text-align: center;
@@ -36,7 +40,10 @@ mat-form-field textarea {
     margin-left: 30px;
 }
 @media (max-width: 1023px) {
-    button[mat-raised-button] {
+    .button-row button {
+        margin-right: 0;
+    }
+    button[mat-stroked-button] {
         width: 100%;
     }
     mat-button-toggle-group {

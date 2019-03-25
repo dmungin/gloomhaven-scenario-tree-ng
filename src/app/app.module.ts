@@ -11,6 +11,7 @@ import { TreeComponent } from './tree/tree.component';
 import { AssetService } from './asset.service';
 import { ScenarioInfoComponent, ScenarioInfoDialog } from './scenario-info/scenario-info.component';
 import { TreeLogicService } from './tree-logic.service';
+import { KeyComponent } from './key/key.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { TreeLogicService } from './tree-logic.service';
     ScenarioInfoComponent,
     ScenarioInfoDialog,
     ExportTreeComponent,
-    ImportExportDialog
+    ImportExportDialog,
+    KeyComponent
   ],
   imports: [
     BrowserModule,

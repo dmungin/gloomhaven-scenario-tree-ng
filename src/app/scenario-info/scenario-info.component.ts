@@ -18,6 +18,7 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
   @Output() updateScenario = new EventEmitter<any>();
   filteredScenarios: Observable<any[]>;
   scenarioCtrl = new FormControl();
+  selectedTab = new FormControl(1);
   public scenario = {
     id: '',
     status: 'incomplete',
@@ -45,6 +46,7 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
       this.scenario.notes = this.selectedScenario.notes || "";
       this.scenario.treasure = cloneDeep(this.selectedScenario.treasure);
       this.treasureArray = this.treasureArrayFromObject(this.selectedScenario.treasure)
+      this.selectedTab.setValue(0);
     }
   }
   public isSideScenario() {
