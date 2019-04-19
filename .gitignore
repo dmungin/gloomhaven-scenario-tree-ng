@@ -5,6 +5,7 @@
 /dist-server
 /tmp
 /out-tsc
+/netlify
 
 # dependencies
 /node_modules
