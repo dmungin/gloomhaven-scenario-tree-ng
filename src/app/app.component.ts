@@ -16,11 +16,11 @@ export class AppComponent implements OnInit {
     private snackBar: MatSnackBar
   ) {}
   ngOnInit() {
-    this.assetService.getScenariosJSON().subscribe(scenarios => this.scenarios = scenarios);
+    this.scenarios = this.assetService.getScenariosJSON();
   }
   public handleScenarioSelect(scenario) {
     if (scenario) {
-      let rawScenario = (typeof scenario.data === 'function') ? scenario.data() : scenario.data;
+      const rawScenario = (typeof scenario.data === 'function') ? scenario.data() : scenario.data;
       rawScenario.activePage = rawScenario.pages[0];
       rawScenario.imageUrl = this.getImageUrl(rawScenario.activePage);
       this.selectedScenario = rawScenario;
