@@ -26,6 +26,7 @@ export class AssetService {
         savedNode.notes = savedNode.data.notes;
         savedNode.x = savedNode.position.x;
         savedNode.y = savedNode.position.y;
+        // tslint:disable-next-line:triple-equals
         if (parseInt(savedNode.data.id, 10) > 51 && (savedNode.status === 'hidden' || savedNode.data.locked == 'true') ) {
           savedNode.status = 'locked';
         }
@@ -73,7 +74,7 @@ export class AssetService {
           if (typeof simpleNode['treasure'] === 'undefined') {
             simpleNode['treasure'] = {};
           }
-          simpleNode['treasure'][number] = { looted: node.data.treasure[number].looted.toString() }
+          simpleNode['treasure'][number] = { looted: node.data.treasure[number].looted.toString() };
         }
       });
 

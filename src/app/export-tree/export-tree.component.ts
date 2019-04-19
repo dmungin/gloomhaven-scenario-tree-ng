@@ -18,7 +18,7 @@ export class ExportTreeComponent implements OnInit {
   ngOnInit() {
   }
   public showImportExportModal() {
-    let dialogRef = this.dialog.open(ImportExportDialog, {
+    const dialogRef = this.dialog.open(ImportExportDialogComponent, {
       width: '600px',
       height: '75vh',
       data: { scenarios: this.scenarios }
@@ -45,12 +45,12 @@ export class ExportTreeComponent implements OnInit {
   }
   `]
 })
-export class ImportExportDialog {
+export class ImportExportDialogComponent {
   public scenarios: any;
   public encodedScenarios = new FormControl('', [Validators.required, this.validJSONValidator()]);
-  public importError: String = null;
+  public importError: string = null;
   constructor(
-    public dialogRef: MatDialogRef<ImportExportDialog>,
+    public dialogRef: MatDialogRef<ImportExportDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     public assetService: AssetService) {
       this.scenarios = data.scenarios;
@@ -59,10 +59,10 @@ export class ImportExportDialog {
   public importScenarios(): void {
     this.importError = null;
     try {
-      let decodedScenarioJSON = this.assetService.getDecodedScenarios(this.scenarios.nodes, this.encodedScenarios.value);
+      const decodedScenarioJSON = this.assetService.getDecodedScenarios(this.scenarios.nodes, this.encodedScenarios.value);
       this.dialogRef.close(decodedScenarioJSON);
     } catch (e) {
-      this.importError = "Not a valid scenario JSON.";
+      this.importError = 'Not a valid scenario JSON.';
     }
     this.encodedScenarios.updateValueAndValidity();
   }
