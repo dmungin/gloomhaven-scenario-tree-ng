@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { ExportTreeComponent, ImportExportDialog } from './export-tree/export-tree.component';
+import { ExportTreeComponent, ImportExportDialogComponent } from './export-tree/export-tree.component';
 import { MaterialModule } from './material.module';
 import { AppComponent } from './app.component';
 import { TreeComponent } from './tree/tree.component';
@@ -21,7 +21,7 @@ import { KeyComponent } from './key/key.component';
     ScenarioInfoComponent,
     ScenarioInfoDialog,
     ExportTreeComponent,
-    ImportExportDialog,
+    ImportExportDialogComponent,
     KeyComponent
   ],
   imports: [
@@ -34,7 +34,7 @@ import { KeyComponent } from './key/key.component';
   ],
   entryComponents: [
     ScenarioInfoDialog,
-    ImportExportDialog
+    ImportExportDialogComponent
   ],
   providers: [ AssetService, TreeLogicService ],
   bootstrap: [ AppComponent ]
