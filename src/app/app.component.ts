@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AssetService } from './asset.service';
 import { TreeLogicService } from './tree-logic.service';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   }
   public handleScenarioSelect(scenario) {
     if (scenario) {
-      let rawScenario = (typeof scenario.data === 'function') ? scenario.data() : scenario.data;
+      const rawScenario = (typeof scenario.data === 'function') ? scenario.data() : scenario.data;
       rawScenario.activePage = rawScenario.pages[0];
       rawScenario.imageUrl = this.getImageUrl(rawScenario.activePage);
       this.selectedScenario = rawScenario;
@@ -32,11 +32,11 @@ export class AppComponent implements OnInit {
     }
   }
   public getNextScenarioPage() {
-    let pages = this.selectedScenario.pages;
-		var activeIndex = pages.indexOf(this.selectedScenario.activePage);
-		activeIndex++;
-		if (activeIndex === pages.length) {
-			activeIndex = 0;
+    const pages = this.selectedScenario.pages;
+    let activeIndex = pages.indexOf(this.selectedScenario.activePage);
+    activeIndex++;
+    if (activeIndex === pages.length) {
+      activeIndex = 0;
     }
     this.selectedScenario.activePage = pages[activeIndex];
     this.selectedScenario.imageUrl = this.getImageUrl(this.selectedScenario.activePage);
@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
   public handleScenarioUpdate(changedScenario) {
     this.scenarios = this.treeLogicService.updateScenario(this.scenarios, changedScenario);
     this.assetService.setScenariosJSON(this.scenarios);
-    this.handleScenarioSelect(this.scenarios.nodes.find(scenario => scenario.data.id === changedScenario.id))
+    this.handleScenarioSelect(this.scenarios.nodes.find(scenario => scenario.data.id === changedScenario.id));
   }
   public handleScenariosImport(scenarios) {
     scenarios.edges = this.scenarios.edges;

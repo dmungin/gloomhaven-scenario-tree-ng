@@ -13,8 +13,8 @@ export class TreeComponent implements OnChanges {
   @Output() selectScenario = new EventEmitter();
   @Output() updateScenario = new EventEmitter<any>();
 
-  @ViewChild('cy') cyEl;
-  private initialLoad: boolean = true;
+  @ViewChild('cy', { static: true }) cyEl;
+  private initialLoad = true;
   private cy: any;
 
   public constructor() {}
@@ -25,9 +25,10 @@ export class TreeComponent implements OnChanges {
       && change.selectedScenario.currentValue.status !== 'hidden') {
       this.panToSelected();
     }
+    this.updateStyles();
   }
   public render() {
-    let pan: {x: Number, y: Number};
+    let pan: {x: number, y: number};
     let selectedNode = null;
     if (!this.initialLoad) {
       // Save current viewport pan location and selected node to re-set it after render
@@ -46,7 +47,6 @@ export class TreeComponent implements OnChanges {
     if (selectedNode != null) {
       this.cy.$(selectedNode).select();
     }
-    this.updateStyles();
     this.initialLoad = false;
   }
   private updateStyles() {
@@ -67,7 +67,7 @@ export class TreeComponent implements OnChanges {
       .selectify();
     this.cy.nodes('[status = "hidden"]')
       .css({
-        'visibility': 'hidden', 
+        'visibility': 'hidden',
         'text-opacity': '0'
       });
   }
@@ -117,7 +117,7 @@ export class TreeComponent implements OnChanges {
       'color': '#000',
       'background-color': '#fff',
       'border-width': '1px'});
-    
+
     // Scenarios blocked by other scenarios being incomplete are grey
     this.cy.nodes('[status != "complete"][id != 21]')
       .outgoers('edge[type = "requiredby"][target != "26"]')
@@ -136,14 +136,14 @@ export class TreeComponent implements OnChanges {
       });
   }
   private checkSpecialCases() {
-    let scenario21Complete = this.cy.nodes('#21').data('status') === 'complete';
-    let scenario24Complete = this.cy.$('#24').data('status') === 'complete';
-    let scenario42Complete = this.cy.$('#42').data('status') === 'complete';
-    let scenario25Complete = this.cy.$('#25').data('status') === 'complete';
-    let scenario35Complete = this.cy.$('#35').data('status') === 'complete';
-    let scenario23Complete = this.cy.$('#23').data('status') === 'complete';
-    let scenario33Complete = this.cy.$('#33').data('status') === 'complete';
-    let scenario43Complete = this.cy.$('#43').data('status') === 'complete';
+    const scenario21Complete = this.cy.nodes('#21').data('status') === 'complete';
+    const scenario24Complete = this.cy.$('#24').data('status') === 'complete';
+    const scenario42Complete = this.cy.$('#42').data('status') === 'complete';
+    const scenario25Complete = this.cy.$('#25').data('status') === 'complete';
+    const scenario35Complete = this.cy.$('#35').data('status') === 'complete';
+    const scenario23Complete = this.cy.$('#23').data('status') === 'complete';
+    const scenario33Complete = this.cy.$('#33').data('status') === 'complete';
+    const scenario43Complete = this.cy.$('#43').data('status') === 'complete';
     if (!scenario21Complete) {
       if (this.cy.nodes('#35').data('status') === 'complete') {
         if (this.cy.nodes('#27').data('status') === 'attempted' ||
@@ -228,17 +228,17 @@ export class TreeComponent implements OnChanges {
     }
   }
   private nodeClicked(e) {
-    var scenario = e.target;
+    const scenario = e.target;
     if (scenario.selectable()) {
       this.selectScenario.emit(scenario);
       window.setTimeout(() => this.updateStyles(), 50);
     }
   }
   private panToSelected() {
-    let selectedNode = this.cy.nodes(`#${this.selectedScenario.id}`);
+    const selectedNode = this.cy.nodes(`#${this.selectedScenario.id}`);
     this.cy.nodes().unselect();
     selectedNode.select();
-    this.colorScenarios();
+    // this.colorScenarios();
     this.cy.animate({
       center: {
         eles: selectedNode
@@ -256,7 +256,7 @@ export class TreeComponent implements OnChanges {
       autounselectify: false,
       autolock: false,
       layout: {
-        name: "preset"
+        name: 'preset'
       },
       style: cytoscape.stylesheet()
         .selector('node')
@@ -307,8 +307,8 @@ export class TreeComponent implements OnChanges {
   }
   private getCxtMenuConfig() {
     return {
-      commands: (ele) => {
-        let data = ele.data();
+      commands: (element) => {
+        const data = element.data();
         return [{
         content: 'Incomplete',
         fillColor: data.status === 'incomplete' ? 'rgba(255, 64, 129, 0.75)' : 'rgba(0, 0, 0, 0.75)',
@@ -321,19 +321,19 @@ export class TreeComponent implements OnChanges {
         content: 'Complete',
         fillColor: data.status === 'complete' ? 'rgba(255, 64, 129, 0.75)' : 'rgba(0, 0, 0, 0.75)',
         select: (ele) => this.cxtMenuStatusChange('complete', ele)
-      }]
+      }];
     },
       activeFillColor: 'rgba(63, 81, 181, 1)'
     };
   }
   private cxtMenuStatusChange(status, ele) {
-    let data = ele.data();
-    let scenario = {
+    const data = ele.data();
+    const scenario = {
       id: data.id,
       status: status,
       notes: data.notes,
       treasure: data.treasure
-    }
+    };
     this.updateScenario.emit(scenario);
   }
 

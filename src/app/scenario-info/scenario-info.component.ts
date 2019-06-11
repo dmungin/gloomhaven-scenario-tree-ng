@@ -1,11 +1,63 @@
 import { Component, OnInit, Input, Inject, OnChanges, EventEmitter, Output } from '@angular/core';
 import { AssetService } from '../asset.service';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
 import * as cloneDeep from 'lodash.clonedeep';
 
+@Component({
+  selector: 'app-scenario-info-dialog',
+  templateUrl: './scenario-info-dialog.html',
+  styles: [`
+    .mat-dialog-content {
+        max-height: 100vh;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    p {
+      position: absolute;
+      right: 0;
+      margin: 0;
+      padding: 15px;
+      font-weight: 500;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    @media (max-width: 767px) {
+      p {
+        font-size: 8px;
+      }
+    }
+    .scenario-image {
+      width: 100%;
+    }
+  `]
+})
+export class ScenarioInfoDialogComponent {
+  public selectedScenario: any;
+  constructor(
+    public dialogRef: MatDialogRef<ScenarioInfoDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public assetService: AssetService) {
+      this.selectedScenario = data.selectedScenario;
+    }
+
+  close(): void {
+    this.dialogRef.close();
+  }
+  public getNextScenarioPage() {
+    const pages = this.selectedScenario.pages;
+    let activeIndex = pages.indexOf(this.selectedScenario.activePage);
+    activeIndex++;
+    if (activeIndex === pages.length) {
+      activeIndex = 0;
+    }
+    this.selectedScenario.activePage = pages[activeIndex];
+    this.selectedScenario.imageUrl = this.assetService.getImageUrl(this.selectedScenario.activePage);
+  }
+}
 @Component({
   selector: 'app-scenario-info',
   templateUrl: './scenario-info.component.html',
@@ -42,15 +94,15 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
   ngOnChanges() {
     if (this.selectedScenario !== null) {
       this.scenario.id = this.selectedScenario.id;
-      this.scenario.status = this.selectedScenario.status || "incomplete";
-      this.scenario.notes = this.selectedScenario.notes || "";
+      this.scenario.status = this.selectedScenario.status || 'incomplete';
+      this.scenario.notes = this.selectedScenario.notes || '';
       this.scenario.treasure = cloneDeep(this.selectedScenario.treasure);
-      this.treasureArray = this.treasureArrayFromObject(this.selectedScenario.treasure)
+      this.treasureArray = this.treasureArrayFromObject(this.selectedScenario.treasure);
       this.selectedTab.setValue(0);
     }
   }
   public isSideScenario() {
-    return (parseInt(this.scenario.id) > 51);
+    return (parseInt(this.scenario.id, 10) > 51);
   }
   public showScenarioName(node) {
     return (node.data.status !== 'locked' && node.data.status !== 'hidden');
@@ -68,7 +120,7 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
     this.scenarioCtrl.patchValue('');
   }
   public showScenarioModal() {
-    let dialogRef = this.dialog.open(ScenarioInfoDialog, {
+    const dialogRef = this.dialog.open(ScenarioInfoDialogComponent, {
       panelClass: 'scenario-info-dialog',
       data: { selectedScenario: this.selectedScenario }
     });
@@ -76,7 +128,7 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
   }
   public clearScenario() {
     this.scenarioCtrl.patchValue('');
-    this.selectScenario.emit(null)
+    this.selectScenario.emit(null);
   }
   public saveScenarioData(showSnackBar) {
     this.updateScenario.emit(this.scenario);
@@ -115,57 +167,5 @@ export class ScenarioInfoComponent implements OnInit, OnChanges {
       looted: treasureObject[number].looted.toString() === 'true',
       description: treasureObject[number].description
     }));
-  }
-}
-
-@Component({
-  selector: 'app-scenario-info-dialog',
-  templateUrl: './scenario-info-dialog.html',
-  styles: [`
-    .mat-dialog-content {
-        max-height: 100vh;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-    }
-    p {
-      position: absolute;
-      right: 0;
-      margin: 0;
-      padding: 15px;
-      font-weight: 500;
-      background-color: rgba(255, 255, 255, 0.3);
-    }
-    @media (max-width: 767px) {
-      p {
-        font-size: 8px;
-      }
-    }
-    .scenario-image {
-      width: 100%;
-    }
-  `]
-})
-export class ScenarioInfoDialog {
-  public selectedScenario: any;
-  constructor(
-    public dialogRef: MatDialogRef<ScenarioInfoDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: any,
-    public assetService: AssetService) {
-      this.selectedScenario = data.selectedScenario;
-    }
-
-  close(): void {
-    this.dialogRef.close();
-  }
-  public getNextScenarioPage() {
-    let pages = this.selectedScenario.pages;
-		var activeIndex = pages.indexOf(this.selectedScenario.activePage);
-		activeIndex++;
-		if (activeIndex === pages.length) {
-			activeIndex = 0;
-    }
-    this.selectedScenario.activePage = pages[activeIndex];
-    this.selectedScenario.imageUrl = this.assetService.getImageUrl(this.selectedScenario.activePage);
   }
 }
