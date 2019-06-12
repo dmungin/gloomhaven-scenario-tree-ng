@@ -1,0 +1,11 @@
+mat-icon {
+    margin-left: 5px;
+    margin-right: 20px;
+}
+.example-arrow-lines {
+    border: 0;
+    border-bottom: 2px solid;
+    width: 30px;
+    height: 1px;
+    margin-right: 20px;
+}
