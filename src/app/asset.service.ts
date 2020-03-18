@@ -25,34 +25,37 @@ export class AssetService {
     const savedScenarios = JSON.parse(savedScenarioString);
     currentNodes.forEach((node, index) => {
       const savedNode = savedScenarios.nodes.find(saved => saved.id === node.data.id);
-      const matchedBase = this.defaultScenariosJSON.nodes.find(base => base.data.id === node.data.id);
-      /* Logic to allow old saved json format to work */
-      if (typeof savedScenarios.version === 'undefined') {
-        savedNode.status = savedNode.data.status;
-        savedNode.notes = savedNode.data.notes;
-        savedNode.x = savedNode.position.x;
-        savedNode.y = savedNode.position.y;
-        if (parseInt(savedNode.data.id, 10) > 51
-        && (savedNode.status === 'hidden' || savedNode.data.locked === 'true' || savedNode.data.locked === true) ) {
-          savedNode.status = 'locked';
+      if (typeof savedNode !== 'undefined')
+      {
+        const matchedBase = this.defaultScenariosJSON.nodes.find(base => base.data.id === node.data.id);
+        /* Logic to allow old saved json format to work */
+        if (typeof savedScenarios.version === 'undefined') {
+          savedNode.status = savedNode.data.status;
+          savedNode.notes = savedNode.data.notes;
+          savedNode.x = savedNode.position.x;
+          savedNode.y = savedNode.position.y;
+          if (parseInt(savedNode.data.id, 10) > 51
+          && (savedNode.status === 'hidden' || savedNode.data.locked === 'true' || savedNode.data.locked === true) ) {
+            savedNode.status = 'locked';
+          }
         }
-      }
-      /* If an attribute was saved then copy it over to the current full JSON */
-      node.data.status = (typeof savedNode.status !== 'undefined') ? savedNode.status : matchedBase.data.status;
+        /* If an attribute was saved then copy it over to the current full JSON */
+        node.data.status = (typeof savedNode.status !== 'undefined') ? savedNode.status : matchedBase.data.status;
 
-      if (typeof savedNode.notes !== 'undefined') {
-        node.data.notes = savedNode.notes;
-      }
-      if (typeof savedNode.x !== 'undefined') {
-        node.position.x = savedNode.x;
-      }
-      if (typeof savedNode.y !== 'undefined') {
-        node.position.y = savedNode.y;
-      }
-      if (typeof savedNode.treasure !== 'undefined') {
-        Object.keys(savedNode.treasure).forEach(number => {
-          node.data.treasure[number].looted = savedNode.treasure[number].looted;
-        });
+        if (typeof savedNode.notes !== 'undefined') {
+          node.data.notes = savedNode.notes;
+        }
+        if (typeof savedNode.x !== 'undefined') {
+          node.position.x = savedNode.x;
+        }
+        if (typeof savedNode.y !== 'undefined') {
+          node.position.y = savedNode.y;
+        }
+        if (typeof savedNode.treasure !== 'undefined') {
+          Object.keys(savedNode.treasure).forEach(number => {
+            node.data.treasure[number].looted = savedNode.treasure[number].looted;
+          });
+        }
       }
     });
     return {nodes: currentNodes};
@@ -85,7 +88,9 @@ export class AssetService {
 
       return simpleNode;
     });
-    return JSON.stringify({nodes: simplifiedNodes, version: '2'});
+    /* Save only nodes with changed attributes */
+    const changedNodes = simplifiedNodes.filter(obj => Object.keys(obj).length > 1);
+    return JSON.stringify({nodes: changedNodes, version: '2'});
   }
   public setScenariosJSON(scenarios) {
     localStorage.setItem('gloomhavenScenarioTree', this.getEncodedScenarios(scenarios));
