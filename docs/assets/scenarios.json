@@ -1708,7 +1708,7 @@
             "data": {
                 "id": "96",
                 "name": "#96 Unexpected Visitors",
-                "pages": ["FC1-5"],
+                "pages": ["FC1-5", "FC2-3", "FC2-10", "FC2-12", "FC2-14"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {
@@ -1727,7 +1727,7 @@
             "data": {
                 "id": "97",
                 "name": "#97 Lore Untold",
-                "pages": ["FC1-6"],
+                "pages": ["FC1-6", "FC2-4", "FC2-9", "FC2-15", "FC2-36", "FC2-38"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {}
@@ -1741,7 +1741,7 @@
             "data": {
                 "id": "98",
                 "name": "#98 Past in Flames",
-                "pages": ["FC1-7"],
+                "pages": ["FC1-7", "FC2-3", "FC2-12", "FC2-19", "FC2-20", "FC2-27"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {
@@ -1760,7 +1760,7 @@
             "data": {
                 "id": "99",
                 "name": "#99 Aftershocks",
-                "pages": ["FC1-8"],
+                "pages": ["FC1-8", "FC2-7", "FC2-10", "FC2-28", "FC2-33"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {
@@ -1779,7 +1779,7 @@
             "data": {
                 "id": "100",
                 "name": "#100 Shifting Gears",
-                "pages": ["FC1-9"],
+                "pages": ["FC1-9", "FC2-3", "FC2-6", "FC2-9", "FC2-10", "FC2-13", "FC2-14", "FC2-16", "FC2-18", "FC2-19", "FC2-23", "FC2-24", "FC2-25", "FC2-35", "FC2-36"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {
@@ -1802,7 +1802,7 @@
             "data": {
                 "id": "101",
                 "name": "#101 Shrouded Crypt",
-                "pages": ["FC1-10"],
+                "pages": ["FC1-10", "FC2-15", "FC2-21", "FC2-22", "FC2-24", "FC2-30", "FC2-39"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {
@@ -1821,7 +1821,7 @@
             "data": {
                 "id": "102",
                 "name": "#102 Bazaar of Knowledge",
-                "pages": ["FC1-11"],
+                "pages": ["FC1-11", "FC2-3", "FC2-5", "FC2-8", "FC2-34", "FC2-36", "FC2-37"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {
@@ -1844,7 +1844,7 @@
             "data": {
                 "id": "103",
                 "name": "#103 Where It Is Needed",
-                "pages": ["FC1-12"],
+                "pages": ["FC1-12", "FC2-5", "FC2-19", "FC2-29"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {
@@ -1863,7 +1863,7 @@
             "data": {
                 "id": "104",
                 "name": "#104 A Gaping Would",
-                "pages": ["FC1-13"],
+                "pages": ["FC1-13", "FC2-19", "FC2-26", "FC2-28", "FC2-33"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {
@@ -1882,7 +1882,7 @@
             "data": {
                 "id": "105",
                 "name": "#105 Monstrosities of a Cult",
-                "pages": ["FC1-14"],
+                "pages": ["FC1-14", "FC2-4", "FC2-11", "FC2-29"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {
@@ -1905,7 +1905,7 @@
             "data": {
                 "id": "106",
                 "name": "#106 Intricate Work",
-                "pages": ["FC1-15"],
+                "pages": ["FC1-15", "FC2-6", "FC2-5", "FC2-7", "FC2-13", "FC2-23", "FC2-29", "FC2-30", "FC2-37", "FC2-39"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {}
@@ -1919,7 +1919,7 @@
             "data": {
                 "id": "107",
                 "name": "#107 Mechanical Genius",
-                "pages": ["FC1-16"],
+                "pages": ["FC1-16", "FC2-3", "FC2-5", "FC2-7", "FC2-11", "FC2-15", "FC2-17", "FC2-19", "FC2-30", "FC2-31", "FC2-39", "FC2-40"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {
@@ -1942,7 +1942,7 @@
             "data": {
                 "id": "108",
                 "name": "#108 Prologue to the End",
-                "pages": ["FC1-17"],
+                "pages": ["FC1-17", "FC2-13", "FC2-16", "FC2-33", "FC2-34", "FC2-36", "FC2-38"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {}
@@ -1956,7 +1956,7 @@
             "data": {
                 "id": "109",
                 "name": "#109 Epilogue of a War",
-                "pages": ["FC1-18"],
+                "pages": ["FC1-18", "FC2-20"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {
@@ -1979,7 +1979,7 @@
             "data": {
                 "id": "110",
                 "name": "#110 A Circular Solution",
-                "pages": ["FC1-19"],
+                "pages": ["FC1-19", "FC2-19", "FC2-25", "FC2-40", "FC2-41"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {
@@ -1998,7 +1998,7 @@
             "data": {
                 "id": "111",
                 "name": "#111 The Shackles Loosen",
-                "pages": ["FC1-20"],
+                "pages": ["FC1-20", "FC2-15", "FC2-22", "FC2-23", "FC2-24", "FC2-27", "FC2-30", "FC2-32", "FC2-35", "FC2-39", "FC2-41"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {
@@ -2017,7 +2017,7 @@
             "data": {
                 "id": "112",
                 "name": "#112 The Bottom of It",
-                "pages": ["FC1-21"],
+                "pages": ["FC1-21", "FC2-23", "FC2-40"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {}
@@ -2031,7 +2031,7 @@
             "data": {
                 "id": "113",
                 "name": "#113 The Lost Thread",
-                "pages": ["FC1-22"],
+                "pages": ["FC1-22", "FC2-11", "FC2-20", "FC2-31", "FC2-35", "FC2-37"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {}
@@ -2045,7 +2045,7 @@
             "data": {
                 "id": "114",
                 "name": "#114 Ink Not Yet Dry",
-                "pages": ["FC1-23"],
+                "pages": ["FC1-23", "FC2-7", "FC2-32"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {}
@@ -2059,7 +2059,7 @@
             "data": {
                 "id": "115",
                 "name": "#115 Future Uncertain",
-                "pages": ["FC1-24"],
+                "pages": ["FC1-24", "FC2-8", "FC2-18"],
                 "status": "hidden",
                 "notes": "",
                 "treasure": {
