@@ -32,10 +32,6 @@ import { KeyComponent } from './key/key.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  entryComponents: [
-    ScenarioInfoDialogComponent,
-    ImportExportDialogComponent
-  ],
   providers: [ AssetService, TreeLogicService ],
   bootstrap: [ AppComponent ]
 })
