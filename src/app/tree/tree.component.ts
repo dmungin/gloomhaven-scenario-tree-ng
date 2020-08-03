@@ -144,6 +144,24 @@ export class TreeComponent implements OnChanges {
     const scenario23Complete = this.cy.$('#23').data('status') === 'complete';
     const scenario33Complete = this.cy.$('#33').data('status') === 'complete';
     const scenario43Complete = this.cy.$('#43').data('status') === 'complete';
+    const scenario98Complete = this.cy.$("#98").data("status") === "complete";
+    const scenario99Complete = this.cy.$("#99").data("status") === "complete";
+    const scenario100Complete = this.cy.$("#100").data("status") === "complete";
+    const scenario101Complete = this.cy.$("#101").data("status") === "complete";
+    const scenario110Complete = this.cy.$("#110").data("status") === "complete";
+    const scenario111Complete = this.cy.$("#111").data("status") === "complete";
+    const scenario112Complete = this.cy.$("#112").data("status") === "complete";
+    const scenario113Complete = this.cy.$("#113").data("status") === "complete";
+    const knowledgeIsPowerCount =
+      Number(scenario98Complete) +
+      Number(scenario99Complete) +
+      Number(scenario100Complete) +
+      Number(scenario101Complete);
+    const perilAvertedCount =
+      Number(scenario110Complete) +
+      Number(scenario111Complete) +
+      Number(scenario112Complete) +
+      Number(scenario113Complete);
     if (!scenario21Complete) {
       if (this.cy.nodes('#35').data('status') === 'complete') {
         if (this.cy.nodes('#27').data('status') === 'attempted' ||
@@ -225,6 +243,32 @@ export class TreeComponent implements OnChanges {
         'background-color': '#f44336',
         'border-width': '0px'
       });
+    }
+    if (knowledgeIsPowerCount > 1) {
+      this.cy
+        .nodes("#98, #99, #100, #101")
+        .outgoers('[type = "requiredby"]')
+        .css({
+          visibility: "hidden",
+        })
+        .targets()
+        .css({
+          "background-color": "#000000",
+          "border-width": "0px",
+        });
+    }
+    if (perilAvertedCount > 1) {
+      this.cy
+        .nodes("#110, #111, #112, #113")
+        .outgoers('[type = "requiredby"]')
+        .css({
+          visibility: "hidden",
+        })
+        .targets()
+        .css({
+          "background-color": "#000000",
+          "border-width": "0px",
+        });
     }
   }
   private nodeClicked(e) {
