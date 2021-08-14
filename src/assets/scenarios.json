@@ -2073,7 +2073,246 @@
                 "x": 175,
                 "y": 1724
             }
+        },
+        {
+            "data": {
+                "id": "SOLO2",
+                "name": "#SOLO2 Return of the Black Barrow",
+                "pages": ["SOLO2"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -1000,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "SOLO3",
+                "name": "#SOLO3 An Unfortunate Intrusion",
+                "pages": ["SOLO3"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -900,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "SOLO4",
+                "name": "#SOLO4 Corrupted Laboratory",
+                "pages": ["SOLO4"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -800,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "SOLO5",
+                "name": "#SOLO5 Armory Heist",
+                "pages": ["SOLO5"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -700,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "SOLO6",
+                "name": "#SOLO6 Stone Defense",
+                "pages": ["SOLO6"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -600,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "SOLO7",
+                "name": "#SOLO7 Rodent Liberation",
+                "pages": ["SOLO7"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -500,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "SOLO8",
+                "name": "#SOLO8 Caravan Escort",
+                "pages": ["SOLO8", "SOLO9"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -400,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "SOLO9",
+                "name": "#SOLO9 Unnatural Insults",
+                "pages": ["SOLO9", "SOLO10"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -300,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "SOLO11",
+                "name": "#SOLO11 Storage Fees",
+                "pages": ["SOLO11"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -200,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "SOLO12",
+                "name": "#SOLO12 Plane of Wild Beasts",
+                "pages": ["SOLO12"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -100,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "SOLO13",
+                "name": "#SOLO13 Harvesting the Night",
+                "pages": ["SOLO13"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": 0,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "SOLO14",
+                "name": "#SOLO14 Plagued Crypt",
+                "pages": ["SOLO14"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": 100,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "SOLO15",
+                "name": "#SOLO15 Battle of the Bards",
+                "pages": ["SOLO15", "SOLO16"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": 200,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "SOLO16",
+                "name": "#SOLO16 Corrupted Hunt",
+                "pages": ["SOLO16", "SOLO17"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": 300,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "SOLO18",
+                "name": "#SOLO18 Aftermath",
+                "pages": ["SOLO18"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": 400,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "SOLO19",
+                "name": "#SOLO19 Elemental Secrets",
+                "pages": ["SOLO19"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": 500,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "SOLO20",
+                "name": "#SOLO20 The Caged Bear",
+                "pages": ["SOLO20", "SOLO21"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": 600,
+                "y": -100
+            }
         }
+
     ],
     "edges": [
         {
