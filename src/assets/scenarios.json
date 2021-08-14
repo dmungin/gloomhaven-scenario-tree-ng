@@ -2073,7 +2073,246 @@
                 "x": 175,
                 "y": 1724
             }
+        },
+        {
+            "data": {
+                "id": "116",
+                "name": "#SOLO2",
+                "pages": ["SOLO2"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -1000,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "117",
+                "name": "#SOLO3",
+                "pages": ["SOLO3"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -900,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "118",
+                "name": "#SOLO4",
+                "pages": ["SOLO4"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -800,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "119",
+                "name": "#SOLO5",
+                "pages": ["SOLO5"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -700,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "120",
+                "name": "#SOLO6",
+                "pages": ["SOLO6"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -600,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "121",
+                "name": "#SOLO7",
+                "pages": ["SOLO7"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -500,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "122",
+                "name": "#SOLO8",
+                "pages": ["SOLO8", "SOLO9"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -400,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "123",
+                "name": "#SOLO9",
+                "pages": ["SOLO9", "SOLO10"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -300,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "124",
+                "name": "#SOLO11",
+                "pages": ["SOLO11"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -200,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "125",
+                "name": "#SOLO12",
+                "pages": ["SOLO12"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": -100,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "126",
+                "name": "#SOLO13",
+                "pages": ["SOLO13"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": 0,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "127",
+                "name": "#SOLO14",
+                "pages": ["SOLO14"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": 100,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "128",
+                "name": "#SOLO15",
+                "pages": ["SOLO15", "SOLO16"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": 200,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "129",
+                "name": "#SOLO16",
+                "pages": ["SOLO16", "SOLO17"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": 300,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "130",
+                "name": "#SOLO18",
+                "pages": ["SOLO18"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": 400,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "131",
+                "name": "#SOLO19",
+                "pages": ["SOLO19"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": 500,
+                "y": -100
+            }
+        },
+        {
+            "data": {
+                "id": "132",
+                "name": "#SOLO20",
+                "pages": ["SOLO20", "SOLO21"],
+                "status": "hidden",
+                "notes": "",
+                "treasure": {}
+            },
+            "position": {
+                "x": 600,
+                "y": -100
+            }
         }
+
     ],
     "edges": [
         {
