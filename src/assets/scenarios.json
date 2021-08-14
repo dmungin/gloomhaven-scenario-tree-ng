@@ -2077,7 +2077,7 @@
         {
             "data": {
                 "id": "SOLO2",
-                "name": "#S2 Return of the Black Barrow",
+                "name": "#SOLO2 Return of the Black Barrow",
                 "pages": ["SOLO2"],
                 "status": "hidden",
                 "notes": "",
@@ -2091,7 +2091,7 @@
         {
             "data": {
                 "id": "SOLO3",
-                "name": "#S3 An Unfortunate Intrusion",
+                "name": "#SOLO3 An Unfortunate Intrusion",
                 "pages": ["SOLO3"],
                 "status": "hidden",
                 "notes": "",
@@ -2105,7 +2105,7 @@
         {
             "data": {
                 "id": "SOLO4",
-                "name": "#S4 Corrupted Laboratory",
+                "name": "#SOLO4 Corrupted Laboratory",
                 "pages": ["SOLO4"],
                 "status": "hidden",
                 "notes": "",
@@ -2119,7 +2119,7 @@
         {
             "data": {
                 "id": "SOLO5",
-                "name": "#S5 Armory Heist",
+                "name": "#SOLO5 Armory Heist",
                 "pages": ["SOLO5"],
                 "status": "hidden",
                 "notes": "",
@@ -2133,7 +2133,7 @@
         {
             "data": {
                 "id": "SOLO6",
-                "name": "#S6 Stone Defense",
+                "name": "#SOLO6 Stone Defense",
                 "pages": ["SOLO6"],
                 "status": "hidden",
                 "notes": "",
@@ -2147,7 +2147,7 @@
         {
             "data": {
                 "id": "SOLO7",
-                "name": "#S7 Rodent Liberation",
+                "name": "#SOLO7 Rodent Liberation",
                 "pages": ["SOLO7"],
                 "status": "hidden",
                 "notes": "",
@@ -2161,7 +2161,7 @@
         {
             "data": {
                 "id": "SOLO8",
-                "name": "#S8 Caravan Escort",
+                "name": "#SOLO8 Caravan Escort",
                 "pages": ["SOLO8", "SOLO9"],
                 "status": "hidden",
                 "notes": "",
@@ -2175,7 +2175,7 @@
         {
             "data": {
                 "id": "SOLO9",
-                "name": "#S9 Unnatural Insults",
+                "name": "#SOLO9 Unnatural Insults",
                 "pages": ["SOLO9", "SOLO10"],
                 "status": "hidden",
                 "notes": "",
@@ -2189,7 +2189,7 @@
         {
             "data": {
                 "id": "SOLO11",
-                "name": "#S11 Storage Fees",
+                "name": "#SOLO11 Storage Fees",
                 "pages": ["SOLO11"],
                 "status": "hidden",
                 "notes": "",
@@ -2203,7 +2203,7 @@
         {
             "data": {
                 "id": "SOLO12",
-                "name": "#S12 Plane of Wild Beasts",
+                "name": "#SOLO12 Plane of Wild Beasts",
                 "pages": ["SOLO12"],
                 "status": "hidden",
                 "notes": "",
@@ -2217,7 +2217,7 @@
         {
             "data": {
                 "id": "SOLO13",
-                "name": "#S13 Harvesting the Night",
+                "name": "#SOLO13 Harvesting the Night",
                 "pages": ["SOLO13"],
                 "status": "hidden",
                 "notes": "",
@@ -2231,7 +2231,7 @@
         {
             "data": {
                 "id": "SOLO14",
-                "name": "#S14 Plagued Crypt",
+                "name": "#SOLO14 Plagued Crypt",
                 "pages": ["SOLO14"],
                 "status": "hidden",
                 "notes": "",
@@ -2245,7 +2245,7 @@
         {
             "data": {
                 "id": "SOLO15",
-                "name": "#S15 Battle of the Bards",
+                "name": "#SOLO15 Battle of the Bards",
                 "pages": ["SOLO15", "SOLO16"],
                 "status": "hidden",
                 "notes": "",
@@ -2259,7 +2259,7 @@
         {
             "data": {
                 "id": "SOLO16",
-                "name": "#S16 Corrupted Hunt",
+                "name": "#SOLO16 Corrupted Hunt",
                 "pages": ["SOLO16", "SOLO17"],
                 "status": "hidden",
                 "notes": "",
@@ -2273,7 +2273,7 @@
         {
             "data": {
                 "id": "SOLO18",
-                "name": "#S18 Aftermath",
+                "name": "#SOLO18 Aftermath",
                 "pages": ["SOLO18"],
                 "status": "hidden",
                 "notes": "",
@@ -2287,7 +2287,7 @@
         {
             "data": {
                 "id": "SOLO19",
-                "name": "#S19 Elemental Secrets",
+                "name": "#SOLO19 Elemental Secrets",
                 "pages": ["SOLO19"],
                 "status": "hidden",
                 "notes": "",
@@ -2301,7 +2301,7 @@
         {
             "data": {
                 "id": "SOLO20",
-                "name": "#S20 The Caged Bear",
+                "name": "#SOLO20 The Caged Bear",
                 "pages": ["SOLO20", "SOLO21"],
                 "status": "hidden",
                 "notes": "",
